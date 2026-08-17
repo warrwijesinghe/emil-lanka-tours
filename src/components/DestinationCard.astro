@@ -1,0 +1,20 @@
+---
+import ContentCard from '@/components/ContentCard.astro';
+import type { Destination } from '@/types/content';
+
+interface Props {
+  destination: Destination;
+  priority?: boolean;
+}
+
+const { destination, priority = false } = Astro.props;
+---
+<ContentCard
+  href={`/destinations/${destination.slug}/`}
+  title={destination.name}
+  description={destination.shortDescription}
+  imageUrl={destination.mainImageUrl}
+  imageAlt={destination.imageAlt || `${destination.name} destination`}
+  meta={[destination.region || '', destination.destinationType || 'Sri Lanka'].filter(Boolean)}
+  priority={priority}
+/>

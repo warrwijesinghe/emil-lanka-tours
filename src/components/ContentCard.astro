@@ -1,0 +1,60 @@
+---
+import { resolveMediaUrl } from '@/lib/media';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  imageUrl?: string | null;
+  imageAlt?: string | null;
+  meta?: string[];
+  routeText?: string;
+  badge?: string | null;
+  priority?: boolean;
+}
+
+const {
+  href,
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+  meta = [],
+  routeText,
+  badge,
+  priority = false
+} = Astro.props;
+const src = resolveMediaUrl(imageUrl);
+---
+<a href={href} class="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-black/6 bg-white shadow-soft transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lotus/35">
+  <div class="relative gradient-frame aspect-[16/9] overflow-hidden">
+    <img
+      src={src}
+      alt={imageAlt || title}
+      width="1200"
+      height="675"
+      loading={priority ? 'eager' : 'lazy'}
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+    {badge && <span class="absolute left-4 top-4 rounded-full bg-leaf px-3 py-1.5 text-xs font-extrabold text-white shadow-sm">{badge}</span>}
+  </div>
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    {meta.length > 0 && (
+      <div class="flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-lotus">
+        {meta.map((entry) => <span>{entry}</span>)}
+      </div>
+    )}
+    <h3 class="line-clamp-2 font-display text-3xl leading-tight text-ink">{title}</h3>
+    <p class="line-clamp-3 text-sm leading-7 text-ink/72">{description}</p>
+
+    <div class="mt-auto space-y-3 pt-2">
+      {routeText && (
+        <div class="rounded-2xl bg-leaf/6 px-3.5 py-3">
+          <p class="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-leaf/70">Route</p>
+          <p class="line-clamp-3 break-words text-sm font-semibold leading-6 text-leaf">{routeText}</p>
+        </div>
+      )}
+      <span class="inline-flex text-sm font-semibold text-leaf">Explore details</span>
+    </div>
+  </div>
+</a>

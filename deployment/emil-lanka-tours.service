@@ -1,0 +1,17 @@
+[Unit]
+Description=Chauffeur Emil Lanka Tours Astro server
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/emil-lanka-tours
+EnvironmentFile=/var/www/emil-lanka-tours/.env
+Environment=HOST=127.0.0.1
+Environment=PORT=4321
+ExecStart=/usr/bin/node /var/www/emil-lanka-tours/dist/server/entry.mjs
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

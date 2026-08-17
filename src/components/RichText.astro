@@ -1,0 +1,15 @@
+---
+import { stripHtml } from '@/lib/content';
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+const paragraphs = stripHtml(content)
+  .split(/(?<=[.!?])\s+/)
+  .filter(Boolean);
+---
+<div class="space-y-5 text-base leading-8 text-ink/78">
+  {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+</div>

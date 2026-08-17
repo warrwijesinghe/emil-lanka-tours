@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --page-bg: #faf8fc;
+  --surface: rgba(255, 255, 255, 0.88);
+  --border: rgba(16, 35, 24, 0.08);
+  --text: #102318;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  scroll-padding-bottom: 6rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(109, 13, 197, 0.1), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--page-bg) 55%, #f3f7f3 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-surface {
+  @apply rounded-[1.75rem] border border-[color:var(--border)] bg-white/90 shadow-soft backdrop-blur;
+}
+
+.gradient-frame {
+  background:
+    linear-gradient(135deg, rgba(109, 13, 197, 0.14), rgba(24, 74, 37, 0.12)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.9));
+}

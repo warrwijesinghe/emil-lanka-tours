@@ -1,0 +1,26 @@
+---
+const planHref = '/plan-my-tour/';
+---
+<section class="container-shell py-7 md:py-10 lg:py-12">
+  <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+    <div class="max-w-2xl">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.28em] text-lotus">Private Sri Lanka Tours</p>
+      <h1 class="mt-4 max-w-[13ch] font-display text-4xl leading-[1.08] text-ink sm:text-5xl lg:text-6xl">
+        See Sri Lanka at your pace—with Emil, your trusted local chauffeur
+      </h1>
+      <p class="mt-5 max-w-xl text-base leading-8 text-ink/75 md:text-lg">
+        Private round tours and tailor-made journeys with Emil, planned around realistic routes, flexible pacing and local support throughout your trip.
+      </p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a href={planHref} class="inline-flex min-h-12 items-center justify-center rounded-full bg-leaf px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#123b1e] focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-4">Plan My Tour</a>
+        <a href="/tours/" class="inline-flex min-h-12 items-center justify-center rounded-full border border-ink/15 bg-white px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-leaf/35 hover:text-leaf focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-4">Explore Round Tours</a>
+      </div>
+    </div>
+    <figure class="overflow-hidden rounded-[1.75rem] bg-leaf-soft shadow-soft">
+      <picture>
+        <source media="(max-width: 767px)" srcset="/images/hero/optimized/home-hero-tea-picker-sri-lanka-mobile.webp" />
+        <img src="/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp" alt="Tea pickers in Sri Lanka's hill country" width="1920" height="1280" sizes="(max-width: 1023px) calc(100vw - 2rem), (max-width: 1279px) 50vw, 640px" loading="eager" fetchpriority="high" class="aspect-[4/3] h-full w-full object-cover" />
+      </picture>
+    </figure>
+  </div>
+</section>

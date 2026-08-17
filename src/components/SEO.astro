@@ -1,0 +1,68 @@
+---
+import {
+  contactEmail,
+  homepageDescription,
+  isIndexingAllowed,
+  siteDescription,
+  siteName
+} from '@/lib/site';
+import { resolveMediaUrl } from '@/lib/media';
+import { toPublicSiteUrl } from '@/lib/site-url';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  image?: string;
+  imageAlt?: string;
+  robots?: string;
+}
+
+const {
+  title,
+  description = siteDescription,
+  canonicalPath = Astro.url.pathname,
+  image = '/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp',
+  imageAlt = `${siteName} Sri Lanka travel scene`,
+  robots
+} = Astro.props;
+
+const siteUrlOptions = { astroSite: Astro.site, requestUrl: Astro.url };
+const canonical = toPublicSiteUrl(canonicalPath, siteUrlOptions);
+const ogImage = toPublicSiteUrl(resolveMediaUrl(image), siteUrlOptions);
+const logo = toPublicSiteUrl('/images/brand/header-logo.png', siteUrlOptions);
+const isHomepage = new URL(canonical).pathname === '/';
+const organizationSchema = isHomepage
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'TravelAgency',
+      name: siteName,
+      url: canonical,
+      logo,
+      image: ogImage,
+      description: homepageDescription,
+      email: contactEmail,
+      areaServed: 'Sri Lanka'
+    }).replace(/</g, '\\u003c')
+  : null;
+---
+<Fragment slot="head">
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content={robots || (isIndexingAllowed ? 'index, follow, max-image-preview:large' : 'noindex, nofollow')} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content={imageAlt} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={imageAlt} />
+  {organizationSchema && <script is:inline type="application/ld+json" set:html={organizationSchema} />}
+</Fragment>
+

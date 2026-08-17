@@ -1,0 +1,47 @@
+---
+import { contactEmail, footerExploreLinks, footerPlanLinks, siteName, whatsappUrl } from '@/lib/site';
+const currentYear = new Date().getFullYear();
+---
+<footer class="mt-20 border-t border-black/5 bg-ink text-white">
+  <div class="container-shell grid gap-10 py-14 sm:grid-cols-2 xl:grid-cols-[1.35fr_0.8fr_0.8fr_1fr]">
+    <div class="space-y-5">
+      <div class="font-display text-3xl leading-tight text-white">Chauffeur Emil<br /><span class="text-xl text-lotus-soft">Lanka Tours</span></div>
+      <p class="max-w-xl text-sm leading-7 text-white/78">
+        Private Sri Lanka journeys with Emil, an experienced local chauffeur guide, shaped around your pace and interests.
+      </p>
+      <p class="text-sm text-white/60">Based in Sri Lanka - Private chauffeur tours</p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl">Explore</h2>
+      <div class="mt-4 grid gap-3 text-sm text-white/75">
+        {footerExploreLinks.map((item) => (
+          <a href={item.href} class="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink">
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl">Plan</h2>
+      <div class="mt-4 grid gap-3 text-sm text-white/75">
+        {footerPlanLinks.map((item) => (
+          <a href={item.href} class="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink">{item.label}</a>
+        ))}
+      </div>
+    </div>
+    <div class="space-y-4">
+      <h2 class="font-display text-2xl">Connect</h2>
+      <a
+        href={whatsappUrl()}
+        class="inline-flex min-h-11 items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink"
+        aria-label="Chat with Emil on WhatsApp"
+      >
+        WhatsApp Emil
+      </a>
+      <a href={`mailto:${contactEmail}`} class="block break-all text-sm text-white/75 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink">{contactEmail}</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10"><div class="container-shell py-5 text-sm text-white/60">Copyright {currentYear} {siteName}. All rights reserved.</div></div>
+</footer>
+
+

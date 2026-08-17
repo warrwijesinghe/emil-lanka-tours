@@ -1,0 +1,13 @@
+---
+import { whatsappUrl } from '@/lib/site';
+
+interface Props { hideOnMobile?: boolean; }
+const { hideOnMobile = false } = Astro.props;
+---
+<a
+  href={whatsappUrl()}
+  class:list={['fixed bottom-5 right-5 z-50 inline-flex min-h-11 items-center rounded-full bg-leaf px-4 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-leaf/90 focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-2', hideOnMobile && 'hidden sm:inline-flex']}
+  aria-label="Chat with Emil on WhatsApp"
+>
+  WhatsApp Emil
+</a>

@@ -1,0 +1,4 @@
+---
+import ListingIntro from '@/components/ListingIntro.astro'; import DestinationCard from '@/components/DestinationCard.astro'; import SiteLayout from '@/components/SiteLayout.astro'; import { destinations } from '@/lib/content'; import { siteName } from '@/lib/site';
+---
+<SiteLayout title={`Sri Lanka Destinations | ${siteName}`} description="Explore the Sri Lanka destinations Emil can combine into your private journey." canonicalPath="/destinations/"><ListingIntro eyebrow="Destinations" title="Places to shape around your journey" description="Explore cultural cities, tea-covered hills, wildlife regions and coastal escapes. Emil can help you find the right sequence and pace." compact /><section class="container-shell pb-12 md:pb-16"><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">{destinations.map((destination) => <DestinationCard {destination} />)}</div></section></SiteLayout>
