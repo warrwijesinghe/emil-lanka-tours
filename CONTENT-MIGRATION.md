@@ -1,10 +1,9 @@
 # Content migration notes
 
-The original public website’s visual components, static images, and Emil photo collection were migrated into this repository. The legacy database backup was used to recover the public tour and day-tour titles/descriptions that are represented in the local JSON files.
+The original public website’s visual components, static images, and Emil photo collection were migrated into this repository. The legacy database backup was used to recover the public day-tour titles and descriptions represented in the local JSON files.
 
 Current local content inventory:
 
-- 3 round tours in `src/data/tours.json`
 - 8 day tours in `src/data/day-tours.json`
 - 8 destinations in `src/data/destinations.json`
 - 2 recovered-style testimonial placeholders in `src/data/testimonials.json`

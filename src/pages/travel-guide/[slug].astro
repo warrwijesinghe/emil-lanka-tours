@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import ContentCard from '@/components/ContentCard.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { siteName } from '@/lib/site';
+import { toPublicSiteUrl } from '@/lib/site-url';
+
+export const prerender = true;
+
+const guideSlug = (id: string) => id.replace(/\.md$/, '');
+
+export async function getStaticPaths() {
+  const guides = await getCollection('travelGuide');
+  return guides.map((guide) => ({ params: { slug: guide.id.replace(/\.md$/, '') }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const allGuides = await getCollection('travelGuide');
+const related = allGuides.filter((item) => item.id !== guide.id).sort((a, b) => Number(b.data.category === guide.data.category) - Number(a.data.category === guide.data.category) || b.data.publishedDate.getTime() - a.data.publishedDate.getTime()).slice(0, 3);
+const canonicalPath = `/travel-guide/${guideSlug(guide.id)}/`;
+const canonical = toPublicSiteUrl(canonicalPath, { astroSite: Astro.site, requestUrl: Astro.url });
+const image = toPublicSiteUrl(guide.data.image, { astroSite: Astro.site, requestUrl: Astro.url });
+const formatDate = (date: Date) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BlogPosting', headline: guide.data.title, description: guide.data.description, image: [image], author: { '@type': 'Person', name: guide.data.author }, datePublished: guide.data.publishedDate.toISOString(), ...(guide.data.updatedDate ? { dateModified: guide.data.updatedDate.toISOString() } : {}), publisher: { '@type': 'TravelAgency', name: siteName }, mainEntityOfPage: { '@type': 'WebPage', '@id': canonical } }).replace(/</g, '\\u003c');
+const breadcrumbSchema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: toPublicSiteUrl('/', { astroSite: Astro.site, requestUrl: Astro.url }) }, { '@type': 'ListItem', position: 2, name: 'Travel Guide', item: toPublicSiteUrl('/travel-guide/', { astroSite: Astro.site, requestUrl: Astro.url }) }, { '@type': 'ListItem', position: 3, name: guide.data.title, item: canonical }] }).replace(/</g, '\\u003c');
+---
+<SiteLayout title={`${guide.data.title} | ${siteName}`} description={guide.data.description} canonicalPath={canonicalPath} image={guide.data.image} imageAlt={guide.data.imageAlt} ogType="article">
+  <Fragment slot="head"><script is:inline type="application/ld+json" set:html={schema} /><script is:inline type="application/ld+json" set:html={breadcrumbSchema} /></Fragment>
+  <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/travel-guide/', label: 'Travel Guide' }, { label: guide.data.title }]} />
+  <article class="container-shell pb-8 pt-6 md:pb-12">
+    <header class="mx-auto max-w-4xl"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-lotus">{guide.data.category || 'Travel Guide'}</p><h1 class="mt-3 font-display text-4xl leading-tight text-ink sm:text-5xl">{guide.data.title}</h1><p class="mt-5 text-lg leading-8 text-ink/72">{guide.data.description}</p><p class="mt-5 text-sm text-ink/60">Published {formatDate(guide.data.publishedDate)} · By {guide.data.author}</p></header>
+    <img src={guide.data.image} alt={guide.data.imageAlt} width="1600" height="900" class="mx-auto mt-8 aspect-video w-full max-w-5xl rounded-[2rem] object-cover shadow-soft" />
+    <div class="prose-guide mx-auto mt-10 max-w-3xl text-[17px] leading-8 text-ink/80"><Content /></div>
+  </article>
+  <CTASection title="Planning a private tour around Sri Lanka?" description="Tell us your travel dates, preferred destinations and number of travellers, and Emil can help you plan a personalised journey." href="/plan-my-tour/" label="Plan Your Sri Lanka Tour" />
+  {related.length > 0 && <section class="container-shell py-10 md:py-14"><h2 class="font-display text-4xl text-ink">You May Also Like</h2><div class="mt-6 grid gap-5 md:grid-cols-3">{related.map((item) => <ContentCard href={`/travel-guide/${guideSlug(item.id)}/`} title={item.data.title} description={item.data.description} imageUrl={item.data.image} imageAlt={item.data.imageAlt} meta={[item.data.category || 'Travel guide']} />)}</div></section>}
+</SiteLayout>

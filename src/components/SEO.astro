@@ -16,6 +16,7 @@ interface Props {
   image?: string;
   imageAlt?: string;
   robots?: string;
+  ogType?: 'website' | 'article';
 }
 
 const {
@@ -24,7 +25,8 @@ const {
   canonicalPath = Astro.url.pathname,
   image = '/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp',
   imageAlt = `${siteName} Sri Lanka travel scene`,
-  robots
+  robots,
+  ogType = 'website'
 } = Astro.props;
 
 const siteUrlOptions = { astroSite: Astro.site, requestUrl: Astro.url };
@@ -51,7 +53,7 @@ const organizationSchema = isHomepage
   <meta name="description" content={description} />
   <meta name="robots" content={robots || (isIndexingAllowed ? 'index, follow, max-image-preview:large' : 'noindex, nofollow')} />
   <link rel="canonical" href={canonical} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content={siteName} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose-guide h2 { @apply mt-12 font-display text-3xl leading-tight text-ink; }
+.prose-guide h3 { @apply mt-8 text-xl font-bold leading-tight text-ink; }
+.prose-guide p { @apply mt-5; }
+.prose-guide ul { @apply mt-5 list-disc space-y-2 pl-6; }
+.prose-guide ol { @apply mt-5 list-decimal space-y-2 pl-6; }
+.prose-guide a { @apply font-semibold text-leaf underline decoration-lotus/50 underline-offset-4 hover:text-lotus; }
+
 :root {
   color-scheme: light;
   --page-bg: #faf8fc;

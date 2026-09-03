@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ContentCard from '@/components/ContentCard.astro';
+import ListingIntro from '@/components/ListingIntro.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { siteName } from '@/lib/site';
+
+const guides = (await getCollection('travelGuide')).sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+const formatDate = (date: Date) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const guideSlug = (id: string) => id.replace(/\.md$/, '');
+---
+<SiteLayout title={`Sri Lanka Travel Guide | ${siteName}`} description="Practical Sri Lanka travel guides, private driver advice, itineraries, route tips and local travel information from Chauffeur Emil Lanka Tours." canonicalPath="/travel-guide/">
+  <ListingIntro eyebrow="Travel Guide" title="Sri Lanka Travel Guide" description="Practical Sri Lanka travel advice from Chauffeur Emil Lanka Tours. Discover private driver tips, route guides, itineraries and useful information to help you plan a comfortable and memorable journey around Sri Lanka." compact />
+  <section class="container-shell pb-12 md:pb-16" aria-label="Travel guides">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {guides.map((guide) => <ContentCard href={`/travel-guide/${guideSlug(guide.id)}/`} title={guide.data.title} description={guide.data.description} imageUrl={guide.data.image} imageAlt={guide.data.imageAlt} meta={[guide.data.category || 'Travel guide', formatDate(guide.data.publishedDate)]} badge={guide.data.featured ? 'Featured guide' : null} />)}
+    </div>
+  </section>
+</SiteLayout>

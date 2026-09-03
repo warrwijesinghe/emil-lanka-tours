@@ -1,4 +1,8 @@
 ---
-import ListingIntro from '@/components/ListingIntro.astro'; import SiteLayout from '@/components/SiteLayout.astro'; import TourCard from '@/components/TourCard.astro'; import { tours } from '@/lib/content'; import { siteName } from '@/lib/site';
+import ListingIntro from '@/components/ListingIntro.astro';
+import RoundTourCard from '@/components/RoundTourCard.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { roundTours } from '@/data/tours';
+import { siteName } from '@/lib/site';
 ---
-<SiteLayout title={`Private Sri Lanka Round Tours | ${siteName}`} description="Browse private Sri Lanka itineraries that Emil can tailor around your travel dates and pace." canonicalPath="/tours/"><ListingIntro eyebrow="Round Tours" title="Private Sri Lanka itineraries with flexible pacing" description="Start with a carefully planned route, then adjust the pace, stops and experiences with Emil." compact /><section class="container-shell pb-12 md:pb-16"><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{tours.map((tour) => <TourCard {tour} />)}</div></section></SiteLayout>
+<SiteLayout title={`Sri Lanka Round Tours | ${siteName}`} description="Browse private Sri Lanka itineraries prepared from Emil’s reviewed tour plans." canonicalPath="/tours/"><ListingIntro eyebrow="Round Tours" title="Private Sri Lanka itineraries" description="Choose a route as a starting point, then ask Emil to tailor the pace, stays and experiences around your dates." compact /><section class="container-shell pb-12 md:pb-16"><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{roundTours.map((tour) => <RoundTourCard {tour} />)}</div></section></SiteLayout>

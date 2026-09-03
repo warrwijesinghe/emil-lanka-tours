@@ -1,0 +1,35 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import DetailHero from '@/components/DetailHero.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { roundTours } from '@/data/tours';
+import { getDestinationSlugsInText } from '@/data/tour-destinations';
+import { destinations } from '@/lib/content';
+import { getRoundTourDayImages, roundTourImages } from '@/lib/round-tour-images';
+
+const tour = roundTours.find((item) => item.id.toLowerCase() === Astro.params.id?.toLowerCase());
+if (!tour) return Astro.redirect('/tours/');
+const heroImage = roundTourImages[tour.id];
+const overviewFacts = [
+  { label: 'Duration', value: tour.durationLabel },
+  { label: 'Route / main places', value: tour.routePoints.join(' / ') },
+  { label: 'Tour type', value: 'Private round tour' },
+  { label: 'Transport', value: 'Private chauffeur-driven vehicle' }
+];
+const destinationSlugs = new Set(getDestinationSlugsInText(`${tour.routePoints.join(' ')} ${tour.itinerary.map((day) => `${day.route} ${day.experiences.join(' ')}`).join(' ')}`));
+const linkedDestinations = destinations.filter((destination) => destinationSlugs.has(destination.slug));
+---
+<SiteLayout title={`${tour.title} | Chauffeur Emil`} description={tour.shortDescription} canonicalPath={`/tours/${tour.id.toLowerCase()}/`} image={heroImage.src} imageAlt={heroImage.alt}>
+  <Breadcrumbs items={[{href:'/',label:'Home'},{href:'/tours/',label:'Round Tours'},{label:tour.title}]} />
+  <DetailHero eyebrow={tour.durationLabel} title={tour.title} description={tour.shortDescription} imageUrl={heroImage.src} imageAlt={heroImage.alt} meta={[`Tour ID: ${tour.id}`, 'Private chauffeur-guided']} ctaHref={`/plan-my-tour/?tour=${tour.id}`} ctaLabel="Request This Tour" />
+  <section class="container-shell grid gap-8 py-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+    <div class="grid gap-8">
+      <section class="card-surface p-6 md:p-8"><div class="grid gap-8 xl:grid-cols-[minmax(0,.9fr)_minmax(320px,1.1fr)]"><div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Tour Overview</p><h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">A clear snapshot before you plan</h2><p class="mt-5 text-sm leading-7 text-ink/72 md:text-base">{tour.shortDescription} Emil can tailor the pace, stays and experiences around your dates and preferences.</p>{linkedDestinations.length > 0 && <div class="mt-5"><p class="text-xs font-extrabold uppercase tracking-[.18em] text-lotus">Destinations on this route</p><div class="mt-3 flex flex-wrap gap-2">{linkedDestinations.map((destination) => <a href={`/destinations/${destination.slug}/`} class="rounded-full border border-leaf/15 bg-leaf-soft px-3 py-1.5 text-sm font-semibold text-leaf hover:bg-leaf hover:text-white">{destination.name}</a>)}</div></div>}</div><div class="grid gap-3 sm:grid-cols-2">{overviewFacts.map((item) => <div class="rounded-[1.35rem] border border-ink/8 bg-sand p-4"><p class="text-[11px] font-extrabold uppercase tracking-[.16em] text-ink/45">{item.label}</p><p class="mt-2 text-sm font-semibold leading-6 text-ink/78">{item.value}</p></div>)}</div></div></section>
+      <section class="card-surface p-6 md:p-8"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Tour Highlights</p><h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">Memorable moments along the route</h2><div class="mt-6 grid gap-4 md:grid-cols-2">{tour.highlights.map((highlight) => <article class="flex min-h-24 gap-4 rounded-[1.35rem] border border-ink/8 bg-white p-4 shadow-sm md:p-5"><span class="grid h-9 w-9 flex-none place-items-center rounded-full bg-lotus-soft text-lg font-bold text-lotus">+</span><p class="self-center text-sm font-semibold leading-6 text-ink/78">{highlight}</p></article>)}</div></section>
+      <section class="card-surface bg-[#f3f0e4] p-6 md:p-8"><h2 class="font-display text-3xl text-ink md:text-4xl">Itinerary</h2><div class="relative mt-6 grid gap-5 md:gap-6"><div class="absolute bottom-0 left-[2.35rem] top-0 hidden w-px bg-ink/12 md:block"></div>{tour.itinerary.map((day) => <div class="relative md:pl-24"><div class="mb-4 inline-flex rounded-full bg-lotus-soft px-4 py-2 text-sm font-extrabold text-lotus md:absolute md:left-0 md:top-5 md:mb-0">Day {String(day.day).padStart(2,'0')}</div><article class="rounded-[1.6rem] border border-ink/8 bg-white p-6 shadow-sm md:rounded-[1.9rem] md:p-8"><p class="font-display text-2xl font-bold leading-tight text-leaf md:text-[1.75rem]">{day.route}</p><h3 class="mt-3 text-sm font-extrabold text-leaf">{day.title}</h3><p class="mt-5 text-sm leading-7 text-ink/72 md:text-[0.95rem]">{day.description}</p><div class="mt-5"><p class="text-xs font-extrabold uppercase tracking-[.18em] text-lotus">Main Experiences</p><ul class="mt-4 grid gap-3 text-sm font-bold leading-5 text-ink">{day.experiences.map((experience) => <li class="flex gap-3"><span class="mt-1.5 h-3 w-3 flex-none rounded-full bg-gradient-to-br from-leaf to-lotus"></span><span>{experience}</span></li>)}</ul></div><div class="mb-5 grid grid-cols-3 gap-2" aria-label={`${day.title} photo gallery`}>{getRoundTourDayImages(day).map((image) => <img src={image.src} alt={image.alt} loading="lazy" class="aspect-[4/3] w-full rounded-xl object-cover" />)}</div></article></div>)}</div></section>
+    </div>
+    <aside class="card-surface h-fit p-6 lg:sticky lg:top-24"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Plan with Emil</p><h2 class="mt-3 font-display text-3xl text-ink">Make this route your own</h2><p class="mt-3 text-sm leading-7 text-ink/70">Tell Emil your travel dates, group size and interests to shape this itinerary around you.</p><a href={`/plan-my-tour/?tour=${tour.id}`} class="mt-5 inline-flex rounded-full bg-leaf px-5 py-3 text-sm font-semibold text-white">Request This Tour</a><p class="mt-5 border-t border-ink/10 pt-4 text-xs text-ink/55">Temporary source reference: {tour.sourceReference}</p></aside>
+  </section>
+  <CTASection title="Ready to plan this journey?" description="Emil can personalise the route around your dates and travel style." href={`/plan-my-tour/?tour=${tour.id}`} label="Plan My Tour" />
+</SiteLayout>

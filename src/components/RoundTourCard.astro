@@ -1,0 +1,9 @@
+---
+import type { RoundTour } from '@/data/tours';
+import { roundTourImages } from '@/lib/round-tour-images';
+interface Props { tour: RoundTour; }
+const { tour } = Astro.props;
+const image = roundTourImages[tour.id];
+---
+<a href={`/tours/${tour.id.toLowerCase()}/`} aria-label={`View itinerary for ${tour.title}`} class="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-ink/10 bg-white shadow-soft transition duration-200 hover:-translate-y-1 hover:border-leaf/20"><div class="relative aspect-[16/10] overflow-hidden bg-leaf-soft"><img src={image.src} alt={image.alt} loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span class="absolute left-4 top-4 rounded-full bg-ink/88 px-3 py-1.5 text-xs font-semibold text-white shadow-sm backdrop-blur-sm">{tour.durationLabel}</span></div><div class="flex flex-1 flex-col p-5 md:p-6"><h2 class="line-clamp-2 min-h-[3.5rem] font-display text-2xl leading-tight text-ink md:text-3xl">{tour.title}</h2><div class="mt-4 border-l-2 border-lotus/70 pl-3"><p class="text-[10px] font-semibold uppercase tracking-[.18em] text-leaf/65">Route</p><p class="mt-1.5 text-sm font-medium leading-6 text-ink/80">{tour.routePoints.join(' → ')}</p></div><div class="mt-4"><p class="text-[11px] font-semibold uppercase tracking-[.16em] text-leaf/70">Highlights</p><ul class="mt-2 flex flex-wrap gap-2">{tour.highlights.slice(0, 4).map((highlight) => <li class="rounded-full bg-leaf-soft px-2.5 py-1.5 text-xs font-medium text-leaf">{highlight}</li>)}</ul></div><span class="mt-auto flex items-center justify-between gap-3 border-t border-ink/10 pt-4 text-sm font-semibold text-leaf">View Itinerary <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-leaf/20 text-base transition-colors group-hover:bg-leaf group-hover:text-white">→</span></span></div>
+</a>

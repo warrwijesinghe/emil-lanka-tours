@@ -10,7 +10,7 @@ export const whatsappNumber = site.whatsapp.replace(/\D/g, '');
 export const whatsappUrl = (message = 'Hello Emil, I would like to plan a Sri Lanka tour.') => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 export const mainNav = [
   { href: '/', label: 'Home' }, { href: '/tours/', label: 'Round Tours' }, { href: '/day-tours/', label: 'Day Tours' },
-  { href: '/destinations/', label: 'Destinations' }, { href: '/about/', label: 'About Emil' }, { href: '/contact/', label: 'Contact' }
+  { href: '/destinations/', label: 'Destinations' }, { href: '/travel-guide/', label: 'Travel Guide' }, { href: '/about/', label: 'About Emil' }, { href: '/contact/', label: 'Contact' }
 ];
-export const footerExploreLinks = mainNav.slice(1, 4);
+export const footerExploreLinks = mainNav.slice(1, 5);
 export const footerPlanLinks = [{ href: '/plan-my-tour/', label: 'Plan My Tour' }, { href: '/about/', label: 'About Emil' }, { href: '/contact/', label: 'Contact' }];
