@@ -144,8 +144,8 @@ export const roundTours: RoundTour[] = [
         day: 9,
         route: "Ella",
         description:
-          "  Liftios Seat",
-        experiences: ["Liftios Seat"
+          "  Lipton tea estate ",
+        experiences: ["Lipton tea estate"
         ],
       },
       {
