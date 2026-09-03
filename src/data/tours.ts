@@ -216,16 +216,17 @@ export const roundTours: RoundTour[] = [
     ],
     highlights: [
       "Mirissa whale watching",
-      "Maduriver safari & turtle conservation",
+      "Madu river safari & turtle conservation",
       "Udawalawe safari",
-      "Ella train & Nine Arch Bridge",
+      "Ella to damodara train journey",
+      " Nine Arch Bridge",
       "Englnd colonial hill country ",
       "Kandy & Temple of the Tooth",
       "Waterfalls experiences",
       "wildlife safari experiences",
       "Ancient capitals & Sigiriya",
       "Anuradhapura first capital in sri lanka",
-      "Negombo hamillton canal.",
+      
       
       
     ],
@@ -281,12 +282,11 @@ export const roundTours: RoundTour[] = [
         day: 5,
         route: "Udawalawe to Ella",
         description:
-          " enjoy Buduruwagala Temple, Ravana Falls, Nine Arch Bridge.",
+          " enjoy Buduruwagala Temple, Rawana waterfall , Nine ArchBridge",
+         
         experiences: [
-          "Buduruwagala Temple",
-          "Ravana water Falls",
           "Nine Arch Bridge",
-        ],
+        ]
       },
       {
         day: 6,
@@ -307,9 +307,9 @@ export const roundTours: RoundTour[] = [
         experiences: [
           "Ella to Nanu Oya train journey",
           "Nuwara Eliya city tour",
-          "frout market",
+          "fruit market",
           "old post office",
-          "Grgard Lake",
+          "Gargari Lake",
         ],
       },
       {
@@ -332,11 +332,8 @@ export const roundTours: RoundTour[] = [
         description:
           "Explore the cultural character of Kandy to Mahiyanganaya through Vedda Village, Sorabora Lake, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
-          "Vedda Village (aborigines)",
-          "bow and arrow how to use",
-          "Sorabora Lake",
-        ],
-      },
+          "Vedda Village (aborigines),"   ]
+      },  
       {
         day: 10,
         route: "Mahiyanganaya to Sigiriya",
@@ -370,7 +367,7 @@ export const roundTours: RoundTour[] = [
           "Lion Rock vist morning",
           "After breakfast visit",
           "Mihintale",
-          "Ancient City",
+          "Ancient City tour",
         ],
       },
       {
@@ -422,7 +419,9 @@ export const roundTours: RoundTour[] = [
       "Wilpattu leopard safari",
       "Trincomalee & Nilaveli",
       "Sigiriya & Kandy",
-      "Ella train & Galle",
+      "Ella to train journey",
+      "Udawalawe elephant transit home",
+      "Mirissa & Galle fort",
     ],
     highlightsIntro:
       "Travel from Wilpattu wild landscapes to Trincomalee beaches, then across Sri Lanka cultural heartland to Ella and Galle.",
@@ -433,8 +432,9 @@ export const roundTours: RoundTour[] = [
         description:
           "Follow the Colombo Airport to Anuradhapura route with time to experience Sacred City, Mihintale. Your private chauffeur can adjust the pace and stops around your interests.",
         experiences: [
-          "Sacred City",
-          "Mihintale",
+          "Sacred City anuradhapura",
+          
+          ""
         ],
       },
       {
@@ -443,7 +443,7 @@ export const roundTours: RoundTour[] = [
         description:
           "Spend the day close to Sri Lanka wildlife, with Wilpattu National Park planned around the best available timing and your preferred pace.",
         experiences: [
-          "Wilpattu National Park",
+          "Wilpattu National Park full day safari",
         ],
       },
       {
@@ -452,8 +452,11 @@ export const roundTours: RoundTour[] = [
         description:
           "Experience Sri Lanka's coast at an easy pace, with time for Hot Wells, Koneswaram Temple and comfortable private travel throughout the day.",
         experiences: [
-          "Hot Wells",
+          "Hot water Wells",
           "Koneswaram Temple",
+          "Frederick fort",
+          "Mihintale rock climbing",
+          ""
         ],
       },
       {
@@ -464,6 +467,7 @@ export const roundTours: RoundTour[] = [
         experiences: [
           "Dolphin watching",
           "Nilaveli Beach",
+          "Snorkeling",
         ],
       },
       {
@@ -483,7 +487,8 @@ export const roundTours: RoundTour[] = [
           "Explore the cultural character of Trincomalee to Sigiriya through Village safari, Pidurangala, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
           "Village safari",
-          "Pidurangala",
+          "Curture dance show",
+          
         ],
       },
       {
@@ -493,8 +498,8 @@ export const roundTours: RoundTour[] = [
           "Follow the Sigiriya route with time to experience Lion Rock, Ayurveda, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
         experiences: [
           "Lion Rock",
-          "Ayurveda",
-          "Elephant safari",
+          "Ayurveda treatment(optional)",
+          "Elephant safari(kudulla or minneriya national park)",
         ],
       },
       {
@@ -503,9 +508,12 @@ export const roundTours: RoundTour[] = [
         description:
           "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
-          "Dambulla",
+          "Dambulla cave temple",
+          "Nalanda gedege",
           "Temple of the Tooth",
-        ],
+          
+
+        ]
       },
       {
         day: 9,
@@ -515,7 +523,12 @@ export const roundTours: RoundTour[] = [
         experiences: [
           "Tea factory",
           "Ramboda Falls",
-        ],
+          "Tea plantation",
+          "Tea factory",
+          "Nuwara Eliya city tour",
+          "Gargari Lake",
+          "old post office",
+        ]
       },
       {
         day: 10,
@@ -523,8 +536,8 @@ export const roundTours: RoundTour[] = [
         description:
           "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
         experiences: [
-          "Scenic train",
-          "Nine Arch Bridge",
+          "Train journey from Nanu Oya to Demodara",
+          
         ],
       },
       {
@@ -532,9 +545,10 @@ export const roundTours: RoundTour[] = [
         route: "Ella to Mirissa",
         description:
           "Experience Sri Lanka's coast at an easy pace, with time for Ravana Falls, Mirissa Beach and comfortable private travel throughout the day.",
-        experiences: [
-          "Ravana Falls",
+        experiences: [ 
+          "Rawana Falls",
           "Mirissa Beach",
+          "nine arch bridge",
         ],
       },
       {
@@ -545,6 +559,8 @@ export const roundTours: RoundTour[] = [
         experiences: [
           "Galle Fort",
           "Madu River safari",
+          "Turtle farm conservation",
+          "Waligama Fish Market",
         ],
       },
       {
@@ -554,15 +570,17 @@ export const roundTours: RoundTour[] = [
           "Follow the Mirissa to Negombo route with time to experience Colombo city tour. Your private chauffeur can adjust the pace and stops around your interests.",
         experiences: [
           "Colombo city tour",
+          "Negombo beach",
         ],
       },
       {
         day: 14,
-        route: "Negombo to Colombo Airport",
+        route: "Negombo to katunayaka,bandaranayaka,international Airport",
         description:
           "Enjoy a relaxed final morning before your private chauffeur provides a comfortable airport transfer, timed around your flight.",
         experiences: [
           "Airport transfer",
+          "End of the tour",
         ],
       },
     ],
@@ -597,7 +615,7 @@ export const roundTours: RoundTour[] = [
     itinerary: [
       {
         day: 1,
-        route: "Colombo Airport to Anuradhapura",
+        route: "Arrive at Colombo Airport to Anuradhapura",
         description:
           "Meet your private chauffeur on arrival and begin your Sri Lanka journey towards Colombo Airport to Anuradhapura, with time to enjoy Ancient City.",
         experiences: [
@@ -610,7 +628,7 @@ export const roundTours: RoundTour[] = [
         description:
           "Spend the day close to Sri Lanka wildlife, with Wilpattu safari planned around the best available timing and your preferred pace.",
         experiences: [
-          "Wilpattu safari",
+          "Wilpattu full day safari",
         ],
       },
       {
@@ -619,7 +637,10 @@ export const roundTours: RoundTour[] = [
         description:
           "Experience Sri Lanka's coast at an easy pace, with time for Koneswaram Temple and comfortable private travel throughout the day.",
         experiences: [
-          "Koneswaram Temple",
+          "Mihinthle temple",
+          "Koneswaram hindu temple,"
+          
+          
         ],
       },
       {
@@ -629,7 +650,7 @@ export const roundTours: RoundTour[] = [
           "Experience Sri Lanka's coast at an easy pace, with time for Dolphin watching, Nilaveli and comfortable private travel throughout the day.",
         experiences: [
           "Dolphin watching",
-          "Nilaveli",
+          "Snokileen",
         ],
       },
       {
@@ -648,10 +669,12 @@ export const roundTours: RoundTour[] = [
         description:
           "Follow the Trincomalee to Sigiriya route with time to experience Kaudulla Lake, Village safari, Habarana Cultural Show. Your private chauffeur can adjust the pace and stops around your interests.",
         experiences: [
-          "Kaudulla Lake",
-          "Village safari",
-          "Habarana Cultural Show",
-        ],
+          "Polonnaruwa ruinc",
+          "Kaudulla national park safari",
+          "Back to sigiriya",
+        
+        
+        ]
       },
       {
         day: 7,
@@ -659,9 +682,10 @@ export const roundTours: RoundTour[] = [
         description:
           "Spend the day close to Sri Lanka wildlife, with Tuk-tuk tour, Elephant safari planned around the best available timing and your preferred pace.",
         experiences: [
-          "Tuk-tuk tour",
-          "Elephant safari",
-        ],
+          "Tuk-tuk journey around the rock",
+          "pidurangala rock culmbing",
+          "Culture dance show,"
+        ]
       },
       {
         day: 8,
@@ -797,8 +821,80 @@ export const roundTours: RoundTour[] = [
         description:
           "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
         experiences: [
-          "Scenic train",
-          "Hill country",
+          "Nanuoya to Demodara train",
+          "Hill country views",
+        ],
+      },
+       {
+        day: 9,
+        route: "Ella",
+        description:
+          "   Scenic ",
+        experiences: [
+          "Liftion tea estate",
+          "Little Adam's Peak",
+        ],  
+      },
+       {
+        day: 10,
+        route: "Ella to singharaja forest daniyaya",
+        description:
+          " with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "Kitul todi tree",
+          
+        ],
+      },
+       {
+        day: 11,
+        route: "Singharaja forest to mirissa beach",
+        description:
+          "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "Singharaja forest traking morning",
+          "rest and relax on the beach",
+          
+        ],
+      },
+       {
+        day: 12,
+        route:"Mirissa ",
+        description:"Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "Galle fort",
+          "Madu river boat safari",
+          "Mitiyagoda moon stoin",
+          "waligama fish markat,"
+        ],
+      },
+       {
+        day: 13,
+        route: "Mirissa",
+        description:
+          "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "Blu whels watching",
+          "Rest on the beach",
+        ],
+      },
+       {
+        day: 14,
+        route: "Mirissa",
+        description:
+          "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "Rest on te beach",
+          
+        ],
+      },
+       {
+        day: 15,
+        route: "Mirissa to bandaranayaka internationl air port",
+        description:
+          "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
+        experiences: [
+          "End of the tour",
+          "Drop to air port",
         ],
       },
     ],
@@ -904,7 +1000,7 @@ export const roundTours: RoundTour[] = [
     shortDescription:
       "A nature-led journey that begins in Kalpitiya and connects coastal wildlife, the Cultural Triangle and the hill country.",
     routePoints: [
-      "Colombo Airport",
+      "Arrival at Colombo Airport",
       "Kalpitiya",
       "Anuradhapura",
       "Sigiriya",
@@ -915,9 +1011,10 @@ export const roundTours: RoundTour[] = [
     ],
     highlights: [
       "Kalpitiya dolphin watching",
-      "Wilpattu safari",
-      "Sigiriya & Kandy",
-      "Tea country train to Ella",
+      "Kite surfing",
+      "Kandy tooth temple",
+      "Tea country train to journey",
+      "Sigiriya",
     ],
     highlightsIntro:
       "A nature-rich route from Kalpitiya marine life and Wilpattu wildlife through ancient cities, tea country and Ella.",
@@ -929,6 +1026,7 @@ export const roundTours: RoundTour[] = [
           "Meet your private chauffeur on arrival and begin your Sri Lanka journey towards Colombo Airport to Kalpitiya, with time to enjoy Coastal relaxation.",
         experiences: [
           "Coastal relaxation",
+          "kite surfing",
         ],
       },
       {
@@ -938,34 +1036,37 @@ export const roundTours: RoundTour[] = [
           "Experience Sri Lanka's coast at an easy pace, with time for Dolphin or whale watching and comfortable private travel throughout the day.",
         experiences: [
           "Dolphin or whale watching",
+          "kite surfing",
         ],
       },
       {
         day: 3,
-        route: "Kalpitiya to Anuradhapura",
+        route: "Kalpitiya to Mannarama",
         description:
           "Explore the cultural character of Kalpitiya to Anuradhapura through Sacred City, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
-          "Sacred City",
+          "Flamingo bird watching",
         ],
       },
       {
         day: 4,
-        route: "Anuradhapura",
+        route: "Mannarama",
         description:
           "Spend the day close to Sri Lanka wildlife, with Wilpattu safari planned around the best available timing and your preferred pace.",
         experiences: [
-          "Wilpattu safari",
+          "Mannarama city tour",
         ],
       },
       {
         day: 5,
-        route: "Anuradhapura to Sigiriya",
+        route: "Mannarama to  anuradhapura",
         description:
           "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
-          "Ritigala",
+          "Anuradhapura city tour",
           "Village safari",
+          "Minneriya or kudula park safari",
+          
         ],
       },
       {
@@ -975,7 +1076,9 @@ export const roundTours: RoundTour[] = [
           "Follow the Sigiriya route with time to experience Lion Rock, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
         experiences: [
           "Lion Rock",
-          "Elephant safari",
+          "cooking callass (optinal)",
+          "Pidurangala rock",
+          "Cultur dance show",
         ],
       },
       {
@@ -984,7 +1087,9 @@ export const roundTours: RoundTour[] = [
         description:
           "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
         experiences: [
-          "Dambulla",
+          "Dambulla cave temple",
+          "Nalanda gedege",
+          "Kandy dance",
           "Temple of the Tooth",
         ],
       },
@@ -995,7 +1100,11 @@ export const roundTours: RoundTour[] = [
           "Travel through Sri Lanka's cool central highlands on the Kandy to Nuwara Eliya route, pausing for Tea estate, Ramboda Falls and the views that make this region special.",
         experiences: [
           "Tea estate",
-          "Ramboda Falls",
+          "Ramboda water falls",
+          "Ramboda tea factory",
+          "Tea garden",
+          "Jam and juwalari shop",
+          "Nuwaraeliya city tour",
         ],
       },
       {
