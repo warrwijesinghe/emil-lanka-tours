@@ -1,0 +1,24 @@
+---
+import { tripadvisorReviewsUrl, type EmilReview } from '@/data/emil-reviews';
+
+interface Props { reviews: EmilReview[]; heading?: string; eyebrow?: string; }
+const { reviews, heading = 'Guest reviews of Emil', eyebrow = 'Guest experiences' } = Astro.props;
+---
+<section class="container-shell py-10 md:py-12" aria-labelledby="emil-reviews-heading">
+  <p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">{eyebrow}</p>
+  <h2 id="emil-reviews-heading" class="mt-3 font-display text-3xl text-ink md:text-4xl">{heading}</h2>
+  <div class="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {reviews.map((review) => (
+      <figure class="rounded-[1.35rem] border border-ink/8 bg-white p-5 shadow-sm">
+        <blockquote class="text-sm leading-7 text-ink/75">“{review.reviewText}”</blockquote>
+        <figcaption class="mt-5 border-t border-ink/10 pt-4 text-sm font-semibold text-ink">
+          <span class="block">{review.guestName}{review.guestCountry && ` · ${review.guestCountry}`}</span>
+          <a href={tripadvisorReviewsUrl} target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center gap-2 rounded-lg text-xs font-semibold text-ink/60 transition hover:text-ink" aria-label={`Read ${review.guestName}'s review on Tripadvisor (opens in a new tab)`}>
+            <img src="/images/brand/tripadvisor-owl.png" alt="Tripadvisor" width="28" height="28" class="h-7 w-7 rounded object-cover" />
+            <span>{review.tourName} · {review.travelMonth} · Read on {review.source}</span>
+          </a>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
