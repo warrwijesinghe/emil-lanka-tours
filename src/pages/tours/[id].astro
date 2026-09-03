@@ -4,9 +4,8 @@ import CTASection from '@/components/CTASection.astro';
 import EmilReviews from '@/components/EmilReviews.astro';
 import DetailHero from '@/components/DetailHero.astro';
 import SiteLayout from '@/components/SiteLayout.astro';
-import { roundTours } from '@/data/tours';
+import { roundTours, tourPackageDetails } from '@/data/tours';
 import { emilReviews } from '@/data/emil-reviews';
-import { tourPackageDetails } from '@/data/tour-package-details';
 import { getRoundTourDayImages, roundTourImages } from '@/lib/round-tour-images';
 
 const tour = roundTours.find((item) => item.id.toLowerCase() === Astro.params.id?.toLowerCase());

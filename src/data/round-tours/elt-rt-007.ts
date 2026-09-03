@@ -1,0 +1,185 @@
+import type { RoundTourFile } from "../tours";
+
+/**
+ * 14-Day Sri Lanka Kalpitiya, Wildlife & Hill Country Tour
+ * Keep the itinerary, inclusions and exclusions together for easy editing.
+ */
+const tour = {
+  "id": "ELT-RT-007",
+  "sourceReference": "IMG_20260814_0001 (2).pdf",
+  "title": "14-Day Sri Lanka Kalpitiya, Wildlife & Hill Country Tour",
+  "durationLabel": "14 Days 13 Nights",
+  "shortDescription": "A nature-led journey that begins in Kalpitiya and connects coastal wildlife, the Cultural Triangle and the hill country.",
+  "routePoints": [
+    "Arrival at Colombo Airport",
+    "Kalpitiya",
+    "Anuradhapura",
+    "Sigiriya",
+    "Kandy",
+    "Nuwara Eliya",
+    "Ella",
+    "South Coast"
+  ],
+  "highlights": [
+    "Kalpitiya dolphin watching",
+    "Kite surfing",
+    "Kandy tooth temple",
+    "Tea country train to journey",
+    "Sigiriya"
+  ],
+  "highlightsIntro": "A nature-rich route from Kalpitiya marine life and Wilpattu wildlife through ancient cities, tea country and Ella.",
+  "itinerary": [
+    {
+      "day": 1,
+      "route": "Colombo Airport to Kalpitiya",
+      "description": "Meet your private chauffeur on arrival and begin your Sri Lanka journey towards Colombo Airport to Kalpitiya, with time to enjoy Coastal relaxation.",
+      "experiences": [
+        "Coastal relaxation",
+        "kite surfing"
+      ]
+    },
+    {
+      "day": 2,
+      "route": "Kalpitiya",
+      "description": "Experience Sri Lanka's coast at an easy pace, with time for Dolphin or whale watching and comfortable private travel throughout the day.",
+      "experiences": [
+        "Dolphin or whale watching",
+        "kite surfing"
+      ]
+    },
+    {
+      "day": 3,
+      "route": "Kalpitiya to Mannarama",
+      "description": "Explore the cultural character of Kalpitiya to Anuradhapura through Sacred City, with your private chauffeur keeping the day flexible around your interests.",
+      "experiences": [
+        "Flamingo bird watching"
+      ]
+    },
+    {
+      "day": 4,
+      "route": "Mannarama",
+      "description": "Spend the day close to Sri Lanka wildlife, with Wilpattu safari planned around the best available timing and your preferred pace.",
+      "experiences": [
+        "Mannarama city tour"
+      ]
+    },
+    {
+      "day": 5,
+      "route": "Mannarama to  anuradhapura",
+      "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
+      "experiences": [
+        "Anuradhapura city tour",
+        "Village safari",
+        "Minneriya or kudula park safari"
+      ]
+    },
+    {
+      "day": 6,
+      "route": "Sigiriya",
+      "description": "Follow the Sigiriya route with time to experience Lion Rock, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
+      "experiences": [
+        "Lion Rock",
+        "cooking callass (optinal)",
+        "Pidurangala rock",
+        "Cultur dance show"
+      ]
+    },
+    {
+      "day": 7,
+      "route": "Sigiriya to Kandy",
+      "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
+      "experiences": [
+        "Dambulla cave temple",
+        "Nalanda gedege",
+        "Kandy dance",
+        "Temple of the Tooth"
+      ]
+    },
+    {
+      "day": 8,
+      "route": "Kandy to Nuwara Eliya",
+      "description": "Travel through Sri Lanka's cool central highlands on the Kandy to Nuwara Eliya route, pausing for Tea estate, Ramboda Falls and the views that make this region special.",
+      "experiences": [
+        "Tea estate",
+        "Ramboda water falls",
+        "Ramboda tea factory",
+        "Tea garden",
+        "Jam and juwalari shop",
+        "Nuwaraeliya city tour"
+      ]
+    },
+    {
+      "day": 9,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Scenic train journey nanuoya to damodara",
+        
+      ]
+    },
+    {
+      "day": 10,
+      "route": " Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nine arch brigde",
+        "Little Adam's peck",
+        "Ella rock",
+      ]
+    },
+    {
+      "day": 11,
+      "route": " Ella to Yala safari",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "",
+        "Yala safari evening",
+      ]
+    },
+    {
+      "day": 12,
+      "route": "Yala to Mirissa beach",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Udawalawe elephint transit home",
+        "Mirissa beach",
+      ]
+    },
+    {
+      "day": 13,
+      "route": "Mirissa beach ",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Rest on the beach"
+      ]
+    },
+    {
+      "day": 14,
+      "route":"Mirissa to negombo beach",
+      
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        
+        "Negombo beach",
+        "End of the journey",
+      ]
+    }
+  ]
+};
+
+const packageDetails = {
+  "included": [
+    "Private air-conditioned vehicle and chauffeur for the Kalpitiya, Cultural Triangle and hill-country route.",
+    "Airport meet-and-greet shown on Day 1.",
+    "Flexible driving between Kalpitiya, Anuradhapura, Sigiriya, Kandy and Ella.",
+    "Fuel, expressway tolls and vehicle parking for the stated route."
+  ],
+  "excluded": [
+    "Accommodation and hotel meals, unless stated in your written quotation.",
+    "Dolphin or whale watching, Wilpattu safari jeep and park entry fees.",
+    "Admission to ancient sites, Sigiriya, temples and cultural experiences.",
+    "International flights, visa, travel insurance and personal expenses."
+  ]
+};
+
+export default { tour, packageDetails } satisfies RoundTourFile;
