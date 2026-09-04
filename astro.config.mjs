@@ -9,5 +9,5 @@ export default defineConfig({
   server: {
     host: true
   },
-  site: process.env.PUBLIC_SITE_URL || 'https://emillankatours.com'
+  site: process.env.PUBLIC_SITE_URL || 'https://chauffeuremillankatour.com'
 });
