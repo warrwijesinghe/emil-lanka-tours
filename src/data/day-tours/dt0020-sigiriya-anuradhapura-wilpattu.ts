@@ -20,16 +20,17 @@ const tour = {
     { name: "Anuradhapura", slug: "anuradhapura" },
   ],
   destinationsCovered: ["Anuradhapura", "Wilpattu National Park"],
-  pickupLocations: ["Sigiriya hotels", "Habarana hotels"],
+  pickupLocations: [ " Anuradhapura city area hotels, Air port road hotels"],
   dropLocations: ["Sigiriya hotels", "Habarana hotels", "Anuradhapura hotels"],
   included: [
-    "Private vehicle and chauffeur",
+    "Private vehicle and chauffeur & compatable safari jeep ",
     "Fuel, parking and route planning",
-    "Pickup and drop-off in the stated area",
+    "Pickup and drop-off in the stated area", 
+    " Safari jeep & driver",
   ],
   excluded: [
     "Anuradhapura tickets",
-    "Wilpattu entry ticket, safari jeep and tracker",
+    "Wilpattu entry ticket, safari tracker",
     "Meals and personal expenses",
   ],
   experiences: [

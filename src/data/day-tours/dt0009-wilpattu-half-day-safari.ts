@@ -5,7 +5,7 @@ const tour = {
   slug: "wilpattu-half-day-safari",
   title: "Wilpattu Half-Day Safari",
   durationLabel: "Half Day",
-  duration: "Approximately 4–5 hours",
+  duration: "Approximately 4,5 hours",
   shortDescription:
     "A private transfer and safari experience in Wilpattu National Park from Anuradhapura.",
   description:
@@ -13,7 +13,7 @@ const tour = {
   mainImageUrl: "/images/day-tours/dt0009-wilpattu-half-day-safari.webp",
   imageAlt: "Wilpattu safari",
   categories: ["Wildlife", "Safari"],
-  highlights: ["4x4 safari", "Wildlife viewing", "Forest lakes"],
+  highlights: ["4x4 comfortable safari jeep ", "Wildlife viewing", "Forest lakes"],
   destinations: [{ name: "Wilpattu", slug: "wilpattu" }],
   destinationsCovered: ["Wilpattu National Park", "Safari tracks and villus"],
   pickupLocations: ["Anuradhapura hotels", "Wilpattu entrance area"],
@@ -22,6 +22,7 @@ const tour = {
     "Private vehicle and chauffeur transfer",
     "Safari timing coordination",
     "Hotel pickup and drop-off in the stated area",
+    " Safari jeep & driver",
   ],
   excluded: [
     "National park entry ticket",

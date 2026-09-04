@@ -1,10 +1,10 @@
 import type { DayTourFile } from "../day-tour-files";
 const tour = {
   id: "DT0023",
-  slug: "anuradhapura-mihintale-trincomalee-drop",
-  title: "Anuradhapura, Mihintale & Trincomalee Drop",
+  slug: "anuradhapura-mihintale-trincomalee, or dambulla drop",
+  title: "Anuradhapura, Mihintale & Trincomalee or dambulla  Drop",
   durationLabel: "1 Day",
-  duration: "Approximately 6–7 hours",
+  duration: "Approximately 6,7 hours",
   shortDescription:
     "Visit sacred Mihintale from Anuradhapura before a comfortable private transfer to Trincomalee.",
   description:
@@ -23,7 +23,7 @@ const tour = {
     { name: "Trincomalee", slug: "trincomalee" },
   ],
   destinationsCovered: ["Anuradhapura", "Mihintale", "Trincomalee"],
-  pickupLocations: ["Anuradhapura hotels", "Mihintale area hotels"],
+  pickupLocations: ["Anuradhapura hotels", "Mihintale city area hotels"],
   dropLocations: ["Trincomalee hotels", "Nilaveli hotels", "Uppuveli hotels"],
   included: [
     "Private vehicle and chauffeur",
@@ -36,7 +36,7 @@ const tour = {
     "Accommodation",
   ],
   experiences: [
-    "Climb Mihintale’s sacred rock",
+    "Climb Mihintale  sacred rock",
     "See the Cultural Triangle countryside",
     "Arrive comfortably at your east-coast hotel",
   ],
@@ -58,7 +58,7 @@ const tour = {
       description: "Collect luggage and set off towards Mihintale.",
     },
     {
-      time: "Morning",
+      time: "Morning 0700 am to 1200 pm",
       title: "Mihintale visit",
       description: "Explore the sacred site at your own pace.",
     },

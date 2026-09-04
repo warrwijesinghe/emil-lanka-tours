@@ -15,22 +15,27 @@ const tour = {
   highlights: ["Full-day safari", "Forest lakes", "Birdlife"],
   destinations: [{ name: "Wilpattu", slug: "wilpattu" }],
   destinationsCovered: ["Wilpattu National Park"],
-  pickupLocations: ["Anuradhapura hotels", "Wilpattu entrance area"],
-  dropLocations: ["Your Anuradhapura hotel", "Wilpattu entrance area"],
+  pickupLocations: ["Anuradhapura city  hotels areas ",],
+  dropLocations: ["Your Anuradhapura hotel",],
   included: [
     "Private vehicle and chauffeur transfer",
     "Safari timing coordination",
     "Hotel pickup and drop-off in the stated area",
+    " Safari jeep & driver",
+    "(maximum 6 people)",
   ],
   excluded: [
     "Park entry ticket",
-    "Safari jeep, tracker and gratuities",
+    "Safari jeep, tracker and gratuities", 
     "Meals, drinks and personal expenses",
   ],
   experiences: [
-    "Full-day 4x4 game drive",
+    "Full-day comfortable jeeep safari ",
     "Forest and villu landscapes",
-    "Wildlife and bird observation",
+    "Wildlife and bird observation", 
+    " Especially Bear ,leopard ,deer,animals watching",
+    " Having lunch in the national park ",
+    " you can watch forhawks (hawksbill) that catch snakes & fish"
   ],
   importantInformation: [
     "Wildlife sightings cannot be guaranteed.",

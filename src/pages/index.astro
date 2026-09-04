@@ -1,14 +1,30 @@
 ---
-import SiteLayout from '@/components/SiteLayout.astro';
-import HomepageHero from '@/components/HomepageHero.astro';
-import HomepageTrustStrip from '@/components/HomepageTrustStrip.astro';
-import HomepageJourneyChoices from '@/components/HomepageJourneyChoices.astro';
-import HomepageDestinationGrid from '@/components/HomepageDestinationGrid.astro';
-import HomepageHowItWorks from '@/components/HomepageHowItWorks.astro';
-import HomepageFinalCta from '@/components/HomepageFinalCta.astro';
+import DayTourCard from '@/components/DayTourCard.astro';
 import EmilReviews from '@/components/EmilReviews.astro';
+import HomepageFinalCta from '@/components/HomepageFinalCta.astro';
+import HomepageHero from '@/components/HomepageHero.astro';
+import HomepageJourneyChoices from '@/components/HomepageJourneyChoices.astro';
+import HomepageQuickInquiry from '@/components/HomepageQuickInquiry.astro';
+import HomepageTrustStrip from '@/components/HomepageTrustStrip.astro';
+import RoundTourCard from '@/components/RoundTourCard.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
 import { emilReviews } from '@/data/emil-reviews';
-import { destinations } from '@/lib/content';
+import { roundTours } from '@/data/tours';
+import { visibleDayTours } from '@/lib/content';
 import { homepageDescription, homepageTitle } from '@/lib/site';
+
+const featuredRoundTours = roundTours.slice(0, 6);
+const featuredDayTours = visibleDayTours.slice(0, 3);
+const durationOptions = ['7 Days 6 Nights', '10 Days 9 Nights', '14 Days 13 Nights', '21 Days 20 Nights'];
 ---
-<SiteLayout title={homepageTitle} description={homepageDescription} canonicalPath="/" image="/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp"><HomepageHero /><HomepageTrustStrip /><HomepageJourneyChoices /><EmilReviews reviews={emilReviews.slice(0, 3)} heading="Why guests recommend Emil" /><HomepageDestinationGrid destinations={destinations.filter((destination) => destination.featured)} /><HomepageHowItWorks /><HomepageFinalCta /></SiteLayout>
+<SiteLayout title={homepageTitle} description={homepageDescription} canonicalPath="/" image="/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp">
+  <HomepageHero />
+  <HomepageTrustStrip />
+  <HomepageQuickInquiry />
+  <HomepageJourneyChoices />
+  <section class="bg-[#F4ECFB]/60" aria-labelledby="round-tours-heading"><div class="container-shell py-10 md:py-14"><div class="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div class="max-w-2xl"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Private round tours</p><h2 id="round-tours-heading" class="mt-3 font-display text-4xl text-ink md:text-5xl">Choose your ideal Sri Lanka trip length</h2><p class="mt-3 text-base leading-8 text-ink/72">Start with a proven route, then tailor the pace, hotels and experiences around your group.</p></div><a href="/tours/" class="inline-flex min-h-11 items-center justify-center rounded-xl border border-leaf/20 bg-white px-5 text-sm font-semibold text-leaf hover:bg-leaf-soft">View all round tours</a></div><div class="mt-6 flex flex-wrap gap-2">{durationOptions.map((duration) => <a href={`/tours/?duration=${encodeURIComponent(duration)}`} class="rounded-full border border-leaf/20 bg-white px-4 py-2.5 text-sm font-semibold text-leaf transition hover:bg-leaf hover:text-white">{duration}</a>)}</div><div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{featuredRoundTours.map((tour) => <RoundTourCard {tour} />)}</div></div></section>
+  <section class="container-shell py-10 md:py-14" aria-labelledby="day-tours-heading"><div class="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div class="max-w-2xl"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Private day tours</p><h2 id="day-tours-heading" class="mt-3 font-display text-4xl text-ink md:text-5xl">Make more of every day in Sri Lanka</h2><p class="mt-3 text-base leading-8 text-ink/72">Choose cultural sites, wildlife, hill-country scenery and memorable local experiences.</p></div><a href="/day-tours/" class="inline-flex min-h-11 items-center justify-center rounded-xl border border-leaf/20 bg-white px-5 text-sm font-semibold text-leaf hover:bg-leaf-soft">View all day tours</a></div><div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{featuredDayTours.map((dayTour) => <DayTourCard {dayTour} />)}</div></section>
+  <section class="bg-white/90" aria-labelledby="why-us-heading"><div class="container-shell py-10 md:py-14"><div class="max-w-2xl"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus">Why travel with us</p><h2 id="why-us-heading" class="mt-3 font-display text-4xl text-ink md:text-5xl">Private travel, planned around your group</h2></div><ul class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">Private vehicles</h3><p class="mt-2 text-sm leading-7 text-ink/70">Travel with your own group, not a fixed shared-coach timetable.</p></li><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">Local driver guides</h3><p class="mt-2 text-sm leading-7 text-ink/70">Experienced local drivers are assigned to suit your route and group needs.</p></li><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">Flexible itineraries</h3><p class="mt-2 text-sm leading-7 text-ink/70">Adjust sightseeing, hotel stops and daily pacing before and during your journey.</p></li><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">Airport to hotel</h3><p class="mt-2 text-sm leading-7 text-ink/70">Arrange convenient airport, hotel and destination transfers in one plan.</p></li><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">WhatsApp support</h3><p class="mt-2 text-sm leading-7 text-ink/70">Get clear answers while planning and practical support throughout your stay.</p></li><li class="card-surface p-5"><h3 class="font-display text-2xl text-ink">Built around you</h3><p class="mt-2 text-sm leading-7 text-ink/70">Culture, wildlife, beaches, tea country or family travel—your itinerary starts with your interests.</p></li></ul></div></section>
+  <EmilReviews reviews={emilReviews.slice(0, 3)} eyebrow="Guest experiences" heading="What guests say about their journey" />
+  <HomepageFinalCta />
+</SiteLayout>

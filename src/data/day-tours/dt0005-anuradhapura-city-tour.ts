@@ -5,9 +5,9 @@ const tour = {
   slug: "anuradhapura-city-tour",
   title: "Anuradhapura City Tour",
   durationLabel: "1 Day",
-  duration: "Approximately 8–9 hours",
+  duration: "Approximately 5,6 hours",
   shortDescription:
-    "Explore Anuradhapura’s ancient ruins and sacred sites, with an optional Mihintale sunset.",
+    "Explore Anuradhapura ancient ruins and sacred sites, with an optional Mihintale sunset.",
   description:
     "A private heritage day through Sri Lanka’s first ancient capital, paced around the places that matter most to you.",
   mainImageUrl: "/images/day-tours/dt0005-anuradhapura-city-tour.webp",
@@ -16,15 +16,20 @@ const tour = {
   highlights: ["Ancient city", "Sri Maha Bodhi", "Mihintale"],
   destinations: [{ name: "Anuradhapura", slug: "anuradhapura" }],
   destinationsCovered: [
-    "Anuradhapura Ancient City",
-    "Sri Maha Bodhi",
+    "Anuradhapura Ancient secret City",
+    "Sri Maha Bodhi tree",
     "Ruwanwelisaya",
-    " moon stion",
-    "Jetavanaramaya",
+    " moon stone", 
+    " Twins pond",
+    " Guard stone", 
+    " Samadhi stupa", 
+    " Abayagiriya viharaya",
+    "Jetavanarama viharaya",
+
     "Mihintale (optional)",
   ],
   pickupLocations: ["Anuradhapura hotels", "Mihintale area hotels"],
-  dropLocations: ["Your Anuradhapura hotel", "Mihintale area hotel"],
+  dropLocations: ["Your Anuradhapura hotel", " Air port road hotels anuradhapura"],
   included: [
     "Private air-conditioned vehicle and chauffeur",
     "Fuel, parking and route planning",
@@ -88,13 +93,13 @@ const tour = {
       location: "Mihintale",
       ticketRequired: true,
       ticketPrice:
-        "Approx. US$3 for foreign visitors; official rates may change.",
+        "Approx. US$30 for foreign visitors; official rates may change.",
     },
   ],
   seo: {
     title: "Anuradhapura Private Day Tour | Chauffeur Emil",
     description:
-      "Explore Anuradhapura’s ancient sacred city with a private chauffeur.",
+      "Explore Anuradhapura ancient sacred city with a private chauffeur.",
   },
 };
 export default { tour } satisfies DayTourFile;

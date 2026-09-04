@@ -1,10 +1,10 @@
 ---
 const journeys = [
   {
-    title: 'Tailor-Made Journey',
-    description: 'Share your dates, interests and travel style. Emil will help shape a private Sri Lanka journey around your pace and priorities.',
-    label: 'Plan My Tour',
-    href: '/plan-my-tour/',
+    title: 'Round Tours',
+    description: 'Browse private multi-day Sri Lanka itineraries for 7, 10, 14 or 21 days, then tailor the route to your group.',
+    label: 'Explore Round Tours',
+    href: '/tours/',
     emphasis: true,
     icon: 'route'
   },
@@ -15,6 +15,14 @@ const journeys = [
     href: '/day-tours/',
     emphasis: false,
     icon: 'sun'
+  },
+  {
+    title: 'Custom Tour',
+    description: 'Tell us your dates, interests and preferred pace, and we will prepare a private route for your group.',
+    label: 'Request a Tour Plan',
+    href: '/plan-my-tour/',
+    emphasis: false,
+    icon: 'route'
   }
 ];
 ---
@@ -26,7 +34,7 @@ const journeys = [
       <p class="mt-3 text-base leading-8 text-ink/72">Whether you prefer a complete private itinerary, a tailor-made journey or a memorable day experience, start with the travel style that suits you.</p>
     </div>
 
-    <div class="mt-7 grid gap-5 sm:grid-cols-2">
+    <div class="mt-7 grid gap-5 md:grid-cols-3">
       {journeys.map((journey) => (
         <article class:list={[
           'flex h-full flex-col border p-5 md:p-6',

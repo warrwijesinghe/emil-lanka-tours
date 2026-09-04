@@ -50,6 +50,9 @@ const durationOptions = ['7 Days 6 Nights', '10 Days 9 Nights', '14 Days 13 Nigh
   }
 
   filters.forEach((filter) => filter.addEventListener('click', () => applyTourFilter(filter.dataset.tourFilter || 'all')));
+
+  const requestedDuration = new URLSearchParams(window.location.search).get('duration');
+  if (requestedDuration && filters.some((filter) => filter.dataset.tourFilter === requestedDuration)) applyTourFilter(requestedDuration);
 </script>
 
 <style>

@@ -1,0 +1,29 @@
+<section class="container-shell pb-10 md:pb-12" aria-labelledby="quick-inquiry-heading">
+  <div class="rounded-[2rem] bg-leaf p-6 text-white shadow-soft md:p-8 lg:p-10">
+    <div class="grid gap-7 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+      <div>
+        <p class="text-xs font-extrabold uppercase tracking-[.2em] text-lotus-soft">Free route planning</p>
+        <h2 id="quick-inquiry-heading" class="mt-3 font-display text-3xl leading-tight sm:text-4xl">Tell us about your Sri Lanka trip</h2>
+        <p class="mt-3 max-w-md text-sm leading-7 text-white/80">Share the essentials and start a WhatsApp conversation with our tour team in seconds.</p>
+      </div>
+      <form class="grid gap-3 sm:grid-cols-2" data-quick-inquiry>
+        <label class="grid gap-1.5 text-sm font-semibold">Travel dates<input name="dates" required placeholder="e.g. 12–22 July" class="rounded-xl border border-white/25 bg-white px-3 py-3 font-normal text-ink placeholder:text-ink/45" /></label>
+        <label class="grid gap-1.5 text-sm font-semibold">Travellers<select name="travellers" class="rounded-xl border border-white/25 bg-white px-3 py-3 font-normal text-ink"><option>1–2 travellers</option><option>3–4 travellers</option><option>5–6 travellers</option><option>7+ travellers</option></select></label>
+        <label class="grid gap-1.5 text-sm font-semibold">Trip type<select name="tripType" class="rounded-xl border border-white/25 bg-white px-3 py-3 font-normal text-ink"><option>Round Tour</option><option>Day Tour</option><option>Custom Tour</option></select></label>
+        <label class="grid gap-1.5 text-sm font-semibold">Preferred length<select name="duration" class="rounded-xl border border-white/25 bg-white px-3 py-3 font-normal text-ink"><option>Not sure yet</option><option>7 Days 6 Nights</option><option>10 Days 9 Nights</option><option>14 Days 13 Nights</option><option>21 Days 20 Nights</option></select></label>
+        <button type="submit" class="sm:col-span-2 mt-1 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 text-sm font-semibold text-leaf transition hover:bg-sand focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-leaf">Start WhatsApp Inquiry</button>
+        <a href="/plan-my-tour/" class="sm:col-span-2 text-center text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">Prefer email? Complete the detailed inquiry form</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-quick-inquiry]');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const message = `Hello, I would like help planning a private Sri Lanka tour.\n\nTravel dates: ${data.get('dates')}\nTravellers: ${data.get('travellers')}\nTrip type: ${data.get('tripType')}\nPreferred length: ${data.get('duration')}`;
+    window.location.href = `https://wa.me/94761917039?text=${encodeURIComponent(message)}`;
+  });
+</script>
