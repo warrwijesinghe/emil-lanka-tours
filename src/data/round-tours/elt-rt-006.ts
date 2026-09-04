@@ -65,7 +65,7 @@ const tour = {
     },
     {
       "day": 5,
-      "route": "Aragambay",
+      "route": "Aragambay panama beach",
       "description": "Explore the cultural character of Ella to Kandy through Temple of the Tooth, Kandy dance, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Kumana park safari",
@@ -75,7 +75,7 @@ const tour = {
     },
     {
       "day": 6,
-      "route": "Arugambay",
+      "route": "Arugambay elephint rock",
       "description": "Explore the cultural character of Kandy to Sigiriya through Dambulla, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "River safari",
@@ -103,7 +103,7 @@ const tour = {
     },
     {
       "day": 9,
-      "route": " Ella to negombo beach",
+      "route": " Ella to Negombo beach",
       "description": "Spend the day close to Sri Lanka wildlife, with Lion Rock, Elephant safari planned around the best available timing and your preferred pace.",
       "experiences": [
       "Rest on the beach",

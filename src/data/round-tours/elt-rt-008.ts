@@ -65,7 +65,7 @@ const tour = {
       "experiences": [
         "Village safari",
         "Pidurangala rock",
-        "Elephint safari,kudulla or minneriya park",
+        " safari,kudulla or minneriya park",
       ]
     },
     {
@@ -75,6 +75,9 @@ const tour = {
       "experiences": [
         "Morning visit Lion Rock",
         "Polonnaruwa ruins",
+        "Traditonal cooking class,& lunich or Dinner(optinal)", 
+        
+    
       ]
     },
     {
@@ -83,8 +86,9 @@ const tour = {
       "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Dambulla cave temple",
-        "Kanday dance",
+        "Kanday dance (optinal)",
         "Temple of the Tooth",
+        "Kanday city tour",
       ]
     },
     {
@@ -100,6 +104,124 @@ const tour = {
     },
     {
       "day": 8,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Back to hotel",
+      ]
+    },
+    {
+      "day": 9,
+      "route": " Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nine arch brigde",
+        "Little adams peck",
+        "Ella rock traking",
+      ]
+    },
+    {
+      "day": 10,
+      "route": " Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Liption seat",
+        
+      ]
+    },
+    {
+      "day": 11,
+      "route": " Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 12,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 13,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 14,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 15,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 16,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 17,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 18,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 19,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 20,
+      "route": "Nuwara Eliya to Ella",
+      "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
+      "experiences": [
+        "Nanuoya to damodara train journey",
+        "Little adams peck",
+      ]
+    },
+    {
+      "day": 21,
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [

@@ -61,7 +61,8 @@ const tour = {
       "route": "Sigiriya to Polonnaruwa",
       "description": "Follow the Sigiriya to Polonnaruwa route with time to experience Polonnaruwa ruins. Your private chauffeur can adjust the pace and stops around your interests.",
       "experiences": [
-        "Polonnaruwa ruins"
+        "Polonnaruwa ruins",
+        "polonnaruwa watadage",
       ]
     },
     {
@@ -70,7 +71,7 @@ const tour = {
       "description": "Explore the cultural character of Polonnaruwa to Mahiyanganaya through Vedda Village, Sorabora Lake, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Vedda Village",
-        "Sorabora Lake"
+        "Sorabora Lake boat ride",
       ]
     },
     {
@@ -79,7 +80,8 @@ const tour = {
       "description": "Explore the cultural character of Mahiyanganaya to Kandy via 18 Bend Road through Kandy dance, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Kandy dance",
-        "Temple of the Tooth"
+        "Temple of the Tooth",
+        "18 bend road experience ",
       ]
     },
     {
@@ -88,7 +90,9 @@ const tour = {
       "description": "Travel through Sri Lanka's cool central highlands on the Kandy to Nuwara Eliya route, pausing for Ramboda Falls, Tea factory and the views that make this region special.",
       "experiences": [
         "Ramboda Falls",
-        "Tea factory"
+        "Tea factory",
+        "Tea garden visit",
+        "Tea garden jeep ride",
       ]
     },
     {
@@ -96,8 +100,8 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Nanuoya to Demodara train",
-        "Hill country views"
+        "Nanuoya to Demodara train journey",
+        "nuwaraeliya city tour",
       ]
     },
     {
@@ -105,8 +109,10 @@ const tour = {
       "route": "Ella",
       "description": "   Scenic ",
       "experiences": [
-        "Liftion tea estate",
-        "Little Adam's Peak"
+        "Liption  tea estate",
+        "Little Adam's Peak",
+        "Nine arch brigde",
+        "Ella rock trking (optinal)",
       ]
     },
     {
@@ -114,7 +120,7 @@ const tour = {
       "route": "Ella to singharaja forest daniyaya",
       "description": " with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Kitul todi tree"
+        "Singharaja forst ",
       ]
     },
     {
@@ -123,7 +129,7 @@ const tour = {
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
         "Singharaja forest traking morning",
-        "rest and relax on the beach"
+        "rest and relax on the beach evening",
       ]
     },
     {

@@ -57,7 +57,7 @@ const tour = {
     },
     {
       "day": 4,
-      "route": "Mannarama",
+      "route": "Mannar",
       "description": "Spend the day close to Sri Lanka wildlife, with Wilpattu safari planned around the best available timing and your preferred pace.",
       "experiences": [
         "Mannarama city tour"
@@ -65,27 +65,37 @@ const tour = {
     },
     {
       "day": 5,
-      "route": "Mannarama to  anuradhapura",
+      "route": "Mannar to  Anuradhapura",
       "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Anuradhapura city tour",
-        "Village safari",
-        "Minneriya or kudula park safari"
+        "Evening visit mihinthle temple",
+        
+        
       ]
-    },
-    {
+    }, {
       "day": 6,
-      "route": "Sigiriya",
-      "description": "Follow the Sigiriya route with time to experience Lion Rock, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
+      "route": " Anuradhapura",
+      "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Lion Rock",
-        "cooking callass (optinal)",
-        "Pidurangala rock",
-        "Cultur dance show"
+        "Willpattu park full day safari",
+        
       ]
     },
     {
       "day": 7,
+      "route": "Anuradhapura to Sigiriya",
+        
+      "description": "Follow the Sigiriya route with time to experience Lion Rock, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
+      "experiences": [
+        "Lion Rock",
+        "Pidurangala rock",
+        "Cultur dance show",
+        "Village safari (optinal),"
+      ]
+    },
+    {
+      "day": 8,
       "route": "Sigiriya to Kandy",
       "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
@@ -96,7 +106,7 @@ const tour = {
       ]
     },
     {
-      "day": 8,
+      "day": 9,
       "route": "Kandy to Nuwara Eliya",
       "description": "Travel through Sri Lanka's cool central highlands on the Kandy to Nuwara Eliya route, pausing for Tea estate, Ramboda Falls and the views that make this region special.",
       "experiences": [
@@ -109,7 +119,7 @@ const tour = {
       ]
     },
     {
-      "day": 9,
+      "day": 10,
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
@@ -118,7 +128,7 @@ const tour = {
       ]
     },
     {
-      "day": 10,
+      "day": 11,
       "route": " Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
@@ -128,7 +138,7 @@ const tour = {
       ]
     },
     {
-      "day": 11,
+      "day": 12,
       "route": " Ella to Yala safari",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
@@ -137,7 +147,7 @@ const tour = {
       ]
     },
     {
-      "day": 12,
+      "day": 13,
       "route": "Yala to Mirissa beach",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
@@ -146,7 +156,7 @@ const tour = {
       ]
     },
     {
-      "day": 13,
+      "day": 14,
       "route": "Mirissa beach ",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
@@ -154,7 +164,7 @@ const tour = {
       ]
     },
     {
-      "day": 14,
+      "day": 15,
       "route":"Mirissa to negombo beach",
       
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
