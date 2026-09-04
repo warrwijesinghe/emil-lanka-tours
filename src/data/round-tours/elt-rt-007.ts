@@ -18,7 +18,8 @@ const tour = {
     "Kandy",
     "Nuwara Eliya",
     "Ella",
-    "South Coast"
+    "South Coast",
+    " Airport drop",
   ],
   "highlights": [
     "Kalpitiya dolphin watching",
@@ -69,7 +70,7 @@ const tour = {
       "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Anuradhapura city tour",
-        "Evening visit mihinthle temple",
+        "Evening visit Mihintale Temple",
         
         
       ]
@@ -78,7 +79,7 @@ const tour = {
       "route": " Anuradhapura",
       "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Willpattu park full day safari",
+        "Wilpattu Park full day safari",
         
       ]
     },
@@ -90,8 +91,8 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Pidurangala rock",
-        "Cultur dance show",
-        "Village safari (optinal),"
+        "Culture dance show",
+        "Village safari (optional),"
       ]
     },
     {
@@ -100,7 +101,7 @@ const tour = {
       "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Dambulla cave temple",
-        "Nalanda gedege",
+        "Nalanda Gedige",
         "Kandy dance",
         "Temple of the Tooth"
       ]
@@ -114,8 +115,8 @@ const tour = {
         "Ramboda water falls",
         "Ramboda tea factory",
         "Tea garden",
-        "Jam and juwalari shop",
-        "Nuwaraeliya city tour"
+        "Gem and jewellery shop",
+        "Nuwara Eliya city tour"
       ]
     },
     {
@@ -123,7 +124,7 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Scenic train journey nanuoya to damodara",
+        "Scenic train journey Nanu Oya to Demodara",
         
       ]
     },
@@ -132,8 +133,8 @@ const tour = {
       "route": " Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Nine arch brigde",
-        "Little Adam's peck",
+        "Nine Arch Bridge",
+        "Little Adam's Peak",
         "Ella rock",
       ]
     },
@@ -151,7 +152,7 @@ const tour = {
       "route": "Yala to Mirissa beach",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Udawalawe elephint transit home",
+        "Udawalawe Elephant Transit Home",
         "Mirissa beach",
       ]
     },

@@ -7,7 +7,7 @@ import type { RoundTourFile } from "../tours";
 const tour = {
   "id": "ELT-RT-013",
   "sourceReference": "IMG_20260814_0004.pdf",
-  "title": "7-Day Sri Lanka Adventure: Rafting, Safari & Ella",
+  "title": "7-Day Sri Lanka Adventure: Rafting & Safari",
   "durationLabel": "7 Days 6 Nights",
   "shortDescription": "A high-energy one-week adventure through ancient cities, Kitulgala, Ella, wildlife country and the south coast.",
   "routePoints": [
@@ -17,6 +17,7 @@ const tour = {
     "Kandy",
     "Kitulgala",
     "Ella",
+    " udawalawe",
     "Mirissa",
     "Colombo Airport"
   ],
@@ -34,7 +35,7 @@ const tour = {
       "description": "Explore the cultural character of Colombo Airport to Anuradhapura through Sacred City, Mihintale, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Dambulla cave temple ,Village safari",
-        "piduragala rock",
+        "Pidurangala Rock",
         ""
       ]
     },
@@ -71,7 +72,7 @@ const tour = {
       "route": "Kitulgala to Ella",
       "description": "Enjoy the changing hill-country scenery along Kitulgala to Ella, with time for Devon and St Clair’s Falls, Nanu Oya to Demodara train and a relaxed, unhurried travel day.",
       "experiences": [
-        "Devon and St Clair’swater Falls",
+        "Devon and St Clair’s Water Falls",
         "Nanu Oya to Demodara train journey"
       ]
     },

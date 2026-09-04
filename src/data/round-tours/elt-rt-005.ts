@@ -17,7 +17,8 @@ const tour = {
     "Nuwara Eliya",
     "Ella",
     "Udawalawe",
-    "Mirissa"
+    "Mirissa",
+    "Colombo air port",
   ],
   "highlights": [
     "Sigiriya & Polonnaruwa",
@@ -100,8 +101,8 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Nanuoya to Demodara train journey",
-        "nuwaraeliya city tour",
+        "Nanu Oya to Demodara train journey",
+        "Nuwara Eliya city tour",
       ]
     },
     {
@@ -109,26 +110,26 @@ const tour = {
       "route": "Ella",
       "description": "   Scenic ",
       "experiences": [
-        "Liption  tea estate",
+        "Lipton's tea estate",
         "Little Adam's Peak",
-        "Nine arch brigde",
-        "Ella rock trking (optinal)",
+        "Nine Arch Bridge",
+        "Ella Rock trekking (optional)",
       ]
     },
     {
       "day": 10,
-      "route": "Ella to singharaja forest daniyaya",
+      "route": "Ella to Sinharaja Forest Deniyaya",
       "description": " with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Singharaja forst ",
+        "Sinharaja Forest ",
       ]
     },
     {
       "day": 11,
-      "route": "Singharaja forest to mirissa beach",
+      "route": "Sinharaja Forest to Mirissa Beach",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Singharaja forest traking morning",
+        "Sinharaja Forest trekking morning",
         "rest and relax on the beach evening",
       ]
     },
@@ -139,8 +140,8 @@ const tour = {
       "experiences": [
         "Galle fort",
         "Madu river boat safari",
-        "Mitiyagoda moon stoin",
-        "waligama fish markat,"
+        "Mitiyagoda moonstone",
+        "Weligama Fish Market,"
       ]
     },
     {
@@ -148,7 +149,7 @@ const tour = {
       "route": "Mirissa",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
-        "Blu whels watching",
+        "Blue whale watching",
         "Rest on the beach"
       ]
     },
@@ -162,7 +163,7 @@ const tour = {
     },
     {
       "day": 15,
-      "route": "Mirissa to bandaranayaka internationl air port",
+      "route": "Mirissa to Bandaranaike International Airport",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Hill country and a relaxed, unhurried travel day.",
       "experiences": [
         "End of the tour",

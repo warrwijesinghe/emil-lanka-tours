@@ -20,20 +20,21 @@ const tour = {
     "Mahiyanganaya",
     "Sigiriya",
     "Anuradhapura",
-    "Negombo"
+    "Negombo",
+    " Airport drop",
   ],
   "highlights": [
     "Mirissa whale watching",
-    "Madu river safari & turtle conservation",
-    "Udawalawe safari",
-    "Ella to damodara train journey",
+    "Bundala national park( bird watching )",
+    "Udawalawe national park safari (more then elephint & crocodiles)",
+    "Ella to Demodara train journey",
     " Nine Arch Bridge",
-    "Englnd colonial hill country ",
-    "Kandy & Temple of the Tooth",
+    "England colonial hill country ",
+    "Kandy Temple of the Tooth",
     "Waterfalls experiences",
-    "wildlife safari experiences",
+    "willpattu national park safari (especily Lopards & bears )",
     "Ancient capitals & Sigiriya",
-    "Anuradhapura first capital in sri lanka"
+    
   ],
   "highlightsIntro": "A coast-to-highlands journey pairing Mirissa marine life and Udawalawe wildlife with Ella views and ancient capitals.",
   "itinerary": [
@@ -79,9 +80,9 @@ const tour = {
     {
       "day": 5,
       "route": "Udawalawe to Ella",
-      "description": " enjoy Buduruwagala Temple, Rawana waterfall , Nine ArchBridge",
+      "description": " enjoy Buduruwagala Temple, Rawana waterfall , Nine Arch Bridge",
       "experiences": [
-        "Nine Arch Bridge"
+        " Bundala national park bird watching",
       ]
     },
     {
@@ -125,7 +126,7 @@ const tour = {
       "description": "Explore the cultural character of Kandy to Mahiyanganaya through Vedda Village, Sorabora Lake, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Vedda Village (aborigines)",
-        "18 bend road xperyence",
+        "18 bend road experience",
       ]
     },
     {
@@ -134,7 +135,7 @@ const tour = {
       "description": "Explore the cultural character of Mahiyanganaya to Sigiriya through Polonnaruwa, Habarana Cultural Show, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Polonnaruwa ruins",
-        "Mineriya or kudulla national park safari"
+        "Minneriya or Kaudulla National Park safari"
       ]
     },
     {
@@ -144,8 +145,8 @@ const tour = {
       "experiences": [
         "Village safari",
         "Pidurangala rock climbing",
-        "culturaldance show",
-        "Auyurveda treatment. (optional)"
+        "cultural dance show",
+        "Ayurveda treatment. (optional)"
       ]
     },
     {
@@ -164,7 +165,7 @@ const tour = {
       "route": "Anuradhapura to Negombo",
       "description": "Experience Sri Lanka's coast at an easy pace, with time for Yapahuwa, Hamilton Canal and comfortable private travel throughout the day.",
       "experiences": [
-        "Willpattu National Park half day safari",
+        "Wilpattu National Park half day safari",
         "Negombo beach"
       ]
     },

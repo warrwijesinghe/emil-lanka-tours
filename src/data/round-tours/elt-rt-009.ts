@@ -17,7 +17,8 @@ const tour = {
     "Nuwara Eliya",
     "Ella",
     "Mirissa",
-    "Negombo"
+    "Negombo",
+    " Airport drop",
   ],
   "highlights": [
     "Sigiriya & Polonnaruwa",
@@ -32,8 +33,8 @@ const tour = {
       "route": "Colombo Airport to Sigiriya",
       "description": "Meet your private chauffeur on arrival and begin your Sri Lanka journey towards Colombo Airport to Sigiriya, with time to enjoy Cultural Triangle.",
       "experiences": [
-        "Vallage safari",
-        "pidurangala rock clumbing",
+        "Village safari",
+        "Pidurangala Rock climbing",
         "Culture dance show",
       ]
     },
@@ -43,7 +44,7 @@ const tour = {
       "description": "Follow the Sigiriya route with time to experience Lion Rock, Polonnaruwa, Elephant safari. Your private chauffeur can adjust the pace and stops around your interests.",
       "experiences": [
         "Morning Lion Rock",
-        "After berekfast",
+        "After breakfast",
         "Polonnaruwa ruins",
         "Elephant safari"
       ]
@@ -53,8 +54,8 @@ const tour = {
       "route": "Sigiriya to Kandy",
       "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Dambulla cave tempie",
-        "Kandy dance (optinal)",
+        "Dambulla Cave Temple",
+        "Kandy dance (optional)",
         "Temple of the Tooth",
       ]
     },
@@ -66,7 +67,7 @@ const tour = {
         "Tea factory",
         "Tea garden",
         "Ramboda Falls",
-        "Nuwaraeliya city tour",
+        "Nuwara Eliya city tour",
       ]
     },
     {
@@ -74,8 +75,8 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Scenic train journey(Nanuoya to damodara)",
-        "Little Adams peck",
+        "Scenic train journey(Nanu Oya to Demodara)",
+        "Little Adam's Peak",
       ]
     },
     {
@@ -83,7 +84,7 @@ const tour = {
       "route": "Ella to Mirissa",
       "description": "Experience Sri Lanka's coast at an easy pace, with time for Ravana Falls, Beach time and comfortable private travel throughout the day.",
       "experiences": [
-        "Nine arch brigde ,Rawana water Falls",
+        "Nine Arch Bridge ,Rawana Water Falls",
         "Rest on the Beach ",
       ]
     },

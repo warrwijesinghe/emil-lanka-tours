@@ -4,5 +4,63 @@ import RoundTourCard from '@/components/RoundTourCard.astro';
 import SiteLayout from '@/components/SiteLayout.astro';
 import { roundTours } from '@/data/tours';
 import { siteName } from '@/lib/site';
+
+const durationOptions = ['7 Days 6 Nights', '10 Days 9 Nights', '14 Days 13 Nights', '21 Days 20 Nights'];
 ---
-<SiteLayout title={`Sri Lanka Round Tours | ${siteName}`} description="Browse private Sri Lanka itineraries prepared from Emil’s reviewed tour plans." canonicalPath="/tours/"><ListingIntro eyebrow="Round Tours" title="Private Sri Lanka itineraries" description="Choose a route as a starting point, then ask Emil to tailor the pace, stays and experiences around your dates." compact /><section class="container-shell pb-12 md:pb-16"><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{roundTours.map((tour) => <RoundTourCard {tour} />)}</div></section></SiteLayout>
+<SiteLayout title={`Sri Lanka Round Tours | ${siteName}`} description="Browse private Sri Lanka itineraries prepared from Emil’s reviewed tour plans." canonicalPath="/tours/">
+  <ListingIntro eyebrow="Round Tours" title="Private Sri Lanka itineraries" description="Choose a route as a starting point, then ask Emil to tailor the pace, stays and experiences around your dates." compact />
+  <section class="container-shell pb-12 md:pb-16" aria-labelledby="tour-filters-title">
+    <div class="mb-7 rounded-[1.5rem] border border-ink/10 bg-white p-5 shadow-soft md:p-6">
+      <p id="tour-filters-title" class="text-sm font-semibold text-ink">Choose your trip length</p>
+      <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter tours by duration">
+        <button type="button" class="rounded-full border border-leaf/20 px-4 py-2.5 text-sm font-semibold text-leaf transition-colors hover:bg-leaf-soft focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-2" aria-pressed="true" data-tour-filter="all" data-selected="true">All tours</button>
+        {durationOptions.map((duration) => <button type="button" class="rounded-full border border-leaf/20 px-4 py-2.5 text-sm font-semibold text-leaf transition-colors hover:bg-leaf-soft focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-2" aria-pressed="false" data-tour-filter={duration}>{duration}</button>)}
+      </div>
+      <p class="mt-4 text-sm text-ink/65" aria-live="polite" data-tour-filter-status>Showing all {roundTours.length} tours</p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3" data-tour-grid>
+      {roundTours.map((tour) => <div data-tour-card data-tour-duration={tour.durationLabel}><RoundTourCard {tour} /></div>)}
+    </div>
+    <p class="hidden rounded-xl border border-ink/10 bg-white p-5 text-sm leading-6 text-ink/70" data-no-tours>No tours match this trip length yet. Please contact Emil to tailor an itinerary for your dates.</p>
+  </section>
+</SiteLayout>
+
+<script>
+  const filters = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-tour-filter]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-tour-card]'));
+  const status = document.querySelector<HTMLElement>('[data-tour-filter-status]');
+  const noTours = document.querySelector<HTMLElement>('[data-no-tours]');
+
+  function applyTourFilter(selectedDuration: string) {
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const matches = selectedDuration === 'all' || card.dataset.tourDuration === selectedDuration;
+      card.hidden = !matches;
+      if (matches) visibleCount += 1;
+    });
+
+    filters.forEach((filter) => {
+      const isSelected = filter.dataset.tourFilter === selectedDuration;
+      filter.setAttribute('aria-pressed', String(isSelected));
+      filter.dataset.selected = String(isSelected);
+    });
+
+    if (status) status.textContent = selectedDuration === 'all' ? `Showing all ${visibleCount} tours` : `Showing ${visibleCount} tour${visibleCount === 1 ? '' : 's'} for ${selectedDuration}`;
+    if (noTours) noTours.hidden = visibleCount !== 0;
+  }
+
+  filters.forEach((filter) => filter.addEventListener('click', () => applyTourFilter(filter.dataset.tourFilter || 'all')));
+</script>
+
+<style>
+  [data-tour-filter][data-selected='true'] {
+    background-color: #184a25;
+    border-color: #184a25;
+    color: #ffffff;
+  }
+
+  [data-tour-filter][data-selected='true']:hover {
+    background-color: #123b1e;
+    color: #ffffff;
+  }
+</style>

@@ -17,7 +17,8 @@ const tour = {
     "Kandy",
     "Nuwara Eliya",
     "Ella",
-    "South Coast"
+    "South Coast",
+    " Airport drop",
   ],
   "highlights": [
     "Anuradhapura & Mihintale",
@@ -41,7 +42,7 @@ const tour = {
       "route": "Anuradhapura",
       "description": "Spend the day close to Sri Lanka wildlife, with Safari planned around the best available timing and your preferred pace.",
       "experiences": [
-        "Safari willpattu park",
+        "Safari Wilpattu Park",
       ]
     },
     {
@@ -49,7 +50,7 @@ const tour = {
       "route": "Anuradhapura to Sigiriya",
       "description": "Explore the cultural character of Anuradhapura to Sigiriya through Ritigala, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Ritigala forast view",
+        "Ritigala Forest view",
         "Village safari"
       ]
     },
@@ -60,7 +61,7 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Village safari ",
-        "Elephant safarikudulla or minneriya park",
+        "Elephant safari Kaudulla or Minneriya Park",
       ]
     },
     {
@@ -81,7 +82,7 @@ const tour = {
         "Tea plantation",
         "Ramboda Falls",
         "tea factory visit",
-        "Nuwaraelita city tour",
+        "Nuwara Eliya city tour",
       ]
     },
     {
@@ -89,7 +90,7 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Scenic train journey nanuoya to damodara ",
+        "Scenic train journey Nanu Oya to Demodara ",
         "Nine Arch Bridge",
       ]
     }

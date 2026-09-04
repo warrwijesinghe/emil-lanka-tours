@@ -12,17 +12,18 @@ const tour = {
   "shortDescription": "A compact adventure route focused on the east coast, Kumana wildlife, cultural landmarks and hill country.",
   "routePoints": [
     "Colombo Airport",
+    " Mirissa",
+    " Udawalawe",
     "Arugam Bay",
     "Kumana",
     "Ella",
-    "Kandy",
-    "Sigiriya"
+    "Negombo",
+    " Air port colombo",
   ],
   "highlights": [
     "Arugam Bay & Kumana",
-    "Ella hikes & Nine Arch",
-    "Kandy cultural evening",
-    "Sigiriya elephant safari"
+    "Ella hikes", 
+     "Nine Arch",
   ],
   "highlightsIntro": "Ideal for active travellers: surf-country atmosphere, Kumana wildlife, Ella walks and the Cultural Triangle.",
   "itinerary": [
@@ -41,22 +42,22 @@ const tour = {
       "description": "Experience Sri Lanka's coast at an easy pace, with time for Beach and local experiences and comfortable private travel throughout the day.",
       "experiences": [
         "Beach and local experiences",
-        "Turtel fsrm visit", 
-        "Waligama beach",
+        "Turtle farm visit",
+        "Weligama Beach",
       ]
     },
     {
       "day": 3,
-      "route": "Mirissa to udawlawe park",
+      "route": "Mirissa to Udawalawe Park",
       "description": "Explore the cultural character of Arugam Bay to Ella through Scenic hill-country drive, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Elephint trnssit home",
+        "Elephant Transit Home",
         "Safari udawalawe park",
       ]
     },
     {
       "day": 4,
-      "route": "Udawalawe to Arugambay beach",
+      "route": "Udawalawe to Arugam Bay Beach",
       "description": "Enjoy the changing hill-country scenery along Ella, with time for Nine Arch Bridge, Little Adam’s Peak and a relaxed, unhurried travel day.",
       "experiences": [
         "Rest on the beach",
@@ -65,7 +66,7 @@ const tour = {
     },
     {
       "day": 5,
-      "route": "Aragambay panama beach",
+      "route": "Arugam Bay Panama Beach",
       "description": "Explore the cultural character of Ella to Kandy through Temple of the Tooth, Kandy dance, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Kumana park safari",
@@ -75,22 +76,22 @@ const tour = {
     },
     {
       "day": 6,
-      "route": "Arugambay elephint rock",
+      "route": "Arugam Bay Elephant Rock",
       "description": "Explore the cultural character of Kandy to Sigiriya through Dambulla, Village safari, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "River safari",
-        "Elephint rock",
+        "Elephant Rock",
       ]
     },
     {
       "day": 7,
-      "route": "Arugambay to Ella",
+      "route": "Arugam Bay to Ella",
       "description": "Spend the day close to Sri Lanka wildlife, with Lion Rock, Elephant safari planned around the best available timing and your preferred pace.",
       "experiences": [
         
         "Rawana water fall",
-        "little Adams peack",
-        "Nine arch brigde",
+        "Little Adam's Peak",
+        "Nine Arch Bridge",
       ]
     },
     {

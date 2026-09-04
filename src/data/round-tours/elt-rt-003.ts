@@ -13,25 +13,22 @@ const tour = {
   "routePoints": [
     " Arrival at Colombo Airport",
     " Anuradhapura",
-    "wilpattu National Park",
     "Trincomalee",
     "Sigiriya",
-    "Minneriya National Park",
     "Kandy",
     "Nuwara Eliya",
     "Ella",
-    "Train journey from Nanu Oya to Demodara",
-    "udawalwe elephint transit home",
     "Mirissa",
-    "Galle fort"
+    " Colombo air port",
+    
   ],
   "highlights": [
     "Wilpattu leopard safari",
     "Trincomalee & Nilaveli",
     "Sigiriya & Kandy",
-    "Ella to train journey",
+    "Ella to train journey ,ella rock traking",
     "Udawalawe elephant transit home",
-    "Mirissa & Galle fort"
+    "Mirissa & Galle fort, Hortion plans trking ",
   ],
   "highlightsIntro": "Travel from Wilpattu wild landscapes to Trincomalee beaches, then across Sri Lanka cultural heartland to Ella and Galle.",
   "itinerary": [
@@ -89,7 +86,7 @@ const tour = {
       "description": "Explore the cultural character of Trincomalee to Sigiriya through Village safari, Pidurangala, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Village safari",
-        "Curture dance show"
+        "Culture dance show"
       ]
     },
     {
@@ -99,7 +96,7 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Ayurveda treatment(optional)",
-        "Elephant safari(kudulla or minneriya national park)"
+        "Elephant safari(Kaudulla or Minneriya National Park)"
       ]
     },
     {
@@ -108,7 +105,7 @@ const tour = {
       "description": "Explore the cultural character of Sigiriya to Kandy through Dambulla, Temple of the Tooth, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Dambulla cave temple",
-        "Nalanda gedege",
+        "Nalanda Gedige",
         "Temple of the Tooth"
       ]
     },
@@ -131,7 +128,8 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Scenic train, Nine Arch Bridge and a relaxed, unhurried travel day.",
       "experiences": [
-        "Train journey from Nanu Oya to Demodara"
+        "Train journey from Nanu Oya to Demodara",
+        "Hortion plans",
       ]
     },
     {
@@ -152,7 +150,7 @@ const tour = {
         "Galle Fort",
         "Madu River safari",
         "Turtle farm conservation",
-        "Waligama Fish Market"
+        "Weligama Fish Market"
       ]
     },
     {
@@ -166,7 +164,7 @@ const tour = {
     },
     {
       "day": 14,
-      "route": "Negombo to katunayaka,bandaranayaka,international Airport",
+      "route": "Negombo to Katunayake,Bandaranaike,International Airport",
       "description": "Enjoy a relaxed final morning before your private chauffeur provides a comfortable airport transfer, timed around your flight.",
       "experiences": [
         "Airport transfer",

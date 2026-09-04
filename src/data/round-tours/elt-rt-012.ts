@@ -17,7 +17,7 @@ const tour = {
     "Kandy",
     "Ella",
     "Mirissa",
-    "Negombo"
+    "Negombo drop.",
   ],
   "highlights": [
     "Sigiriya & Dambulla",
@@ -91,7 +91,7 @@ const tour = {
       "experiences": [
         "Galle Fort",
         "Madu River safari",
-        "Turtel fsrm visit",
+        "Turtle farm visit",
         "Negombo beach hotel",
         "End of the journey",
       ]

@@ -19,15 +19,18 @@ const tour = {
     "Nuwara Eliya",
     "Ella",
     "Mirissa",
-    "Negombo"
+    "Negombo",
+    " Airport drop",
   ],
   "highlights": [
-    "Sigiriya & Dambulla",
+    "Sigiriya & Dambulla rock climbing ",
     "Pasikuda Beach",
-    "Nanuoya to demodara train journey",
+    "Nanu Oya to Demodara train journey",
     "Galle & south coast",
     "Vadda village (aborigines)",
-    "Wildlife safari experiences"
+    "Wildlife safari experiences,",
+    " Ella rock climbing",
+    " Pidurangala rock climbing ",
   ],
   "highlightsIntro": "From Sigiriya's ancient rock fortress to Pasikuda's calm coast, this route blends culture, rail scenery and southern beaches.",
   "itinerary": [
@@ -47,7 +50,7 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Village safari",
-        " safari kudulla or minnereya park",
+        " safari Kaudulla or Minneriya Park",
       ]
     },
     {
@@ -71,11 +74,11 @@ const tour = {
     {
       "day": 5,
       "route": "Mahiyanganaya to Kandy via 18 Bend Road",
-      "description": "Explore the cultural character of Mahiyanganaya to Kandy via 18 Bend Road through Temple of the Tooth, Kandy dance, gem & jevellery museum,, with your private chauffeur keeping the day flexible around your interests.",
+      "description": "Explore the cultural character of Mahiyanganaya to Kandy via 18 Bend Road through Temple of the Tooth, Kandy dance, gem & jewellery museum,, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Temple of the Tooth",
         "Kandy dance",
-        "gem & jevellery museum,"
+        "gem & jewellery museum,"
       ]
     },
     {
@@ -117,19 +120,19 @@ const tour = {
     },
     {
       "day": 10,
-      "route": "Ella to singharaja forest daniyaya",
-      "description": "Singharaja forest",
+      "route": "Ella to Sinharaja Forest Deniyaya",
+      "description": "Sinharaja Forest",
       "experiences": [
-        "Elephint Transit Home visit",
-        "Singharaja forest daniyaya entry",
+        "Elephant Transit Home visit",
+        "Sinharaja Forest Deniyaya entry",
       ]
     },
     {
       "day": 11,
-      "route": "Singharaja forest to mirissa beach",
-      "description": " Singharaja forest",
+      "route": "Sinharaja Forest to Mirissa Beach",
+      "description": " Sinharaja Forest",
       "experiences": [
-        "Singharaja forest traking (morning)",
+        "Sinharaja Forest trekking (morning)",
       ]
     },
     {
@@ -137,7 +140,7 @@ const tour = {
       "route": "Mirissa beach",
       "description": " Mirissa beach",
       "experiences": [
-        "galle fort,madu river safari,tutle conservation,tsunami museum"
+        "galle fort,madu river safari,turtle conservation,tsunami museum"
       ]
     },
     {

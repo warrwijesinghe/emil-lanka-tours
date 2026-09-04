@@ -20,13 +20,18 @@ const tour = {
     "Nuwara Eliya",
     "Ella",
     "South Coast",
-    "Negombo"
+    "Negombo",
+    " Colombo air port",
   ],
   "highlights": [
-    "Wilpattu safari",
+    "Trincomalee nelavilli beach",
     "Trincomalee beaches",
     "Sigiriya & elephant safari",
-    "Vedda village experience"
+    " Tangalla beach ",
+    "Vedda village experience",
+    " Waligama beach ",
+    "Negombo beach",
+    "Mirissa beach",
   ],
   "highlightsIntro": "A longer private journey combining northern heritage, east-coast beach time, wildlife and meaningful local culture.",
   "itinerary": [
@@ -51,7 +56,7 @@ const tour = {
       "route": "Anuradhapura to Trincomalee",
       "description": "Experience Sri Lanka's coast at an easy pace, with time for Koneswaram Temple and comfortable private travel throughout the day.",
       "experiences": [
-        "Mihinthle temple",
+        "Mihintale temple",
         "Koneswaram hindu temple,"
       ]
     },
@@ -61,7 +66,7 @@ const tour = {
       "description": "Experience Sri Lanka's coast at an easy pace, with time for Dolphin watching, Nilaveli and comfortable private travel throughout the day.",
       "experiences": [
         "Dolphin watching",
-        "Snokileen"
+        "Snorkelling"
       ]
     },
     {
@@ -78,7 +83,7 @@ const tour = {
       "route": "Trincomalee to Sigiriya",
       "description": "Follow the Trincomalee to Sigiriya route with time to experience Kaudulla Lake, Village safari, Habarana Cultural Show. Your private chauffeur can adjust the pace and stops around your interests.",
       "experiences": [
-        "Polonnaruwa ruinc",
+        "Polonnaruwa ruins",
         "Kaudulla national park safari",
         "Back to sigiriya"
       ]
@@ -89,7 +94,7 @@ const tour = {
       "description": "Spend the day close to Sri Lanka wildlife, with Tuk-tuk tour, Elephant safari planned around the best available timing and your preferred pace.",
       "experiences": [
         "Tuk-tuk journey around the rock",
-        "pidurangala rock culmbing",
+        "Pidurangala Rock climbing",
         "Culture dance show,"
       ]
     },

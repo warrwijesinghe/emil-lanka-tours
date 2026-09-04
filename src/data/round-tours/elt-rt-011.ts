@@ -16,6 +16,7 @@ const tour = {
     "Kandy",
     "Nuwara Eliya",
     "Ella",
+    " udawalawe",
     "Mirissa",
     "Colombo Airport"
   ],
@@ -61,7 +62,7 @@ const tour = {
         "Ramboda Falls",
         "Tea factory",
         "Tea garden",
-        "Nwaraeliya city tour",
+        "Nuwara Eliya city tour",
       ]
     },
     {
@@ -70,7 +71,7 @@ const tour = {
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Horton Plains, Scenic train and a relaxed, unhurried travel day.",
       "experiences": [
         "Horton Plains",
-        "Scenic train journey nanuoya to damodara",
+        "Scenic train journey Nanu Oya to Demodara",
       ]
     },
     {
