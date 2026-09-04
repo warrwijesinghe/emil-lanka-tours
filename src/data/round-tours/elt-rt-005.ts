@@ -33,7 +33,7 @@ const tour = {
       "description": "Explore the cultural character of Colombo Airport to Sigiriya through Dambulla Cave Temple, Pidurangala, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Dambulla Cave Temple",
-        "Pidurangala"
+        "Pidurangala rock vist nice sun sat",
       ]
     },
     {
@@ -43,7 +43,7 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Village safari",
-        "Elephant safari"
+        "safari kaudulla or minneriya park",
       ]
     },
     {
@@ -52,7 +52,7 @@ const tour = {
       "description": "Follow the Sigiriya route with time to experience Ritigala Forest, Ayurveda, Habarana Cultural Show. Your private chauffeur can adjust the pace and stops around your interests.",
       "experiences": [
         "Ritigala Forest",
-        "Ayurveda",
+        "Ayurveda treatment",
         "Habarana Cultural Show"
       ]
     },

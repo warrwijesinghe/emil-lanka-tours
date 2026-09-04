@@ -47,7 +47,7 @@ const tour = {
       "experiences": [
         "Lion Rock",
         "Village safari",
-        "Elephant safari"
+        " safari kudulla or minnereya park",
       ]
     },
     {
@@ -65,7 +65,7 @@ const tour = {
       "description": "Explore the cultural character of Pasikuda to Mahiyanganaya through Vedda Village, Sorabora Lake, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
         "Vedda Village",
-        "Sorabora Lake"
+        "Sorabora Lake boat safari",
       ]
     },
     {
@@ -94,7 +94,7 @@ const tour = {
       "route": "Nuwara Eliya to Ella",
       "description": "Enjoy the changing hill-country scenery along Nuwara Eliya to Ella, with time for Nanu Oya to Demodara train and a relaxed, unhurried travel day.",
       "experiences": [
-        "Nanu Oya to Demodara train"
+        "Nanu Oya to Demodara train journey",
       ]
     },
     {
@@ -121,7 +121,7 @@ const tour = {
       "description": "Singharaja forest",
       "experiences": [
         "Elephint Transit Home visit",
-        "Singharaja foresthotel"
+        "Singharaja forest daniyaya entry",
       ]
     },
     {
@@ -129,7 +129,7 @@ const tour = {
       "route": "Singharaja forest to mirissa beach",
       "description": " Singharaja forest",
       "experiences": [
-        "Singharaja forest traking"
+        "Singharaja forest traking (morning)",
       ]
     },
     {

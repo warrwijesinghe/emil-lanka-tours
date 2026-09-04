@@ -1,20 +1,26 @@
-name: Deploy
+name: Deploy Chauffeur Emil
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
+concurrency:
+  group: chauffeur-emil-production
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy over SSH
+      - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.2.1
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
+          fingerprint: ${{ secrets.DEPLOY_FINGERPRINT }}
+          command_timeout: 15m
           script: |
-            cd /var/www/emil-lanka-tours
-            git pull --ff-only origin main
-            npm ci
-            npm run build
-            sudo systemctl restart emil-lanka-tours
+            echo "Starting Chauffeur Emil production deployment"

@@ -124,7 +124,8 @@ const tour = {
       "route": "Kandy to Mahiyanganaya",
       "description": "Explore the cultural character of Kandy to Mahiyanganaya through Vedda Village, Sorabora Lake, with your private chauffeur keeping the day flexible around your interests.",
       "experiences": [
-        "Vedda Village (aborigines),"
+        "Vedda Village (aborigines)",
+        "18 bend road xperyence",
       ]
     },
     {
