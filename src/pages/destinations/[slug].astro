@@ -93,14 +93,14 @@ const destinationGalleryImages: GalleryImage[] = [
 
   <section class="container-shell py-7 md:py-9">
     <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Attractions</p>
-    <h2 class="mt-2 font-display text-3xl text-ink">What to see in {destination.name}</h2>
+    <h2 class="mt-2 font-display text-3xl text-ink">Attractions in {destination.name}</h2>
     <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{destinationGuide.attractions.map((attraction) => <AttractionCard {attraction} description={getAttractionDescription(attraction, destination.name)} {destination} />)}</div>
   </section>
 
   {destinationExperienceCards.length > 0 && <section class="bg-[#F4ECFB]/60">
     <div class="container-shell py-9 md:py-11">
       <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Experiences</p>
-      <h2 class="mt-2 font-display text-3xl text-ink">What to do in {destination.name}</h2>
+      <h2 class="mt-2 font-display text-3xl text-ink">Experiences in {destination.name}</h2>
       <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{destinationExperienceCards.map((experience) => <ExperienceCard {...experience} href={`/experiences/${getExperienceSlug(experience.title)}/`} />)}</div>
     </div>
   </section>}
