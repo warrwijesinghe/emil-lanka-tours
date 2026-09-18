@@ -1,0 +1,211 @@
+---
+export const prerender = false;
+
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import DayTourCard from '@/components/DayTourCard.astro';
+import DetailHero from '@/components/DetailHero.astro';
+import RoundTourCard from '@/components/RoundTourCard.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { experienceDetailCopy, experienceMatchTerms, experiences, getExperienceSlug, type ExperienceCategory } from '@/data/experiences';
+import { roundTours } from '@/data/tours';
+import { destinations, visibleDayTours } from '@/lib/content';
+import { siteName } from '@/lib/site';
+
+const slug = Astro.params.slug || '';
+const experience = experiences.find((item) => getExperienceSlug(item.title) === slug);
+if (!experience) return Astro.rewrite('/404');
+
+const terms = experienceMatchTerms[slug] || [];
+const hasExperience = (value: string) => terms.some((term) => value.toLowerCase().includes(term));
+const roundToursWithExperience = roundTours.filter((tour) => hasExperience([
+  tour.title,
+  tour.routePoints.join(' '),
+  tour.highlights.join(' '),
+  ...tour.itinerary.flatMap((day) => [day.route, day.description, day.experiences.join(' ')]),
+].join(' ')));
+const dayToursWithExperience = visibleDayTours.filter((tour) => hasExperience([
+  tour.title,
+  tour.shortDescription,
+  tour.description,
+  tour.highlights.join(' '),
+  tour.destinationsCovered.join(' '),
+  tour.experiences.join(' '),
+].join(' ')));
+const experienceDestinations = experience.destinationSlugs
+  .map((destinationSlug) => destinations.find((destination) => destination.slug === destinationSlug))
+  .filter((destination): destination is NonNullable<typeof destination> => Boolean(destination));
+
+const categoryGallery: Record<ExperienceCategory, { src: string; alt: string }[]> = {
+  'Culture & heritage': [
+    { src: '/images/experiences/culture.webp', alt: 'Sri Lanka cultural experience' },
+    { src: '/images/hero/optimized/home-hero-sigiriya-desktop.webp', alt: 'Sigiriya Rock Fortress' },
+    { src: '/images/day-tours/dt0005-anuradhapura-city-tour.webp', alt: 'Ancient Sri Lanka heritage' },
+    { src: '/images/day-tours/dt0022-sigiriya-to-ritigala-mountain-day-tour.webp', alt: 'Ritigala forest monastery' },
+    { src: '/images/destinations/kandy.webp', alt: 'Kandy cultural city' },
+    { src: '/images/imported-destinations/abayagiriya-stupa.png', alt: 'Ancient Sri Lanka stupa' },
+    { src: '/images/promotions/kandy-esala-perahera.webp', alt: 'Kandy cultural celebration' },
+    { src: '/images/tours/banners/rt0003-sri-lankas-cultural-gems-banner.webp', alt: 'Sri Lanka cultural tour' },
+    { src: '/images/driver-guides/emil/emil-sigiriya-family.jpeg', alt: 'Guests visiting Sigiriya' },
+    { src: '/images/driver-guides/emil/emil-sigiriya-guests.jpg', alt: 'Sri Lanka cultural journey' },
+    { src: '/images/gallery/food-01.webp', alt: 'Sri Lankan food experience' },
+    { src: '/images/gallery/guide-01.webp', alt: 'Private guided Sri Lanka journey' },
+    { src: '/images/tours/banners/rt0013-ancient-nature-secrets-banner.webp', alt: 'Ancient Sri Lanka landscape' },
+    { src: '/images/experiences/ramayanaya.webp', alt: 'Sri Lanka heritage experience' },
+    { src: '/images/driver-guides/emil/emil-sunset-lake.webp', alt: 'Sri Lanka evening scenery' },
+    { src: '/images/tours/thumbs/elt-rt-014-kandy-perahera.png', alt: 'Kandy Perahera experience' },
+    { src: '/images/driver-guides/emil/emil-coconut-guests.webp', alt: 'Sri Lanka local experience' },
+  ],
+  'Wildlife & nature': [
+    { src: '/images/experiences/wildlife.webp', alt: 'Sri Lanka wildlife' },
+    { src: '/images/destinations/udawalawe.webp', alt: 'Udawalawe elephant safari' },
+    { src: '/images/destinations/yala.webp', alt: 'Yala National Park safari' },
+    { src: '/images/day-tours/dt0009-wilpattu-half-day-safari.webp', alt: 'Wilpattu safari' },
+    { src: '/images/day-tours/dt0026-wilpattu-full-day-safari.webp', alt: 'Wilpattu National Park' },
+    { src: '/images/hero/optimized/home-hero-leopard-desktop.webp', alt: 'Sri Lanka leopard' },
+    { src: '/images/hero/optimized/home-hero-elephants-desktop.webp', alt: 'Sri Lanka elephants' },
+    { src: '/images/driver-guides/emil/emil-elephant-safari.jpg', alt: 'Elephant safari with Emil' },
+    { src: '/images/driver-guides/emil/emil-sloth-bear.webp', alt: 'Sri Lanka sloth bear' },
+    { src: '/images/tours/banners/rt0006-heritage-and-nature-quest-banner.webp', alt: 'Sri Lanka nature tour' },
+    { src: '/images/tours/banners/rt0008-cultural-and-wild-explorations-banner.webp', alt: 'Sri Lanka wildlife exploration' },
+    { src: '/images/tours/banners/rt0014-secret-nature-wonders-banner.webp', alt: 'Sri Lanka nature' },
+    { src: '/images/driver-guides/emil/emil-rainy-walk.jpeg', alt: 'Sri Lanka rainforest walk' },
+    { src: '/images/driver-guides/emil/emil-profile-mangrove.jpeg', alt: 'Sri Lanka mangrove landscape' },
+    { src: '/images/driver-guides/emil/emil-boat-guests.jpg', alt: 'Sri Lanka wildlife boat journey' },
+    { src: '/images/experiences/adventure.webp', alt: 'Sri Lanka outdoor adventure' },
+    { src: '/images/driver-guides/emil/emil-lake-guests.webp', alt: 'Sri Lanka lake wildlife' },
+  ],
+  'Hill country & adventure': [
+    { src: '/images/experiences/hill-country.webp', alt: 'Sri Lanka hill country' },
+    { src: '/images/destinations/ella.webp', alt: 'Ella hill-country scenery' },
+    { src: '/images/destinations/nuwara-eliya.webp', alt: 'Nuwara Eliya tea country' },
+    { src: '/images/hero/optimized/home-hero-ella-train-desktop.webp', alt: 'Ella scenic train journey' },
+    { src: '/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp', alt: 'Sri Lanka tea country' },
+    { src: '/images/promotions/scenic-train-journey.webp', alt: 'Sri Lanka scenic train' },
+    { src: '/images/driver-guides/emil/emil-nine-arches-guests.jpg', alt: 'Nine Arch Bridge visit' },
+    { src: '/images/driver-guides/emil/emil-hill-country-couple.webp', alt: 'Sri Lanka hill-country travellers' },
+    { src: '/images/driver-guides/emil/emil-hill-country-family.jpg', alt: 'Sri Lanka hill-country family journey' },
+    { src: '/images/driver-guides/emil/emil-mountain-guests.webp', alt: 'Sri Lanka mountain experience' },
+    { src: '/images/driver-guides/emil/emil-hill-country-breakfast.webp', alt: 'Sri Lanka highland stay' },
+    { src: '/images/driver-guides/emil/emil-hill-country-meal.webp', alt: 'Sri Lanka tea-country stop' },
+    { src: '/images/tours/banners/rt0011-heritage-and-paradise-adventure-banner.webp', alt: 'Sri Lanka hill-country adventure' },
+    { src: '/images/tours/banners/rt0012-adventure-culture-and-heart-banner.webp', alt: 'Sri Lanka adventure journey' },
+    { src: '/images/experiences/adventure.webp', alt: 'Sri Lanka active experience' },
+    { src: '/images/driver-guides/emil/emil-rainy-walk.jpeg', alt: 'Sri Lanka hillside walk' },
+    { src: '/images/driver-guides/emil/emil-sunset-lake.webp', alt: 'Sri Lanka highland sunset' },
+  ],
+  'Coast & water': [
+    { src: '/images/experiences/beaches.webp', alt: 'Sri Lanka coast' },
+    { src: '/images/destinations/mirissa.webp', alt: 'Mirissa beach' },
+    { src: '/images/driver-guides/emil/emil-kayak-lake.webp', alt: 'Sri Lanka water experience' },
+    { src: '/images/destinations/galle.webp', alt: 'Galle south coast' },
+    { src: '/images/hero/optimized/home-hero-beach-desktop.webp', alt: 'Sri Lanka beach' },
+    { src: '/images/driver-guides/emil/emil-south-coast-beach.webp', alt: 'Sri Lanka south coast beach' },
+    { src: '/images/driver-guides/emil/emil-bentota-guests.jpg', alt: 'Sri Lanka beach travellers' },
+    { src: '/images/driver-guides/emil/emil-boat-guests.jpg', alt: 'Sri Lanka boat experience' },
+    { src: '/images/driver-guides/emil/emil-kayak-group.webp', alt: 'Sri Lanka kayaking' },
+    { src: '/images/driver-guides/emil/emil-profile-mangrove.jpeg', alt: 'Sri Lanka mangroves' },
+    { src: '/images/driver-guides/emil/emil-sunset-lake.webp', alt: 'Sri Lanka water sunset' },
+    { src: '/images/tours/banners/rt0001-serene-island-escapes-banner.webp', alt: 'Sri Lanka coastal journey' },
+    { src: '/images/tours/banners/rt0009-timeless-gems-and-voyages-banner.webp', alt: 'Sri Lanka beach holiday' },
+    { src: '/images/experiences/honeymoon.webp', alt: 'Sri Lanka coastal escape' },
+    { src: '/images/experiences/family-tours.webp', alt: 'Sri Lanka family beach time' },
+    { src: '/images/driver-guides/emil/emil-lake-guests.webp', alt: 'Sri Lanka lake outing' },
+    { src: '/images/driver-guides/emil/emil-coconut-guests.webp', alt: 'Sri Lanka coastal local experience' },
+  ],
+};
+const gallery = [{ src: experience.imageUrl, alt: experience.imageAlt }, ...categoryGallery[experience.category]]
+  .filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index);
+---
+<SiteLayout title={`${experience.title} | ${siteName}`} description={experience.description} canonicalPath={`/experiences/${slug}/`} image={experience.imageUrl} imageAlt={experience.imageAlt}>
+  <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/experiences/', label: 'Experiences' }, { label: experience.title }]} />
+  <DetailHero compact eyebrow={experience.category} title={experience.title} description={experience.description} detailDescription={experienceDetailCopy[slug]} imageUrl={experience.imageUrl} imageAlt={experience.imageAlt} tags={experienceDestinations.map((destination) => ({ href: `/destinations/${destination.slug}/`, label: destination.name }))} />
+
+  <section class="bg-[#F4ECFB]/60">
+    <div class="container-shell py-10 md:py-14">
+      <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Gallery</p>
+      <h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">Inspiration for your journey</h2>
+      <div class="mt-7" data-experience-gallery data-gallery-images={JSON.stringify(gallery)}>
+        <div class="grid auto-rows-[100px] grid-cols-2 gap-2 sm:auto-rows-[120px] md:aspect-[1.8/1] md:auto-rows-fr md:grid-cols-[2fr_1fr_1fr] md:gap-3">
+          {gallery.slice(0, 7).map((image, index) => <button type="button" data-gallery-open={index} class:list={[
+            'group relative overflow-hidden rounded-2xl bg-ink text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lotus focus-visible:ring-offset-2',
+            index === 0 ? 'col-span-2 row-span-2 md:col-span-1 md:row-span-4' : index === 1 || index === 2 ? 'col-span-2 md:col-span-1 md:row-span-2' : 'col-span-1',
+          ]} aria-label={`Open image ${index + 1} of ${gallery.length}: ${image.alt}`}>
+            <img src={image.src} alt={image.alt} width="1200" height="800" loading={index === 0 ? 'eager' : 'lazy'} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            {index === 6 && <span class="absolute inset-0 flex items-center justify-center bg-ink/65 font-display text-4xl text-white sm:text-5xl">10+</span>}
+          </button>)}
+        </div>
+        <div hidden data-gallery-modal class="fixed inset-0 z-[100] items-center justify-center bg-black/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={`${experience.title} photo gallery`}>
+          <button type="button" data-gallery-close class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/30 text-2xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white" aria-label="Close photo viewer">×</button>
+          <button type="button" data-gallery-previous class="absolute left-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-3xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-7" aria-label="Previous image">‹</button>
+          <figure class="flex max-h-full max-w-6xl flex-col items-center">
+            <img data-gallery-image src={gallery[0].src} alt={gallery[0].alt} width="1600" height="1100" class="max-h-[75vh] w-auto max-w-full rounded-xl object-contain" />
+            <figcaption data-gallery-caption class="mt-4 text-center text-sm text-white/85"></figcaption>
+          </figure>
+          <button type="button" data-gallery-next class="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-3xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-7" aria-label="Next image">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell py-10 md:py-14">
+    <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Related round tours</p>
+    <h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">Round tours with this experience</h2>
+    {roundToursWithExperience.length ? <div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{roundToursWithExperience.map((tour) => <RoundTourCard {tour} />)}</div> : <p class="mt-5 text-sm leading-7 text-ink/70">Ask Emil to include this experience in a round tour designed for you.</p>}
+  </section>
+
+  {dayToursWithExperience.length > 0 && <section class="bg-[#F4ECFB]/60">
+    <div class="container-shell py-10 md:py-14">
+      <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Related day tours</p>
+      <h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">Day tours with this experience</h2>
+      <div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{dayToursWithExperience.map((dayTour) => <DayTourCard {dayTour} />)}</div>
+    </div>
+  </section>}
+
+  <CTASection title="Ready to add this to your Sri Lanka journey?" description="Tell Emil your preferred dates and interests, and he will shape a private route around this experience." href={`/plan-my-tour/?experience=${encodeURIComponent(experience.title)}`} label="Plan My Tour" />
+</SiteLayout>
+<script is:inline>
+  document.querySelectorAll('[data-experience-gallery]').forEach((galleryRoot) => {
+    const images = JSON.parse(galleryRoot.dataset.galleryImages || '[]');
+    const modal = galleryRoot.querySelector('[data-gallery-modal]');
+    const modalImage = galleryRoot.querySelector('[data-gallery-image]');
+    const caption = galleryRoot.querySelector('[data-gallery-caption]');
+    const closeButton = galleryRoot.querySelector('[data-gallery-close]');
+    const previousButton = galleryRoot.querySelector('[data-gallery-previous]');
+    const nextButton = galleryRoot.querySelector('[data-gallery-next]');
+    let activeIndex = 0;
+    let lastFocusedElement;
+
+    const showImage = (index) => {
+      activeIndex = (index + images.length) % images.length;
+      const image = images[activeIndex];
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      caption.textContent = `${activeIndex + 1} / ${images.length} — ${image.alt}`;
+    };
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      lastFocusedElement?.focus();
+    };
+    const open = (index, trigger) => {
+      lastFocusedElement = trigger;
+      showImage(index);
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    };
+
+    galleryRoot.querySelectorAll('[data-gallery-open]').forEach((button) => button.addEventListener('click', () => open(Number(button.dataset.galleryOpen), button)));
+    closeButton.addEventListener('click', close);
+    previousButton.addEventListener('click', () => showImage(activeIndex - 1));
+    nextButton.addEventListener('click', () => showImage(activeIndex + 1));
+    modal.addEventListener('click', (event) => { if (event.target === modal) close(); });
+    document.addEventListener('keydown', (event) => {
+      if (modal.hidden) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft') showImage(activeIndex - 1);
+      if (event.key === 'ArrowRight') showImage(activeIndex + 1);
+    });
+  });
+</script>

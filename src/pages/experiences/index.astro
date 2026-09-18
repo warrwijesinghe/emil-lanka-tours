@@ -1,0 +1,26 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import ExperienceCard from '@/components/ExperienceCard.astro';
+import ListingIntro from '@/components/ListingIntro.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { experienceCategoryOrder, experiences, getExperienceSlug } from '@/data/experiences';
+import { siteName } from '@/lib/site';
+---
+<SiteLayout title={`Sri Lanka Experiences | ${siteName}`} description="Explore culture, wildlife, hill-country, coastal and adventure experiences Emil can shape into your private Sri Lanka journey." canonicalPath="/experiences/" image="/images/experiences/culture.webp" imageAlt="Sri Lanka cultural experience">
+  <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'Experiences' }]} />
+  <ListingIntro eyebrow="Sri Lanka experiences" title="Make your journey your own" description="From ancient cities and safaris to tea-country rail journeys and quiet beach days, choose the experiences that matter most to you. Emil will shape a comfortable private route around them." compact />
+  <section class="container-shell space-y-12 pb-12 md:space-y-14 md:pb-16">
+    {experienceCategoryOrder.map((category) => {
+      const categoryExperiences = experiences.filter((experience) => experience.category === category);
+      const headingId = `${category.toLowerCase().replaceAll(' ', '-').replaceAll('&', 'and')}-heading`;
+      return <section aria-labelledby={headingId}>
+        <h2 id={headingId} class="font-display text-3xl text-ink md:text-4xl">{category}</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {categoryExperiences.map((experience) => <ExperienceCard {...experience} href={`/experiences/${getExperienceSlug(experience.title)}/`} />)}
+        </div>
+      </section>;
+    })}
+  </section>
+  <CTASection title="See Sri Lanka your way" description="Tell Emil the experiences you would like to include, and he will create a private route with the right pace and travel time." href="/plan-my-tour/" label="Plan My Tour" />
+</SiteLayout>

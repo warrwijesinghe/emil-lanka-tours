@@ -71,3 +71,7 @@ img {
     linear-gradient(135deg, rgba(109, 13, 197, 0.14), rgba(24, 74, 37, 0.12)),
     linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.9));
 }
+
+[data-gallery-modal]:not([hidden]) {
+  display: flex;
+}
