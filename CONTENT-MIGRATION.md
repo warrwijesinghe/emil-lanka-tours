@@ -5,7 +5,7 @@ The original public website’s visual components, static images, and Emil photo
 Current local content inventory:
 
 - 8 day tours in `src/data/day-tours.json`
-- 8 destinations in `src/data/destinations.json`
+- 31 destinations in individual files under `src/data/destinations/`
 - 2 recovered-style testimonial placeholders in `src/data/testimonials.json`
 - Emil’s local profile imagery in `public/images/driver-guides/emil/`
 

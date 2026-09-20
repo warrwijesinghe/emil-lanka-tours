@@ -1,6 +1,6 @@
 # Chauffeur Emil Lanka Tours
 
-Astro website for a single Sri Lankan chauffeur/tour operator. Tourism content is editable in `src/data/*.json`; the build validates its required fields, local image paths and unique slugs.
+Astro website for a single Sri Lankan chauffeur/tour operator. Tourism content is editable in `src/data/`; day tours, round tours and destinations each have one file per item. The build validates required fields, local image paths and unique slugs.
 
 ## Local development
 

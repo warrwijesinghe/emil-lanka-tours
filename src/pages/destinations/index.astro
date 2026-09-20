@@ -1,5 +1,70 @@
 ---
-import ListingIntro from '@/components/ListingIntro.astro'; import DestinationCard from '@/components/DestinationCard.astro'; import SiteLayout from '@/components/SiteLayout.astro'; import { mainDestinationSlugs } from '@/data/destination-guides'; import { destinations } from '@/lib/content'; import { siteName } from '@/lib/site';
-const mainDestinations = destinations.filter((destination) => mainDestinationSlugs.has(destination.slug));
+import ListingIntro from '@/components/ListingIntro.astro';
+import DestinationCard from '@/components/DestinationCard.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { mainDestinationSlugs } from '@/data/destination-guides';
+import { destinationFilterOptions, getDestinationFilterIds, orderDestinations } from '@/data/destination-filters';
+import { destinations } from '@/lib/content';
+import { siteName } from '@/lib/site';
+
+const mainDestinations = orderDestinations(
+  destinations.filter((destination) => mainDestinationSlugs.has(destination.slug)),
+);
 ---
-<SiteLayout title={`Sri Lanka Destinations | ${siteName}`} description="Explore the Sri Lanka destinations Emil can combine into your private journey." canonicalPath="/destinations/"><ListingIntro eyebrow="Destinations" title="Places to shape around your journey" description="Explore Sri Lanka’s main cultural cities, hill-country bases, wildlife regions and coastal escapes. Attractions are included within the relevant destination page." compact /><section class="container-shell pb-12 md:pb-16"><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">{mainDestinations.map((destination) => <DestinationCard {destination} />)}</div></section></SiteLayout>
+<SiteLayout title={`Sri Lanka Destinations | ${siteName}`} description="Explore the Sri Lanka destinations Emil can combine into your private journey." canonicalPath="/destinations/">
+  <ListingIntro eyebrow="Destinations" title="Places to shape around your journey" description="Explore Sri Lanka’s main cultural cities, hill-country bases, wildlife regions and coastal escapes. Attractions are included within the relevant destination page." compact />
+  <section class="container-shell pb-12 md:pb-16" aria-labelledby="destination-filters-title">
+    <div class="mb-7">
+      <p id="destination-filters-title" class="text-sm font-semibold text-ink">Choose what interests you</p>
+      <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter destinations by travel interest">
+        <button type="button" class="rounded-full border border-leaf/20 px-4 py-2.5 text-sm font-semibold text-leaf transition-colors hover:bg-leaf-soft focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-2" aria-pressed="true" data-destination-filter="all" data-selected="true">All destinations</button>
+        {destinationFilterOptions.map(({ id, label }) => <button type="button" class="rounded-full border border-leaf/20 px-4 py-2.5 text-sm font-semibold text-leaf transition-colors hover:bg-leaf-soft focus:outline-none focus:ring-2 focus:ring-leaf focus:ring-offset-2" aria-pressed="false" data-destination-filter={id}>{label}</button>)}
+      </div>
+      <p class="mt-4 text-sm text-ink/65" aria-live="polite" data-destination-filter-status>Showing all {mainDestinations.length} destinations</p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4" data-destination-grid>
+      {mainDestinations.map((destination) => <div data-destination-card data-destination-filters={getDestinationFilterIds(destination).join(' ')}><DestinationCard {destination} /></div>)}
+    </div>
+    <p class="mt-5 hidden rounded-xl border border-ink/10 bg-white p-5 text-sm leading-6 text-ink/70" data-no-destinations>No destinations match this interest yet. Contact Emil to tailor a private route around what you would like to experience.</p>
+  </section>
+</SiteLayout>
+
+<script>
+  const filters = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-destination-filter]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-destination-card]'));
+  const status = document.querySelector<HTMLElement>('[data-destination-filter-status]');
+  const noDestinations = document.querySelector<HTMLElement>('[data-no-destinations]');
+
+  const applyDestinationFilter = (selectedFilter: string) => {
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const matches = selectedFilter === 'all' || (card.dataset.destinationFilters || '').split(' ').includes(selectedFilter);
+      card.hidden = !matches;
+      if (matches) visibleCount += 1;
+    });
+    filters.forEach((filter) => {
+      const isSelected = filter.dataset.destinationFilter === selectedFilter;
+      filter.setAttribute('aria-pressed', String(isSelected));
+      filter.dataset.selected = String(isSelected);
+    });
+    if (status) status.textContent = selectedFilter === 'all' ? `Showing all ${visibleCount} destinations` : `Showing ${visibleCount} destination${visibleCount === 1 ? '' : 's'}`;
+    if (noDestinations) noDestinations.hidden = visibleCount !== 0;
+  };
+
+  filters.forEach((filter) => filter.addEventListener('click', () => applyDestinationFilter(filter.dataset.destinationFilter || 'all')));
+
+  const requestedFilter = new URLSearchParams(window.location.search).get('filter');
+  if (requestedFilter && filters.some((filter) => filter.dataset.destinationFilter === requestedFilter)) applyDestinationFilter(requestedFilter);
+</script>
+
+<style>
+  [data-destination-filter][data-selected='true'] {
+    border-color: var(--tw-color-leaf, #184A25);
+    background-color: #184A25;
+    color: white;
+  }
+
+  [data-destination-filter][data-selected='true']:hover {
+    background-color: #102f19;
+  }
+</style>

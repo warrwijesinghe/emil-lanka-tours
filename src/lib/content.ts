@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { dayTours as dayTourFiles } from "@/data/day-tour-files";
-import destinationsJson from "@/data/destinations.json";
+import { destinations as destinationFiles } from "@/data/destination-files";
 import { tourDestinations } from "@/data/tour-destinations";
 import testimonialsJson from "@/data/testimonials.json";
 import type { DayTour, Destination } from "@/types/content";
@@ -32,7 +32,7 @@ function uniqueSlugs(items: { slug: string }[], label: string) {
 export const dayTours = uniqueSlugs(dayTourFiles, "day tour") as DayTour[];
 export const visibleDayTours = dayTours;
 export const destinations = uniqueSlugs(
-  [...z.array(destinationSchema).parse(destinationsJson), ...tourDestinations],
+  [...z.array(destinationSchema).parse(destinationFiles), ...tourDestinations],
   "destination",
 ) as Destination[];
 export const testimonials = z
