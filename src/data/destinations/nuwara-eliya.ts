@@ -9,6 +9,26 @@ const destination = {
   "description": "Nuwara Eliya’s tea-covered hills and cooler climate provide a relaxed pause on a journey through the central highlands.",
   "mainImageUrl": "/images/destinations/nuwara-eliya.webp",
   "imageAlt": "Nuwara Eliya tea country",
+  "galleryImages": [
+    {
+      "src": "/images/tea-estates/tea-estate-family-children.jpeg",
+      "alt": "Children exploring a tea garden near Nuwara Eliya"
+    },
+    {
+      "src": "/images/tea-estates/tea-picking-with-local-workers.jpeg",
+      "alt": "Traveller experiencing tea picking in Sri Lanka's highlands"
+    },
+    {
+      "src": "/images/tea-estates/tea-estate-family-portrait.jpeg",
+      "alt": "Family in a green tea estate in Sri Lanka"
+    }
+  ],
+  "attractionImages": {
+    "Tea estates": {
+      "src": "/images/tea-estates/tea-picking-with-local-workers.jpeg",
+      "alt": "Traveller experiencing tea picking in Sri Lanka's highlands"
+    }
+  },
   "highlights": [
     "Tea estates",
     "Highland scenery",
@@ -28,4 +48,3 @@ const destination = {
 } satisfies Destination;
 
 export default { destination };
-

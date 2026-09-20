@@ -11,6 +11,7 @@ import { experienceDetailCopy, experienceMatchTerms, experiences, getExperienceS
 import { roundTours } from '@/data/tours';
 import { destinations, visibleDayTours } from '@/lib/content';
 import { siteName } from '@/lib/site';
+import { hasDedicatedMedia } from '@/lib/media';
 
 const slug = Astro.params.slug || '';
 const experience = experiences.find((item) => getExperienceSlug(item.title) === slug);
@@ -114,14 +115,15 @@ const categoryGallery: Record<ExperienceCategory, { src: string; alt: string }[]
     { src: '/images/driver-guides/emil/emil-coconut-guests.webp', alt: 'Sri Lanka coastal local experience' },
   ],
 };
-const gallery = [{ src: experience.imageUrl, alt: experience.imageAlt }, ...categoryGallery[experience.category]]
-  .filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index);
+const gallery = hasDedicatedMedia(experience.imageUrl)
+  ? [{ src: experience.imageUrl, alt: experience.imageAlt }, ...(experience.galleryImages || [])]
+  : [];
 ---
 <SiteLayout title={`${experience.title} | ${siteName}`} description={experience.description} canonicalPath={`/experiences/${slug}/`} image={experience.imageUrl} imageAlt={experience.imageAlt}>
   <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/experiences/', label: 'Experiences' }, { label: experience.title }]} />
   <DetailHero compact eyebrow={experience.category} title={experience.title} description={experience.description} detailDescription={experienceDetailCopy[slug]} imageUrl={experience.imageUrl} imageAlt={experience.imageAlt} tags={experienceDestinations.map((destination) => ({ href: `/destinations/${destination.slug}/`, label: destination.name }))} />
 
-  <section class="bg-[#F4ECFB]/60">
+  {gallery.length > 0 && <section class="bg-[#F4ECFB]/60">
     <div class="container-shell py-10 md:py-14">
       <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Gallery</p>
       <h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">Inspiration for your journey</h2>
@@ -146,7 +148,7 @@ const gallery = [{ src: experience.imageUrl, alt: experience.imageAlt }, ...cate
         </div>
       </div>
     </div>
-  </section>
+  </section>}
 
   <section class="container-shell py-10 md:py-14">
     <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Related round tours</p>

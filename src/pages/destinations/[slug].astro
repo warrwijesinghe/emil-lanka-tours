@@ -13,7 +13,6 @@ import { roundTours } from '@/data/tours';
 import { getAttractionDescription, getDestinationGuide } from '@/data/destination-guides';
 import { experiences, getExperienceSlug } from '@/data/experiences';
 import { getDestinationSlugsInText } from '@/data/tour-destinations';
-import { roundTourImages } from '@/lib/round-tour-images';
 import { getDestination, visibleDayTours } from '@/lib/content';
 
 const destination = getDestination(Astro.params.slug || '');
@@ -34,43 +33,16 @@ const relatedRoundTours = roundTours.filter((tour) =>
 );
 
 type GalleryImage = { src: string; alt: string };
-const fallbackGalleryImages: GalleryImage[] = [
-  ...destinationExperienceCards.map(({ imageUrl, imageAlt }) => ({ src: imageUrl, alt: imageAlt })),
-  ...relatedDayTours.map(({ mainImageUrl, imageAlt }) => ({ src: mainImageUrl, alt: imageAlt })),
-  ...relatedRoundTours.map((tour) => roundTourImages[tour.id]),
-  { src: '/images/hero/optimized/home-hero-sigiriya-desktop.webp', alt: 'Sigiriya Rock Fortress in Sri Lanka' },
-  { src: '/images/hero/optimized/home-hero-elephants-desktop.webp', alt: 'Elephants in Sri Lanka' },
-  { src: '/images/hero/optimized/home-hero-ella-train-desktop.webp', alt: 'Scenic train journey in Sri Lanka' },
-  { src: '/images/hero/optimized/home-hero-tea-picker-sri-lanka-desktop.webp', alt: 'Tea country in Sri Lanka' },
-  { src: '/images/hero/optimized/home-hero-beach-desktop.webp', alt: 'Sri Lanka coastline' },
-  { src: '/images/hero/optimized/home-hero-leopard-desktop.webp', alt: 'Leopard in Sri Lanka' },
-  { src: '/images/driver-guides/emil/emil-elephant-safari.jpg', alt: 'Private elephant safari with Emil' },
-  { src: '/images/driver-guides/emil/emil-nine-arches-guests.jpg', alt: 'Guests at Nine Arch Bridge' },
-  { src: '/images/driver-guides/emil/emil-south-coast-beach.webp', alt: 'South coast beach time' },
-  { src: '/images/driver-guides/emil/emil-boat-guests.jpg', alt: 'Guests on a Sri Lanka boat outing' },
-  { src: '/images/driver-guides/emil/emil-hill-country-couple.webp', alt: 'Hill-country private journey' },
-  { src: '/images/driver-guides/emil/emil-sigiriya-family.jpeg', alt: 'Family visiting Sigiriya' },
-  { src: '/images/experiences/culture.webp', alt: 'Sri Lanka cultural heritage' },
-  { src: '/images/experiences/wildlife.webp', alt: 'Sri Lanka wildlife' },
-  { src: '/images/experiences/hill-country.webp', alt: 'Sri Lanka hill country' },
-  { src: '/images/experiences/beaches.webp', alt: 'Sri Lanka beaches' },
-  { src: '/images/gallery/food-01.webp', alt: 'Sri Lankan food experience' },
-  { src: '/images/gallery/guide-01.webp', alt: 'Private Sri Lanka journey with a local guide' },
-];
-const destinationGalleryImages: GalleryImage[] = [
-  ...(destination.galleryImages?.length
-    ? destination.galleryImages
-    : [{ src: destination.mainImageUrl, alt: destination.imageAlt }, ...fallbackGalleryImages]),
-]
+const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [])
   .filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index)
-  .slice(0, destination.galleryImages?.length ?? 17);
+  .slice(0, 17);
 ---
 
 <SiteLayout title={destination.seo.title} description={destination.seo.description} canonicalPath={`/destinations/${destination.slug}/`} image={destination.mainImageUrl}>
   <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/destinations/', label: 'Destinations' }, { label: destination.name }]} />
   <DetailHero compact eyebrow={destination.region} title={destination.name} description={destination.shortDescription} detailDescription={destination.description} imageUrl={destination.mainImageUrl} imageAlt={destination.imageAlt} meta={[destination.suggestedVisitDuration]} />
 
-  <section class="bg-[#F4ECFB]/60">
+  {destinationGalleryImages.length > 0 && <section class="bg-[#F4ECFB]/60">
     <div class="container-shell py-9 md:py-12">
       <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Gallery</p>
       <h2 class="mt-2 font-display text-3xl text-ink md:text-4xl">A glimpse of {destination.name}</h2>
@@ -95,7 +67,7 @@ const destinationGalleryImages: GalleryImage[] = [
         </div>
       </div>
     </div>
-  </section>
+  </section>}
 
   <section class="container-shell py-7 md:py-9">
     <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Attractions</p>

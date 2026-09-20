@@ -7,8 +7,28 @@ const destination = {
   "region": "South Coast",
   "shortDescription": "Palm-lined beaches, a laid-back coastal atmosphere and seasonal marine excursions.",
   "description": "Mirissa is a relaxed choice for beach time on a private Sri Lanka itinerary, with easy road links to Galle and southern wildlife parks.",
-  "mainImageUrl": "/images/destinations/mirissa.webp",
-  "imageAlt": "Mirissa beach",
+  "mainImageUrl": "/images/destinations/mirissa/mirissa-beach-parrot-rock.jpeg",
+  "imageAlt": "Mirissa Beach and Parrot Rock",
+  "galleryImages": [
+    {
+      "src": "/images/destinations/mirissa/mirissa-beach-parrot-rock.jpeg",
+      "alt": "Visitors enjoying Mirissa Beach beside Parrot Rock"
+    },
+    {
+      "src": "/images/destinations/mirissa/mirissa-beach-sunset.jpeg",
+      "alt": "Evening atmosphere on Mirissa Beach"
+    }
+  ],
+  "attractionImages": {
+    "Mirissa Beach": {
+      "src": "/images/destinations/mirissa/mirissa-beach-parrot-rock.jpeg",
+      "alt": "Visitors enjoying Mirissa Beach beside Parrot Rock"
+    },
+    "Coastal viewpoints": {
+      "src": "/images/destinations/mirissa/mirissa-beach-sunset.jpeg",
+      "alt": "Evening atmosphere on Mirissa Beach"
+    }
+  },
   "highlights": [
     "Beach time",
     "Coastal sunsets",
@@ -28,4 +48,3 @@ const destination = {
 } satisfies Destination;
 
 export default { destination };
-

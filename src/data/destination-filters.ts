@@ -53,7 +53,7 @@ const slugsByFilter: Record<DestinationFilterId, string[]> = {
   ],
   culture: [
     "anuradhapura", "colombo", "dambulla", "habarana", "kandy",
-    "mahiyanganaya", "mannar", "polonnaruwa", "sigiriya",
+    "mahiyanganaya", "mannar", "pidurangala-rock", "polonnaruwa", "ritigala", "sigiriya",
   ],
   "hill-country": ["ella", "haputale", "nuwara-eliya"],
   nature: [

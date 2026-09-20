@@ -12,6 +12,7 @@ export interface Experience {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  galleryImages?: { src: string; alt: string }[];
   destinationSlugs: string[];
 }
 

@@ -1,5 +1,5 @@
 ---
-import { resolveMediaUrl } from '@/lib/media';
+import { hasDedicatedMedia, resolveMediaUrl } from '@/lib/media';
 
 interface Props {
   eyebrow?: string;
@@ -33,7 +33,7 @@ const {
   tags = []
 } = Astro.props;
 
-const src = resolveMediaUrl(imageUrl);
+const src = hasDedicatedMedia(imageUrl) ? resolveMediaUrl(imageUrl) : null;
 ---
 <section class:list={['container-shell', compact ? 'pt-2 md:pt-3' : 'pt-4 md:pt-6']}>
   <div class:list={['grid items-start gap-6 md:gap-8 lg:grid-cols-[0.95fr_1.05fr]', compact ? 'lg:gap-8' : 'lg:gap-12']}>
@@ -60,7 +60,7 @@ const src = resolveMediaUrl(imageUrl);
       )}
     </div>
     <div class="order-1 overflow-hidden rounded-[1.75rem] md:rounded-[2rem] lg:order-2">
-      <img
+      {src && <img
         src={src}
         alt={imageAlt || title}
         loading="eager"
@@ -72,7 +72,7 @@ const src = resolveMediaUrl(imageUrl);
           'w-full object-cover',
           compact ? 'h-[28svh] min-h-[220px] sm:h-[32svh] md:h-[34svh] md:min-h-[260px] lg:h-[360px] xl:h-[400px]' : 'h-[34svh] min-h-[240px] sm:h-[38svh] md:h-[42svh] md:min-h-[320px] lg:h-[48svh] xl:h-[54svh]',
         ]}
-      />
+      />}
     </div>
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-import { resolveMediaUrl } from '@/lib/media';
+import { hasDedicatedMedia, resolveMediaUrl } from '@/lib/media';
 
 interface Props {
   href: string;
@@ -24,18 +24,18 @@ const {
   badge,
   priority = false
 } = Astro.props;
-const src = resolveMediaUrl(imageUrl);
+const src = hasDedicatedMedia(imageUrl) ? resolveMediaUrl(imageUrl) : null;
 ---
 <a href={href} class="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-black/6 bg-white shadow-soft transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lotus/35">
   <div class="relative gradient-frame aspect-[16/9] overflow-hidden">
-    <img
+    {src && <img
       src={src}
       alt={imageAlt || title}
       width="1200"
       height="675"
       loading={priority ? 'eager' : 'lazy'}
       class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-    />
+    />}
     {badge && <span class="absolute left-4 top-4 rounded-full bg-leaf px-3 py-1.5 text-xs font-extrabold text-white shadow-sm">{badge}</span>}
   </div>
   <div class="flex flex-1 flex-col gap-3 p-6">

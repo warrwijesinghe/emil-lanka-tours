@@ -4,7 +4,7 @@ export interface DestinationGuide {
 }
 
 export const mainDestinationSlugs = new Set([
-  'anuradhapura', 'arugam-bay', 'bundala-national-park', 'colombo', 'dambulla', 'ella', 'galle', 'habarana', 'haputale', 'kalpitiya', 'kandy', 'kaudulla-national-park', 'kitulgala', 'kumana', 'mahiyanganaya', 'mannar', 'minneriya-national-park', 'mirissa', 'negombo', 'nilaveli', 'nuwara-eliya', 'pasikuda', 'polonnaruwa', 'sigiriya', 'sinharaja', 'tangalle', 'tissamaharama', 'trincomalee', 'udawalawe', 'uppuveli', 'weligama', 'wilpattu', 'yala-national-park',
+  'anuradhapura', 'arugam-bay', 'bundala-national-park', 'colombo', 'dambulla', 'ella', 'galle', 'habarana', 'haputale', 'kalpitiya', 'kandy', 'kaudulla-national-park', 'kitulgala', 'kumana', 'mahiyanganaya', 'mannar', 'minneriya-national-park', 'mirissa', 'negombo', 'nilaveli', 'nuwara-eliya', 'pasikuda', 'pidurangala-rock', 'polonnaruwa', 'ritigala', 'sigiriya', 'sinharaja', 'tangalle', 'tissamaharama', 'trincomalee', 'udawalawe', 'uppuveli', 'weligama', 'wilpattu', 'yala-national-park',
 ]);
 
 const guide = (attractions: string[], experiences: string[]): DestinationGuide => ({ attractions, experiences });
@@ -40,6 +40,7 @@ export const destinationGuides: Record<string, DestinationGuide> = {
   'nuwara-eliya': guide(['Tea estates', 'Gregory Lake', 'Colonial town centre', 'Old Post Office', 'Ramboda Falls'], ['Tea Estate Experience', 'City sightseeing', 'Scenic train connection']),
   'panama': guide(['Panama Beach', 'Coastal village landscape', 'Kumana route'], ['Beach relaxation', 'Coastal exploration', 'Safari connection']),
   'pasikuda': guide(['Pasikuda Beach', 'Calm bay', 'East-coast shoreline'], ['Beach relaxation', 'Swimming', 'Coastal stay']),
+  'pidurangala-rock': guide(['Pidurangala summit', 'Sigiriya Rock view', 'Cultural Triangle panorama'], ['Rock climb', 'Sunrise or sunset viewing', 'Scenic photography']),
   'polonnaruwa': guide(['Ancient royal city', 'Gal Vihara', 'Polonnaruwa Watadage'], ['Ancient City Tour', 'Heritage cycling or walking', 'Cultural sightseeing']),
   'rekawa': guide(['Rekawa Beach', 'Coastal lagoon', 'Turtle-nesting shore'], ['Sea Turtle Conservation Visit', 'Beach walk', 'Nature watching']),
   'ritigala': guide(['Forest monastery ruins', 'Stone pathways', 'Shaded archaeological reserve'], ['Ritigala Forest Monastery Walk', 'Heritage exploration', 'Forest walk']),
