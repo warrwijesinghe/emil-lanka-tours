@@ -43,6 +43,8 @@ export interface Destination {
   mainImageUrl: string;
   imageUrl?: string;
   imageAlt: string;
+  galleryImages?: { src: string; alt: string }[];
+  attractionImages?: Record<string, { src: string; alt: string }>;
   highlights: string[];
   bestFor: string[];
   suggestedVisitDuration: string;

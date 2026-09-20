@@ -8,11 +8,14 @@ interface Props {
 }
 
 const { attraction, description, destination } = Astro.props;
+const image = destination.attractionImages
+  ? destination.attractionImages[attraction]
+  : { src: destination.mainImageUrl, alt: destination.imageAlt };
 ---
 <article class="card-surface flex h-full flex-col overflow-hidden">
-  <div class="gradient-frame aspect-[16/9] overflow-hidden">
-    <img src={destination.mainImageUrl} alt={`${attraction} in ${destination.name}`} width="1200" height="675" loading="lazy" class="h-full w-full object-cover" />
-  </div>
+  {image && <div class="gradient-frame aspect-[16/9] overflow-hidden">
+    <img src={image.src} alt={image.alt} width="1200" height="675" loading="lazy" class="h-full w-full object-cover" />
+  </div>}
   <div class="flex flex-1 flex-col p-5">
     <p class="text-[11px] font-semibold uppercase tracking-[.18em] text-lotus">Attraction in {destination.name}</p>
     <h3 class="mt-2 font-display text-2xl leading-tight text-ink">{attraction}</h3>

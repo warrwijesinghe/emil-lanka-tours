@@ -9,6 +9,10 @@ const seo = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
 });
+const imageSchema = z.object({
+  src: z.string().startsWith("/images/"),
+  alt: z.string().min(1),
+});
 const destinationSchema = z.object({
   id: z.string(),
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -18,6 +22,8 @@ const destinationSchema = z.object({
   description: z.string().min(1),
   mainImageUrl: z.string().startsWith("/images/"),
   imageAlt: z.string().min(1),
+  galleryImages: z.array(imageSchema).optional(),
+  attractionImages: z.record(z.string(), imageSchema).optional(),
   highlights: z.array(z.string()),
   bestFor: z.array(z.string()),
   suggestedVisitDuration: z.string().min(1),

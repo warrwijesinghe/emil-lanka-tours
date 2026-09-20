@@ -34,8 +34,7 @@ const relatedRoundTours = roundTours.filter((tour) =>
 );
 
 type GalleryImage = { src: string; alt: string };
-const destinationGalleryImages: GalleryImage[] = [
-  { src: destination.mainImageUrl, alt: destination.imageAlt },
+const fallbackGalleryImages: GalleryImage[] = [
   ...destinationExperienceCards.map(({ imageUrl, imageAlt }) => ({ src: imageUrl, alt: imageAlt })),
   ...relatedDayTours.map(({ mainImageUrl, imageAlt }) => ({ src: mainImageUrl, alt: imageAlt })),
   ...relatedRoundTours.map((tour) => roundTourImages[tour.id]),
@@ -57,7 +56,14 @@ const destinationGalleryImages: GalleryImage[] = [
   { src: '/images/experiences/beaches.webp', alt: 'Sri Lanka beaches' },
   { src: '/images/gallery/food-01.webp', alt: 'Sri Lankan food experience' },
   { src: '/images/gallery/guide-01.webp', alt: 'Private Sri Lanka journey with a local guide' },
-].filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index).slice(0, 17);
+];
+const destinationGalleryImages: GalleryImage[] = [
+  ...(destination.galleryImages?.length
+    ? destination.galleryImages
+    : [{ src: destination.mainImageUrl, alt: destination.imageAlt }, ...fallbackGalleryImages]),
+]
+  .filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index)
+  .slice(0, destination.galleryImages?.length ?? 17);
 ---
 
 <SiteLayout title={destination.seo.title} description={destination.seo.description} canonicalPath={`/destinations/${destination.slug}/`} image={destination.mainImageUrl}>
