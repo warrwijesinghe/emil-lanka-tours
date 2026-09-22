@@ -1,11 +1,12 @@
 ---
 import { contactEmail, footerExploreLinks, footerPlanLinks, siteName, whatsappUrl } from '@/lib/site';
+import BrandLogo from './BrandLogo.astro';
 const currentYear = new Date().getFullYear();
 ---
 <footer class="mt-20 border-t border-black/5 bg-ink text-white">
   <div class="container-shell grid gap-10 py-14 sm:grid-cols-2 xl:grid-cols-[1.35fr_0.8fr_0.8fr_1fr]">
     <div class="space-y-5">
-      <div class="font-display text-3xl leading-tight text-white">Chauffeur Emil<br /><span class="text-xl text-lotus-soft">Lanka Tours</span></div>
+      <BrandLogo variant="white" class="w-full max-w-[320px]" />
       <p class="max-w-xl text-sm leading-7 text-white/78">
         Private Sri Lanka journeys with Emil, an experienced local chauffeur guide, shaped around your pace and interests.
       </p>

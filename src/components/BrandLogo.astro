@@ -1,0 +1,33 @@
+---
+import { siteName } from '@/lib/site';
+
+interface Props {
+  variant?: 'colour' | 'white';
+  class?: string;
+}
+
+const { variant = 'colour', class: className } = Astro.props;
+---
+
+<span class:list={['brand-logo', className]}>
+  <img src={`/images/brand/chauffeur-emil-${variant}.png`} alt={siteName} width="1000" height="1000" decoding="async" />
+</span>
+
+<style>
+  /* Crop the transparent canvas while retaining the supplied artwork exactly. */
+  .brand-logo {
+    position: relative;
+    display: block;
+    aspect-ratio: 650 / 200;
+    overflow: hidden;
+  }
+
+  .brand-logo img {
+    position: absolute;
+    width: 153.846154%;
+    max-width: none;
+    height: auto;
+    left: -26.615385%;
+    top: -202.5%;
+  }
+</style>
