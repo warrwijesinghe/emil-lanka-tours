@@ -7,8 +7,18 @@ const destination = {
   "region": "North Central Province",
   "shortDescription": "A sacred hilltop sanctuary near Anuradhapura, celebrated for its sweeping views and deep Buddhist heritage.",
   "description": "Mihintale is best visited in the softer light of morning or late afternoon, when the stone steps, ancient stupas and surrounding countryside feel especially peaceful. It is an easy, meaningful addition to an Anuradhapura stay or a private transfer towards the east coast.",
-  "mainImageUrl": "/images/day-tours/dt0005-anuradhapura-city-tour.webp",
-  "imageAlt": "Mihintale sacred site",
+  "mainImageUrl": "/images/destinations/anuradhapura/mihintale-hilltop-view.webp",
+  "imageAlt": "Rocky hilltop and countryside view at Mihintale near Anuradhapura",
+  "attractionImages": {
+  "Sacred rock summit": {
+    "src": "/images/destinations/anuradhapura/mihintale-hilltop-view.webp",
+    "alt": "Rocky hilltop and countryside view at Mihintale near Anuradhapura"
+  },
+  "Ancient stupas": {
+    "src": "/images/destinations/anuradhapura/sela-chethiya-mihintale.webp",
+    "alt": "Sela Chethiya stupa and stone pillars at Mihintale"
+  }
+},
   "highlights": [
     "Sacred hill climb",
     "Ancient stupas",

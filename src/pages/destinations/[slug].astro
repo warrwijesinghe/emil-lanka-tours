@@ -35,7 +35,7 @@ const relatedRoundTours = roundTours.filter((tour) =>
 type GalleryImage = { src: string; alt: string };
 const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [])
   .filter((image, index, images) => images.findIndex((candidate) => candidate.src === image.src) === index)
-  .slice(0, 17);
+  .filter((image) => image.src !== destination.mainImageUrl);
 ---
 
 <SiteLayout title={destination.seo.title} description={destination.seo.description} canonicalPath={`/destinations/${destination.slug}/`} image={destination.mainImageUrl}>
@@ -53,7 +53,7 @@ const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [
             index === 0 ? 'col-span-2 row-span-2 md:col-span-1 md:row-span-4' : index === 1 || index === 2 ? 'col-span-2 md:col-span-1 md:row-span-2' : 'col-span-1',
           ]} aria-label={`Open image ${index + 1} of ${destinationGalleryImages.length}: ${image.alt}`}>
             <img src={image.src} alt={image.alt} width="1200" height="800" loading={index === 0 ? 'eager' : 'lazy'} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-            {index === 6 && <span class="absolute inset-0 flex items-center justify-center bg-ink/65 font-display text-4xl text-white sm:text-5xl">10+</span>}
+            {index === 6 && destinationGalleryImages.length > 7 && <span class="absolute inset-0 flex items-center justify-center bg-ink/65 font-display text-4xl text-white sm:text-5xl">+{destinationGalleryImages.length - 6}</span>}
           </button>)}
         </div>
         <div hidden data-gallery-modal class="fixed inset-0 z-[100] items-center justify-center bg-black/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={`${destination.name} photo gallery`}>

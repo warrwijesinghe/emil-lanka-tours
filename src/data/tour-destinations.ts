@@ -6,7 +6,6 @@ const destination = (id: string, name: string, region: string, image: string, hi
 
 export const tourDestinations: Destination[] = [
   destination('colombo', 'Colombo', 'Western Province', '/images/day-tours/dt0001-colombo-city-day-tour.webp', ['City landmarks', 'Markets', 'Coastal promenade']),
-  destination('anuradhapura', 'Anuradhapura', 'North Central Province', '/images/day-tours/dt0005-anuradhapura-city-tour.webp', ['Ancient city', 'Sacred sites', 'Mihintale']),
   destination('wilpattu', 'Wilpattu National Park', 'North Western Province', '/images/day-tours/dt0009-wilpattu-half-day-safari.webp', ['Wildlife safaris', 'Forest lakes', 'Birdlife']),
   destination('trincomalee', 'Trincomalee', 'Eastern Province', '/images/experiences/beaches.webp', ['East-coast beaches', 'Koneswaram Temple', 'Marine life']),
   destination('pasikuda', 'Pasikuda', 'Eastern Province', '/images/experiences/beaches.webp', ['Calm bays', 'Beach time', 'East-coast stays']),

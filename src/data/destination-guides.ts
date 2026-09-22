@@ -10,7 +10,7 @@ export const mainDestinationSlugs = new Set([
 const guide = (attractions: string[], experiences: string[]): DestinationGuide => ({ attractions, experiences });
 
 export const destinationGuides: Record<string, DestinationGuide> = {
-  'anuradhapura': guide(['Sri Maha Bodhi', 'Ruwanwelisaya', 'Abhayagiriya Viharaya', 'Jetavanarama Viharaya', 'Twin Ponds', 'Ancient city ruins'], ['Ancient City Tour', 'Sacred-site visit', 'Mihintale excursion']),
+  'anuradhapura': guide(['Sri Maha Bodhi', 'Ruwanwelisaya', 'Abhayagiriya Viharaya', 'Jetavanarama Viharaya', 'Twin Ponds', 'Ancient city ruins', 'Isurumuniya', 'Thuparamaya'], ['Ancient City Tour', 'Sacred-site visit', 'Mihintale excursion']),
   'arugam-bay': guide(['Arugam Bay beach', 'Elephant Rock', 'Panama coast', 'Panama Beach'], ['Beach time', 'Coastal exploration', 'Kumana safari connection']),
   'bundala-national-park': guide(['Wetland lagoons', 'Seasonal flamingos', 'Coastal scrubland'], ['Birdwatching safari', 'Wildlife photography', 'Nature drive']),
   'colombo': guide(['Galle Face Green', 'Pettah markets', 'Gangaramaya Temple'], ['Colombo City Tour', 'Market exploration', 'Airport transfer stop']),
