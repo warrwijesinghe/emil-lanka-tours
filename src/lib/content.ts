@@ -2,6 +2,7 @@ import { z } from "zod";
 import { dayTours as dayTourFiles } from "@/data/day-tour-files";
 import { destinations as destinationFiles } from "@/data/destination-files";
 import { tourDestinations } from "@/data/tour-destinations";
+import { destinationOverrides } from "@/data/destination-overrides";
 import testimonialsJson from "@/data/testimonials.json";
 import type { DayTour, Destination } from "@/types/content";
 
@@ -38,7 +39,10 @@ function uniqueSlugs(items: { slug: string }[], label: string) {
 export const dayTours = uniqueSlugs(dayTourFiles, "day tour") as DayTour[];
 export const visibleDayTours = dayTours;
 export const destinations = uniqueSlugs(
-  [...z.array(destinationSchema).parse(destinationFiles), ...tourDestinations],
+  [
+    ...z.array(destinationSchema).parse(destinationFiles),
+    ...tourDestinations.map((destination) => ({ ...destination, ...destinationOverrides[destination.slug] })),
+  ],
   "destination",
 ) as Destination[];
 export const testimonials = z

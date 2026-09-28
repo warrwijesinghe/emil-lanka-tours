@@ -2,14 +2,11 @@
 import ListingIntro from '@/components/ListingIntro.astro';
 import DestinationCard from '@/components/DestinationCard.astro';
 import SiteLayout from '@/components/SiteLayout.astro';
-import { mainDestinationSlugs } from '@/data/destination-guides';
 import { destinationFilterOptions, getDestinationFilterIds, orderDestinations } from '@/data/destination-filters';
 import { destinations } from '@/lib/content';
 import { siteName } from '@/lib/site';
 
-const mainDestinations = orderDestinations(
-  destinations.filter((destination) => mainDestinationSlugs.has(destination.slug)),
-);
+const mainDestinations = orderDestinations(destinations);
 ---
 <SiteLayout title={`Sri Lanka Destinations | ${siteName}`} description="Explore the Sri Lanka destinations Emil can combine into your private journey." canonicalPath="/destinations/">
   <ListingIntro eyebrow="Destinations" title="Places to shape around your journey" description="Explore Sri Lanka’s main cultural cities, hill-country bases, wildlife regions and coastal escapes. Attractions are included within the relevant destination page." compact />

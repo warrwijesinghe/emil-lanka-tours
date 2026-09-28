@@ -25,12 +25,16 @@ const destination = {
     {
       "src": "/images/destinations/haputale/liptons-seat-view-couple.jpeg",
       "alt": "Couple enjoying the view from Lipton's Seat"
+    },
+    {
+      "src": "/images/destinations/nuwara-eliya/liptons-seat-tea-view.webp",
+      "alt": "Tea fields in mist below Lipton's Seat near Haputale"
     }
   ],
   "attractionImages": {
     "Lipton’s Seat": {
-      "src": "/images/destinations/haputale/liptons-seat-welcome-sign.jpeg",
-      "alt": "Visitors at the Lipton's Seat welcome sign near Haputale"
+      "src": "/images/destinations/nuwara-eliya/liptons-seat-tea-view.webp",
+      "alt": "Tea fields in mist below Lipton's Seat near Haputale"
     },
     "Tea estates": {
       "src": "/images/destinations/haputale/liptons-seat-tea-garden-child.jpeg",

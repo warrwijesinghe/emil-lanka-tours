@@ -7,8 +7,8 @@ const destination = {
   "region": "Central Highlands",
   "shortDescription": "A cool, high-altitude wilderness of cloud forest, grassland and memorable walking trails.",
   "description": "Horton Plains offers a refreshing change of pace in Sri Lanka’s hill country. An early start brings the best chance of clear views and a comfortable walk through its quiet forests, open plains and misty viewpoints.",
-  "mainImageUrl": "/images/destinations/default-destination.webp",
-  "imageAlt": "Placeholder image for Horton Plains National Park",
+  "mainImageUrl": "/images/destinations/nuwara-eliya/horton-plains-highland-view.webp",
+  "imageAlt": "Highland view across Horton Plains in Sri Lanka",
   "highlights": [
     "Highland nature walk",
     "Cloud-forest scenery",
@@ -28,4 +28,3 @@ const destination = {
 } satisfies Destination;
 
 export default { destination };
-

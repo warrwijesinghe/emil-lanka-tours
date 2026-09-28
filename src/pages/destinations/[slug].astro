@@ -10,6 +10,7 @@ import ExperienceCard from '@/components/ExperienceCard.astro';
 import RoundTourCard from '@/components/RoundTourCard.astro';
 import SiteLayout from '@/components/SiteLayout.astro';
 import { roundTours } from '@/data/tours';
+import { destinationFilterOptions, getDestinationFilterIds } from '@/data/destination-filters';
 import { getAttractionDescription, getDestinationGuide } from '@/data/destination-guides';
 import { experiences, getExperienceSlug } from '@/data/experiences';
 import { getDestinationSlugsInText } from '@/data/tour-destinations';
@@ -19,6 +20,10 @@ const destination = getDestination(Astro.params.slug || '');
 if (!destination) return Astro.rewrite('/404');
 
 const destinationGuide = getDestinationGuide(destination.slug);
+const destinationTags = getDestinationFilterIds(destination).map((id) => ({
+  href: `/destinations/?filter=${id}`,
+  label: destinationFilterOptions.find((filter) => filter.id === id)?.label || id,
+}));
 const destinationExperienceCards = experiences.filter((experience) => experience.destinationSlugs.includes(destination.slug));
 const relatedDayTours = visibleDayTours.filter((tour) =>
   tour.destinations.some((item) => item.slug === destination.slug) ||
@@ -40,7 +45,7 @@ const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [
 
 <SiteLayout title={destination.seo.title} description={destination.seo.description} canonicalPath={`/destinations/${destination.slug}/`} image={destination.mainImageUrl}>
   <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/destinations/', label: 'Destinations' }, { label: destination.name }]} />
-  <DetailHero compact eyebrow={destination.region} title={destination.name} description={destination.shortDescription} detailDescription={destination.description} imageUrl={destination.mainImageUrl} imageAlt={destination.imageAlt} meta={[destination.suggestedVisitDuration]} />
+  <DetailHero compact eyebrow={destination.region} title={destination.name} description={destination.shortDescription} detailDescription={destination.description} imageUrl={destination.mainImageUrl} imageAlt={destination.imageAlt} tags={destinationTags} meta={[destination.suggestedVisitDuration]} />
 
   {destinationGalleryImages.length > 0 && <section class="bg-[#F4ECFB]/60">
     <div class="container-shell py-9 md:py-12">

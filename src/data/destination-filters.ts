@@ -44,21 +44,22 @@ export const orderDestinations = <T extends Pick<Destination, "name" | "slug">>(
 const slugsByFilter: Record<DestinationFilterId, string[]> = {
   beaches: [
     "arugam-bay", "galle", "kalpitiya", "mirissa", "negombo", "nilaveli",
-    "pasikuda", "tangalle", "trincomalee", "uppuveli", "weligama",
+    "pasikuda", "tangalle", "trincomalee", "uppuveli", "weligama", "kinniya",
+    "madu-river", "marble-beach", "panama", "rekawa",
   ],
   wildlife: [
     "arugam-bay", "bundala-national-park", "kalpitiya", "kaudulla-national-park",
     "kumana", "minneriya-national-park", "sinharaja", "tissamaharama",
-    "udawalawe", "wilpattu", "yala-national-park",
+    "udawalawe", "wilpattu", "yala-national-park", "minneriya-national-park",
   ],
   culture: [
     "anuradhapura", "colombo", "dambulla", "habarana", "kandy",
-    "mahiyanganaya", "mannar", "pidurangala-rock", "polonnaruwa", "ritigala", "sigiriya",
+    "mahiyanganaya", "mannar", "mihintale", "pidurangala-rock", "polonnaruwa", "ritigala", "sigiriya", "galle",
   ],
-  "hill-country": ["ella", "haputale", "nuwara-eliya"],
+  "hill-country": ["demodara", "ella", "haputale", "horton-plains-national-park", "nanu-oya", "nuwara-eliya"],
   nature: [
     "bundala-national-park", "kalpitiya", "kitulgala", "kumana", "mannar",
-    "sinharaja",
+    "madu-river", "panama", "rekawa", "sinharaja", "sorabora-lake", "horton-plains-national-park",
   ],
 };
 

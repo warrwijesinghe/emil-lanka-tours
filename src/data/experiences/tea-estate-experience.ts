@@ -4,8 +4,8 @@ const experience = {
   "category": "Hill country & adventure",
   "title": "Tea Estate Experience",
   "description": "See the journey from tea garden to factory and enjoy the landscapes that define Sri Lanka’s highlands.",
-  "imageUrl": "/images/tea-estates/tea-estate-family-landscape.jpeg",
-  "imageAlt": "Family visiting a Sri Lanka tea estate",
+  "imageUrl": "/images/destinations/nuwara-eliya/nuwara-eliya-tea-plantation.webp",
+  "imageAlt": "Lush tea plantation in Nuwara Eliya, Sri Lanka",
   "galleryImages": [
     {
       "src": "/images/tea-estates/tea-estate-family-portrait.jpeg",
