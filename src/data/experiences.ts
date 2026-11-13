@@ -62,6 +62,7 @@ export const experienceMatchTerms: Record<string, string[]> = {
 };
 
 export const experienceDetailCopy: Record<string, string> = {
+  'around-the-sigiriya-rock-tuk-tuk-journey': 'Take a tuk tuk through the lanes around Sigiriya to see how the fortress changes in profile as you circle the area. Stop along the way for photos of the rock and the surrounding countryside. Emil can fit the ride around your fortress visit or combine it with a lakeside stop.',
   'ancient-city-tour': 'Sri Lanka’s ancient capitals reward unhurried exploration. In Anuradhapura, vast stupas and sacred spaces tell the story of an early Buddhist kingdom; in Polonnaruwa, beautifully carved stone and royal ruins reveal a later chapter. Emil can shape the visit around the sites you care about most and the heat of the day.',
   'sigiriya-rock-fortress-climb': 'Sigiriya is most enjoyable with an early start, when the climb is cooler and the rock is quieter. The ascent combines landscaped water gardens, frescoes, the Lion Gate and a final summit view across the Cultural Triangle. It is a signature Sri Lanka experience, best balanced with a relaxed afternoon nearby.',
   'dambulla-cave-temple-visit': 'The five caves of Dambulla hold an extraordinary collection of painted walls and Buddha images. The short climb is rewarded with both the temple interiors and a broad view over the surrounding countryside. It works especially well as a cultural stop between Sigiriya and Kandy.',

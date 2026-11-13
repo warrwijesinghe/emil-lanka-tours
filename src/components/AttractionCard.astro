@@ -7,10 +7,10 @@ interface Props {
   description: string;
   href: string;
   destination: Destination;
+  image?: { src: string; alt: string };
 }
 
-const { attraction, description, destination, href } = Astro.props;
-const image = destination.attractionImages?.[attraction];
+const { attraction, description, destination, href, image } = Astro.props;
 ---
 <ContentCard
   {href}

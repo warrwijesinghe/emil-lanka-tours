@@ -44,7 +44,7 @@ export const destinationGuides: Record<string, DestinationGuide> = {
   'polonnaruwa': guide(['Ancient royal city', 'Gal Vihara', 'Polonnaruwa Watadage'], ['Ancient City Tour', 'Heritage cycling or walking', 'Cultural sightseeing']),
   'rekawa': guide(['Rekawa Beach', 'Coastal lagoon', 'Turtle-nesting shore'], ['Sea Turtle Conservation Visit', 'Beach walk', 'Nature watching']),
   'ritigala': guide(['Forest monastery ruins', 'Stone pathways', 'Shaded archaeological reserve'], ['Ritigala Forest Monastery Walk', 'Heritage exploration', 'Forest walk']),
-  'sigiriya': guide(['Sigiriya Rock Fortress', 'Pidurangala Rock', 'Water gardens', 'Dambulla Cave Temple', 'Cultural Triangle countryside'], ['Sigiriya Rock Fortress Climb', 'Village Safari', 'Ayurveda Treatment']),
+  'sigiriya': guide(['Sigiriya Rock Fortress', 'Pidurangala Rock', 'Thalkote Lake'], ['Around the Sigiriya Rock tuk tuk journey', 'Sigiriya Rock Fortress Climb', 'Village Safari', 'Ayurveda Treatment']),
   'sinharaja': guide(['Rainforest trails', 'Forest streams', 'Endemic birdlife'], ['Sinharaja Rainforest Trek', 'Guided jungle walk', 'Waterfall bathing']),
   'sorabora-lake': guide(['Sorabora Lake', 'Rural shoreline', 'Mahiyanganaya countryside'], ['Lake boat ride', 'Birdwatching', 'Scenic relaxation']),
   'tangalle': guide(['Tangalle beaches', 'Quiet coastal coves', 'Rekawa nearby', 'Rekawa turtle-nesting beach'], ['Beach relaxation', 'South-coast drive', 'Turtle conservation connection']),
@@ -64,6 +64,7 @@ export const getDestinationGuide = (slug: string): DestinationGuide => destinati
 );
 
 const attractionDescriptions: Record<string, string> = {
+  'Thalkote Lake': 'Pause by the water near Sigiriya for views across the lake and time to watch for birds along the shore.',
   'Samadhi Buddha Statue': 'See a stone Buddha seated in meditation in Anuradhapura’s Abhayagiri monastic precinct.',
   'Anuradhapura Moonstone': 'Look closely at the carved bands on the semicircular stone threshold at Abhayagiri.',
   'Kandy Lake': 'A peaceful lakeside circuit at the centre of Kandy, ideal for a gentle walk between the city’s cultural landmarks.',

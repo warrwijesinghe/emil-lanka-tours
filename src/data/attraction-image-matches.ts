@@ -1,4 +1,9 @@
 const imageMatches: Record<string, RegExp> = {
+  'Ella Rock': /\/ella\/ella-rock-/,
+  'Cultural show venues': /\/habarana\/cultural-show-/,
+  'Gem and jewellery museum': /\/kandy\/gem-museum-/,
+  'Thalkote Lake': /\/sigiriya\/thalkote-lake-/,
+  'Colonial town centre': /\/nuwara-eliya\/nuwara-eliya-town-/,
   'Sri Maha Bodhi': /\/anuradhapura\/jaya-sri-maha-bodhi/,
   Ruwanwelisaya: /\/anuradhapura\/ruwanwelisaya-/,
   'Abhayagiriya Viharaya': /\/anuradhapura\/abhayagiri-/,

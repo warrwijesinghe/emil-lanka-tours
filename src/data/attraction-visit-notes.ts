@@ -1,4 +1,5 @@
 export const attractionVisitNotes: Record<string, string> = {
+  'Thalkote Lake': 'Take a break at Thalkote Lake after exploring Sigiriya. From the shore, look across the water toward the surrounding hills and watch for birds along the quieter edges. Leave time for photos and ask Emil which stopping point suits your route and the conditions that day.',
   'Sri Maha Bodhi': 'Pause in the courtyard to see how pilgrims approach the sacred fig tree with flowers and offerings. Give worshippers space and allow time to visit nearby Ruwanwelisaya on the same outing.',
   'Ruwanwelisaya': 'Walk around the white stupa to see how its dome changes against the sky. The broad courtyard gives you room to appreciate its scale, especially when you approach on foot.',
   'Abhayagiriya Viharaya': 'Start with the brick stupa, then look for the foundations and stonework of the surrounding monastery. The scattered remains give a sense of how much ground the complex once covered.',

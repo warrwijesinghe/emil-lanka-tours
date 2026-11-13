@@ -80,21 +80,13 @@ const destination = {
       "src": "/images/destinations/sigiriya/sigiriya-lion-gate.webp",
       "alt": "Visitors climbing the Lion Gate staircase at Sigiriya Rock Fortress"
     },
+    "Thalkote Lake": {
+      "src": "/images/destinations/sigiriya/thalkote-lake-guests.jpeg",
+      "alt": "Emil and two guests at Thalkote Lake with Pidurangala and Sigiriya across the water"
+    },
     "Pidurangala Rock": {
       "src": "/images/destinations/pidurangala-rock/pidurangala-sigiriya-view-couple.jpeg",
       "alt": "Couple with Emil at Pidurangala Rock summit overlooking Sigiriya"
-    },
-    "Water gardens": {
-      "src": "/images/destinations/sigiriya/sigiriya-water-gardens-path.webp",
-      "alt": "Path through the royal water gardens towards Sigiriya Rock Fortress"
-    },
-    "Dambulla Cave Temple": {
-      "src": "/images/destinations/dambulla/dambulla-cave-temple-exterior.webp",
-      "alt": "Dambulla Cave Temple beneath its dramatic granite rock overhang"
-    },
-    "Cultural Triangle countryside": {
-      "src": "/images/destinations/sigiriya/sigiriya-village-lake.webp",
-      "alt": "Traditional boat on a lake near Sigiriya in Sri Lanka's Cultural Triangle"
     }
   },
   "highlights": [

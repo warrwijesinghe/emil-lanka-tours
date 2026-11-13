@@ -14,6 +14,9 @@ import { siteName } from '@/lib/site';
 import { hasDedicatedMedia } from '@/lib/media';
 
 const slug = Astro.params.slug || '';
+if (slug === 'thalkote-lake') {
+  return Astro.redirect('/destinations/sigiriya/thalkote-lake/', 301);
+}
 const experience = experiences.find((item) => getExperienceSlug(item.title) === slug);
 if (!experience) return Astro.rewrite('/404');
 

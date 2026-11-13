@@ -7,6 +7,10 @@ import SiteLayout from '@/components/SiteLayout.astro';
 import { getDestination } from '@/lib/content';
 import { getDestinationAttractions } from '@/lib/destination-attractions';
 
+if (Astro.params.slug === 'sigiriya' && Astro.params.attraction === 'dambulla-cave-temple') {
+  return Astro.redirect('/destinations/dambulla/dambulla-cave-temple/', 301);
+}
+
 const destination = getDestination(Astro.params.slug || '');
 const attraction = destination && getDestinationAttractions(destination)
   .find(({ slug }) => slug === Astro.params.attraction);

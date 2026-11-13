@@ -76,6 +76,10 @@ const destination = {
     }
   ],
   "attractionImages": {
+    "Little Adam’s Peak": {
+      "src": "/images/destinations/ella/little-adams-peak-viewpoint.jpeg",
+      "alt": "Three visitors at Little Adam’s Peak with Ella’s green valley behind them"
+    },
     "Ravana Ella Waterfall": {
       "src": "/images/destinations/ella/ravana-ella-lower-cascade.jpg",
       "alt": "Lower tiers of Ravana Ella Waterfall beside a fenced viewing path"

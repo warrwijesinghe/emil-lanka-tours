@@ -13,6 +13,7 @@ import SiteLayout from '@/components/SiteLayout.astro';
 import { roundTours } from '@/data/tours';
 import { destinationFilterOptions, getDestinationFilterIds } from '@/data/destination-filters';
 import { getDestinationAttractions } from '@/lib/destination-attractions';
+import { destinationGuides } from '@/data/destination-guides';
 import { experiences, getExperienceSlug } from '@/data/experiences';
 import { getDestinationSlugsInText } from '@/data/tour-destinations';
 import { getDestination, visibleDayTours } from '@/lib/content';
@@ -25,7 +26,14 @@ const destinationTags = getDestinationFilterIds(destination).map((id) => ({
   href: `/destinations/?filter=${id}`,
   label: destinationFilterOptions.find((filter) => filter.id === id)?.label || id,
 }));
-const destinationExperienceCards = experiences.filter((experience) => experience.destinationSlugs.includes(destination.slug));
+const experienceOrder = destinationGuides[destination.slug]?.experiences ?? [];
+const getExperienceOrder = (title: string) => {
+  const index = experienceOrder.indexOf(title);
+  return index === -1 ? experienceOrder.length : index;
+};
+const destinationExperienceCards = experiences
+  .filter((experience) => experience.destinationSlugs.includes(destination.slug))
+  .sort((first, second) => getExperienceOrder(first.title) - getExperienceOrder(second.title));
 const relatedDayTours = visibleDayTours.filter((tour) =>
   tour.destinations.some((item) => item.slug === destination.slug) ||
   getDestinationSlugsInText([
@@ -53,7 +61,7 @@ const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [
   {attractions.length > 0 && <section class="container-shell py-7 md:py-9">
     <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Attractions</p>
     <h2 class="mt-2 font-display text-3xl text-ink">Attractions in {destination.name}</h2>
-    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{attractions.map((attraction) => <AttractionCard attraction={attraction.name} description={attraction.description} href={attraction.href} {destination} />)}</div>
+    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{attractions.map((attraction) => <AttractionCard attraction={attraction.name} description={attraction.description} href={attraction.href} image={attraction.image} {destination} />)}</div>
   </section>}
 
   {destinationExperienceCards.length > 0 && <section class="bg-[#F4ECFB]/60">
