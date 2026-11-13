@@ -53,7 +53,7 @@ const slugsByFilter: Record<DestinationFilterId, string[]> = {
     "udawalawe", "wilpattu", "yala-national-park", "minneriya-national-park",
   ],
   culture: [
-    "anuradhapura", "colombo", "dambulla", "habarana", "kandy",
+    "anuradhapura", "buduruwagala", "colombo", "dambulla", "habarana", "kandy",
     "mahiyanganaya", "mannar", "mihintale", "pidurangala-rock", "polonnaruwa", "ritigala", "sigiriya", "galle",
   ],
   "hill-country": ["demodara", "ella", "haputale", "horton-plains-national-park", "nanu-oya", "nuwara-eliya"],
