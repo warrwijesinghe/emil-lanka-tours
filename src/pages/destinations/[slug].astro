@@ -5,13 +5,14 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import AttractionCard from '@/components/AttractionCard.astro';
 import CTASection from '@/components/CTASection.astro';
 import DayTourCard from '@/components/DayTourCard.astro';
+import DestinationGallery from '@/components/DestinationGallery.astro';
 import DetailHero from '@/components/DetailHero.astro';
 import ExperienceCard from '@/components/ExperienceCard.astro';
 import RoundTourCard from '@/components/RoundTourCard.astro';
 import SiteLayout from '@/components/SiteLayout.astro';
 import { roundTours } from '@/data/tours';
 import { destinationFilterOptions, getDestinationFilterIds } from '@/data/destination-filters';
-import { getAttractionDescription, getDestinationGuide } from '@/data/destination-guides';
+import { getDestinationAttractions } from '@/lib/destination-attractions';
 import { experiences, getExperienceSlug } from '@/data/experiences';
 import { getDestinationSlugsInText } from '@/data/tour-destinations';
 import { getDestination, visibleDayTours } from '@/lib/content';
@@ -19,7 +20,7 @@ import { getDestination, visibleDayTours } from '@/lib/content';
 const destination = getDestination(Astro.params.slug || '');
 if (!destination) return Astro.rewrite('/404');
 
-const destinationGuide = getDestinationGuide(destination.slug);
+const attractions = getDestinationAttractions(destination);
 const destinationTags = getDestinationFilterIds(destination).map((id) => ({
   href: `/destinations/?filter=${id}`,
   label: destinationFilterOptions.find((filter) => filter.id === id)?.label || id,
@@ -47,38 +48,13 @@ const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [
   <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/destinations/', label: 'Destinations' }, { label: destination.name }]} />
   <DetailHero compact eyebrow={destination.region} title={destination.name} description={destination.shortDescription} detailDescription={destination.description} imageUrl={destination.mainImageUrl} imageAlt={destination.imageAlt} tags={destinationTags} meta={[destination.suggestedVisitDuration]} />
 
-  {destinationGalleryImages.length > 0 && <section class="bg-[#F4ECFB]/60">
-    <div class="container-shell py-9 md:py-12">
-      <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Gallery</p>
-      <h2 class="mt-2 font-display text-3xl text-ink md:text-4xl">A glimpse of {destination.name}</h2>
-      <div class="mt-6" data-destination-gallery data-gallery-images={JSON.stringify(destinationGalleryImages)}>
-        <div class="grid auto-rows-[100px] grid-cols-2 gap-2 sm:auto-rows-[120px] md:aspect-[1.8/1] md:auto-rows-fr md:grid-cols-[2fr_1fr_1fr] md:gap-3">
-          {destinationGalleryImages.slice(0, 7).map((image, index) => <button type="button" data-gallery-open={index} class:list={[
-            'group relative overflow-hidden rounded-2xl bg-ink text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lotus focus-visible:ring-offset-2',
-            index === 0 ? 'col-span-2 row-span-2 md:col-span-1 md:row-span-4' : index === 1 || index === 2 ? 'col-span-2 md:col-span-1 md:row-span-2' : 'col-span-1',
-          ]} aria-label={`Open image ${index + 1} of ${destinationGalleryImages.length}: ${image.alt}`}>
-            <img src={image.src} alt={image.alt} width="1200" height="800" loading={index === 0 ? 'eager' : 'lazy'} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-            {index === 6 && destinationGalleryImages.length > 7 && <span class="absolute inset-0 flex items-center justify-center bg-ink/65 font-display text-4xl text-white sm:text-5xl">+{destinationGalleryImages.length - 6}</span>}
-          </button>)}
-        </div>
-        <div hidden data-gallery-modal class="fixed inset-0 z-[100] items-center justify-center bg-black/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={`${destination.name} photo gallery`}>
-          <button type="button" data-gallery-close class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/30 text-2xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white" aria-label="Close photo viewer">×</button>
-          <button type="button" data-gallery-previous class="absolute left-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-3xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-7" aria-label="Previous image">‹</button>
-          <figure class="flex max-h-full max-w-6xl flex-col items-center">
-            <img data-gallery-image src={destinationGalleryImages[0].src} alt={destinationGalleryImages[0].alt} width="1600" height="1100" class="max-h-[75vh] w-auto max-w-full rounded-xl object-contain" />
-            <figcaption data-gallery-caption class="mt-4 text-center text-sm text-white/85"></figcaption>
-          </figure>
-          <button type="button" data-gallery-next class="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-3xl text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-7" aria-label="Next image">›</button>
-        </div>
-      </div>
-    </div>
-  </section>}
+  <DestinationGallery name={destination.name} {destinationGalleryImages} />
 
-  <section class="container-shell py-7 md:py-9">
+  {attractions.length > 0 && <section class="container-shell py-7 md:py-9">
     <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-lotus">Attractions</p>
     <h2 class="mt-2 font-display text-3xl text-ink">Attractions in {destination.name}</h2>
-    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{destinationGuide.attractions.map((attraction) => <AttractionCard {attraction} description={getAttractionDescription(attraction, destination.name)} {destination} />)}</div>
-  </section>
+    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{attractions.map((attraction) => <AttractionCard attraction={attraction.name} description={attraction.description} href={attraction.href} {destination} />)}</div>
+  </section>}
 
   {destinationExperienceCards.length > 0 && <section class="bg-[#F4ECFB]/60">
     <div class="container-shell py-9 md:py-11">
@@ -103,49 +79,3 @@ const destinationGalleryImages: GalleryImage[] = (destination.galleryImages || [
   </section>
   <CTASection title="Want this destination in your private route?" description="Emil can combine this destination with the right number of nights, travel pacing and nearby experiences." href={`/plan-my-tour/?destination=${destination.slug}`} label="Plan My Tour" />
 </SiteLayout>
-
-<script is:inline>
-  document.querySelectorAll('[data-destination-gallery]').forEach((galleryRoot) => {
-    const images = JSON.parse(galleryRoot.dataset.galleryImages || '[]');
-    const modal = galleryRoot.querySelector('[data-gallery-modal]');
-    const modalImage = galleryRoot.querySelector('[data-gallery-image]');
-    const caption = galleryRoot.querySelector('[data-gallery-caption]');
-    const closeButton = galleryRoot.querySelector('[data-gallery-close]');
-    const previousButton = galleryRoot.querySelector('[data-gallery-previous]');
-    const nextButton = galleryRoot.querySelector('[data-gallery-next]');
-    let activeIndex = 0;
-    let lastFocusedElement;
-
-    const showImage = (index) => {
-      activeIndex = (index + images.length) % images.length;
-      const image = images[activeIndex];
-      modalImage.src = image.src;
-      modalImage.alt = image.alt;
-      caption.textContent = `${activeIndex + 1} / ${images.length} — ${image.alt}`;
-    };
-    const close = () => {
-      modal.hidden = true;
-      document.body.style.overflow = '';
-      lastFocusedElement?.focus();
-    };
-    const open = (index, trigger) => {
-      lastFocusedElement = trigger;
-      showImage(index);
-      modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      closeButton.focus();
-    };
-
-    galleryRoot.querySelectorAll('[data-gallery-open]').forEach((button) => button.addEventListener('click', () => open(Number(button.dataset.galleryOpen), button)));
-    closeButton.addEventListener('click', close);
-    previousButton.addEventListener('click', () => showImage(activeIndex - 1));
-    nextButton.addEventListener('click', () => showImage(activeIndex + 1));
-    modal.addEventListener('click', (event) => { if (event.target === modal) close(); });
-    document.addEventListener('keydown', (event) => {
-      if (modal.hidden) return;
-      if (event.key === 'Escape') close();
-      if (event.key === 'ArrowLeft') showImage(activeIndex - 1);
-      if (event.key === 'ArrowRight') showImage(activeIndex + 1);
-    });
-  });
-</script>

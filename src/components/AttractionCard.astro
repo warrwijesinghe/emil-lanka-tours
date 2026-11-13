@@ -1,26 +1,22 @@
 ---
+import ContentCard from '@/components/ContentCard.astro';
 import type { Destination } from '@/types/content';
-import { hasDedicatedMedia } from '@/lib/media';
 
 interface Props {
   attraction: string;
   description: string;
+  href: string;
   destination: Destination;
 }
 
-const { attraction, description, destination } = Astro.props;
+const { attraction, description, destination, href } = Astro.props;
 const image = destination.attractionImages?.[attraction];
-const hasImage = hasDedicatedMedia(image?.src);
 ---
-<article class="card-surface flex h-full flex-col overflow-hidden">
-  <div class="gradient-frame aspect-[16/9] overflow-hidden">
-    {hasImage && image &&
-    <img src={image.src} alt={image.alt} width="1200" height="675" loading="lazy" class="h-full w-full object-cover" />
-    }
-  </div>
-  <div class="flex flex-1 flex-col p-5">
-    <p class="text-[11px] font-semibold uppercase tracking-[.18em] text-lotus">Attraction in {destination.name}</p>
-    <h3 class="mt-2 font-display text-2xl leading-tight text-ink">{attraction}</h3>
-    <p class="mt-3 text-sm leading-7 text-ink/72">{description}</p>
-  </div>
-</article>
+<ContentCard
+  {href}
+  title={attraction}
+  {description}
+  imageUrl={image?.src}
+  imageAlt={image?.alt}
+  meta={[`Attraction in ${destination.name}`]}
+/>

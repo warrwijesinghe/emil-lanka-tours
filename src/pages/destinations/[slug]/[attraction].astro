@@ -1,0 +1,31 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import DestinationGallery from '@/components/DestinationGallery.astro';
+import DetailHero from '@/components/DetailHero.astro';
+import SiteLayout from '@/components/SiteLayout.astro';
+import { getDestination } from '@/lib/content';
+import { getDestinationAttractions } from '@/lib/destination-attractions';
+
+const destination = getDestination(Astro.params.slug || '');
+const attraction = destination && getDestinationAttractions(destination)
+  .find(({ slug }) => slug === Astro.params.attraction);
+if (!destination || !attraction) return Astro.rewrite('/404');
+
+const parentHref = `/destinations/${destination.slug}/`;
+const tags = attraction.isWaterfall ? [{ href: '/destinations/?filter=waterfalls', label: 'Waterfalls' }] : [];
+---
+<SiteLayout title={`${attraction.name} | Chauffeur Emil`} description={attraction.description} canonicalPath={attraction.href} image={attraction.image?.src}>
+  <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/destinations/', label: 'Destinations' }, { href: parentHref, label: destination.name }, { label: attraction.name }]} />
+  <DetailHero compact eyebrow={destination.name} title={attraction.name} description={attraction.description} imageUrl={attraction.image?.src} imageAlt={attraction.image?.alt} {tags} />
+  <DestinationGallery name={attraction.name} destinationGalleryImages={attraction.gallery} />
+  {attraction.details.length > 0 && <div class="container-shell py-9 md:py-12">
+    <div class="max-w-3xl space-y-7">
+      {attraction.details.map(({ heading, body }) => <section>
+        <h2 class="font-display text-2xl text-ink">{heading}</h2>
+        <p class="mt-2 leading-7 text-ink/75">{body}</p>
+      </section>)}
+    </div>
+  </div>}
+  <CTASection title={`Visit ${attraction.name} with Emil`} description="Add this stop to your private Sri Lanka itinerary." href={`/plan-my-tour/?destination=${destination.slug}`} label="Plan My Tour" />
+</SiteLayout>

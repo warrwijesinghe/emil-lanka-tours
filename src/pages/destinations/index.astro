@@ -1,12 +1,18 @@
 ---
 import ListingIntro from '@/components/ListingIntro.astro';
 import DestinationCard from '@/components/DestinationCard.astro';
+import AttractionCard from '@/components/AttractionCard.astro';
+import { getDestinationAttractions } from '@/lib/destination-attractions';
 import SiteLayout from '@/components/SiteLayout.astro';
 import { destinationFilterOptions, getDestinationFilterIds, orderDestinations } from '@/data/destination-filters';
 import { destinations } from '@/lib/content';
 import { siteName } from '@/lib/site';
 
 const mainDestinations = orderDestinations(destinations);
+const waterfalls = mainDestinations.flatMap((destination) =>
+  getDestinationAttractions(destination).filter(({ isWaterfall }) => isWaterfall)
+    .map((attraction) => ({ attraction, destination })),
+);
 ---
 <SiteLayout title={`Sri Lanka Destinations | ${siteName}`} description="Explore the Sri Lanka destinations Emil can combine into your private journey." canonicalPath="/destinations/">
   <ListingIntro eyebrow="Destinations" title="Places to shape around your journey" description="Explore Sri Lanka’s main cultural cities, hill-country bases, wildlife regions and coastal escapes. Attractions are included within the relevant destination page." compact />
@@ -21,6 +27,7 @@ const mainDestinations = orderDestinations(destinations);
     </div>
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4" data-destination-grid>
       {mainDestinations.map((destination) => <div data-destination-card data-destination-filters={getDestinationFilterIds(destination).join(' ')}><DestinationCard {destination} /></div>)}
+      {waterfalls.map(({ attraction, destination }) => <div hidden data-destination-card data-destination-filters="waterfalls" data-filter-only><AttractionCard attraction={attraction.name} description={attraction.description} href={attraction.href} {destination} /></div>)}
     </div>
     <p class="mt-5 hidden rounded-xl border border-ink/10 bg-white p-5 text-sm leading-6 text-ink/70" data-no-destinations>No destinations match this interest yet. Contact Emil to tailor a private route around what you would like to experience.</p>
   </section>
@@ -35,7 +42,9 @@ const mainDestinations = orderDestinations(destinations);
   const applyDestinationFilter = (selectedFilter: string) => {
     let visibleCount = 0;
     cards.forEach((card) => {
-      const matches = selectedFilter === 'all' || (card.dataset.destinationFilters || '').split(' ').includes(selectedFilter);
+      const matches = selectedFilter === 'all'
+        ? !card.hasAttribute('data-filter-only')
+        : (card.dataset.destinationFilters || '').split(' ').includes(selectedFilter);
       card.hidden = !matches;
       if (matches) visibleCount += 1;
     });
@@ -44,7 +53,8 @@ const mainDestinations = orderDestinations(destinations);
       filter.setAttribute('aria-pressed', String(isSelected));
       filter.dataset.selected = String(isSelected);
     });
-    if (status) status.textContent = selectedFilter === 'all' ? `Showing all ${visibleCount} destinations` : `Showing ${visibleCount} destination${visibleCount === 1 ? '' : 's'}`;
+    const item = selectedFilter === 'waterfalls' ? 'waterfall' : 'destination';
+    if (status) status.textContent = selectedFilter === 'all' ? `Showing all ${visibleCount} destinations` : `Showing ${visibleCount} ${item}${visibleCount === 1 ? '' : 's'}`;
     if (noDestinations) noDestinations.hidden = visibleCount !== 0;
   };
 

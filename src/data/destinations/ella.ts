@@ -27,6 +27,18 @@ const destination = {
       "alt": "Family at Nine Arch Bridge in Ella's hill country"
     },
     {
+      "src": "/images/destinations/ella/ravana-ella-lower-cascade.jpg",
+      "alt": "Lower tiers of Ravana Ella Waterfall beside a fenced viewing path"
+    },
+    {
+      "src": "/images/destinations/ella/ravana-ella-misty-cliffs.jpg",
+      "alt": "Ravana Ella Waterfall below mist-covered cliffs and forest"
+    },
+    {
+      "src": "/images/destinations/ella/ravana-ella-full-cascade.jpg",
+      "alt": "Full vertical view of Ravana Ella Waterfall flowing over stepped rock"
+    },
+    {
       "src": "/images/destinations/ella/ella-nine-arch-bridge-panorama.webp",
       "alt": "Wide view of Nine Arch Bridge in Ella's tea-covered hill country"
     },
@@ -65,8 +77,8 @@ const destination = {
   ],
   "attractionImages": {
     "Ravana Ella Waterfall": {
-      "src": "/images/destinations/ella/ravana-ella-waterfall-cascade.webp",
-      "alt": "Ravana Ella Waterfall cascading down a rocky cliff near Ella"
+      "src": "/images/destinations/ella/ravana-ella-lower-cascade.jpg",
+      "alt": "Lower tiers of Ravana Ella Waterfall beside a fenced viewing path"
     },
     "Nine Arch Bridge": {
       "src": "/images/destinations/ella/ella-nine-arch-bridge-blue-train.webp",

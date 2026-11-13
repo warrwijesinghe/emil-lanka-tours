@@ -6,6 +6,7 @@ export const destinationFilterOptions = [
   { id: "culture", label: "Culture & heritage" },
   { id: "hill-country", label: "Hill country" },
   { id: "nature", label: "Nature & adventure" },
+  { id: "waterfalls", label: "Waterfalls" },
 ] as const;
 
 export type DestinationFilterId = (typeof destinationFilterOptions)[number]["id"];
@@ -42,6 +43,7 @@ export const orderDestinations = <T extends Pick<Destination, "name" | "slug">>(
 };
 
 const slugsByFilter: Record<DestinationFilterId, string[]> = {
+  waterfalls: [],
   beaches: [
     "arugam-bay", "galle", "kalpitiya", "mirissa", "negombo", "nilaveli",
     "pasikuda", "tangalle", "trincomalee", "uppuveli", "weligama", "kinniya",
