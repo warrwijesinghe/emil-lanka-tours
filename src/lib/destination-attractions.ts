@@ -38,6 +38,7 @@ export const getDestinationAttractions = (destination: Destination) =>
   (destinationGuides[destination.slug]?.attractions ?? []).map((name) => {
     const slug = name.toLowerCase().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     const href = `/destinations/${destination.slug}/${slug}/`;
+    const displayName = name === 'Gem and jewellery museum' ? 'Gem and jewellery shop and museum' : name;
     const match = getAttractionImageMatch(name, destination.slug);
     const configuredImage = destination.attractionImages?.[name];
     const cover = configuredImage && imagePool.has(configuredImage.src) &&
@@ -52,16 +53,16 @@ export const getDestinationAttractions = (destination: Destination) =>
     const gallery = matchedImages.length > galleryMinimum ? matchedImages.slice(1) : [...matchedImages];
     const placeholders = Array.from({ length: Math.max(0, galleryMinimum - gallery.length) }, (_, index) => ({
       src: placeholder,
-      alt: `Photo ${gallery.length + index + 1} unavailable for ${name}`,
+      alt: `Photo ${gallery.length + index + 1} unavailable for ${displayName}`,
       placeholder: true,
     }));
     const visitNote = attractionVisitNotes[name];
     return {
-      name,
+      name: displayName,
       slug,
       href,
       details: attractionDetails[href] ?? (visitNote ? [{ heading: 'What to see and do', body: visitNote }] : []),
-      description: getAttractionDescription(name, destination.name),
+      description: getAttractionDescription(displayName, destination.name),
       image,
       gallery: [...gallery, ...placeholders],
       isWaterfall: waterfallSlugs.has(slug),

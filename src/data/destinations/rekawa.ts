@@ -7,8 +7,8 @@ const destination = {
   "region": "Southern Province",
   "shortDescription": "A peaceful coastal village near Tangalle, known for its lagoon, uncrowded shore and turtle-nesting beach.",
   "description": "Rekawa offers a quieter south-coast pause for nature-minded travellers. Visit respectfully for its sea-turtle conservation efforts, then enjoy the lagoon landscapes and easy onward connections to Tangalle or Mirissa.",
-  "mainImageUrl": "/images/experiences/beaches.webp",
-  "imageAlt": "Sri Lanka beach placeholder for Rekawa",
+  "mainImageUrl": "/images/destinations/default-destination.webp",
+  "imageAlt": "Gradient placeholder for Rekawa",
   "highlights": [
     "Sea turtle conservation",
     "Rekawa Lagoon",

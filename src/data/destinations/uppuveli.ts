@@ -7,8 +7,8 @@ const destination = {
   "region": "Eastern Province",
   "shortDescription": "A laid-back Trincomalee beach neighbourhood with gentle waves, local cafés and an easy coastal feel.",
   "description": "Uppuveli is a convenient east-coast base for beach time without being far from Trincomalee’s temples, harbour and marine experiences. It is an easy private-transfer finish after a cultural day in Anuradhapura and Mihintale.",
-  "mainImageUrl": "/images/experiences/beaches.webp",
-  "imageAlt": "Sri Lanka beach placeholder for Uppuveli",
+  "mainImageUrl": "/images/destinations/default-destination.webp",
+  "imageAlt": "Gradient placeholder for Uppuveli",
   "highlights": [
     "Relaxed beach stays",
     "Trincomalee nearby",

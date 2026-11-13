@@ -108,10 +108,6 @@ const destination = {
       "src": "/images/destinations/anuradhapura/kuttam-pokuna-twin-ponds.webp",
       "alt": "Stone steps and water at Kuttam Pokuna Twin Ponds in Anuradhapura"
     },
-    "Ancient city ruins": {
-      "src": "/images/destinations/anuradhapura/thuparamaya-buddha-statue.webp",
-      "alt": "Seated Buddha statue within stone pillars at Thuparamaya"
-    },
     "Isurumuniya": {
       "src": "/images/destinations/anuradhapura/isurumuniya-temple-pond.webp",
       "alt": "Isurumuniya rock temple and reflecting pond in Anuradhapura"

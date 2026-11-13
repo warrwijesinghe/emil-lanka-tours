@@ -7,8 +7,8 @@ const destination = {
   "region": "Eastern Province",
   "shortDescription": "A quiet, unspoilt beach area south of Arugam Bay, surrounded by coastal nature and a slower village atmosphere.",
   "description": "Panama Beach is for travellers who prefer wide open sand and a gentler pace. It works beautifully alongside Arugam Bay and Kumana, bringing together beach time, wildlife and the character of Sri Lanka’s less-developed east coast.",
-  "mainImageUrl": "/images/experiences/beaches.webp",
-  "imageAlt": "Sri Lanka beach placeholder for Panama Beach",
+  "mainImageUrl": "/images/destinations/default-destination.webp",
+  "imageAlt": "Gradient placeholder for Panama Beach",
   "highlights": [
     "Quiet beach time",
     "Arugam Bay nearby",

@@ -10,7 +10,7 @@ export const mainDestinationSlugs = new Set([
 const guide = (attractions: string[], experiences: string[]): DestinationGuide => ({ attractions, experiences });
 
 export const destinationGuides: Record<string, DestinationGuide> = {
-  'anuradhapura': guide(['Sri Maha Bodhi', 'Ruwanwelisaya', 'Abhayagiriya Viharaya', 'Jetavanarama Viharaya', 'Twin Ponds', 'Ancient city ruins', 'Isurumuniya', 'Thuparamaya'], ['Ancient City Tour', 'Sacred-site visit', 'Mihintale excursion']),
+  'anuradhapura': guide(['Sri Maha Bodhi', 'Ruwanwelisaya', 'Abhayagiriya Viharaya', 'Jetavanarama Viharaya', 'Twin Ponds', 'Samadhi Buddha Statue', 'Anuradhapura Moonstone', 'Isurumuniya', 'Thuparamaya'], ['Ancient City Tour', 'Sacred-site visit', 'Mihintale excursion']),
   'arugam-bay': guide(['Arugam Bay beach', 'Elephant Rock', 'Panama coast', 'Panama Beach'], ['Beach time', 'Coastal exploration', 'Kumana safari connection']),
   'bundala-national-park': guide(['Wetland lagoons', 'Seasonal flamingos', 'Coastal scrubland'], ['Birdwatching safari', 'Wildlife photography', 'Nature drive']),
   'colombo': guide(['Galle Face Green', 'Pettah markets', 'Gangaramaya Temple'], ['Colombo City Tour', 'Market exploration', 'Airport transfer stop']),
@@ -22,7 +22,7 @@ export const destinationGuides: Record<string, DestinationGuide> = {
   'haputale': guide(['Lipton’s Seat', 'Tea estates', 'Highland viewpoints'], ['Tea Estate Experience', 'Scenic drive', 'Hill-country walking']),
   'horton-plains-national-park': guide(['Cloud forest', 'Open grasslands', 'Highland viewpoints'], ['Horton Plains Nature Hike', 'Early-morning walk', 'Nature photography']),
   'kalpitiya': guide(['Kalpitiya lagoon', 'North-west coast', 'Kite-surfing waters'], ['Dolphin Watching', 'Kite Surfing', 'Flamingo watching']),
-  'kandy': guide(['Temple of the Tooth', 'Kandy Lake', 'Peradeniya Botanical Garden', 'Kandy cultural dance venue', 'Gem and jewellery museum'], ['Kandy City Tour', 'Cultural Dance Show', 'Temple of the Tooth Visit']),
+  'kandy': guide(['Temple of the Tooth', 'Kandy Lake', 'Peradeniya Botanical Garden', 'Gem and jewellery museum'], ['Kandy City Tour', 'Cultural Dance Show', 'Temple of the Tooth Visit']),
   'kaudulla-national-park': guide(['Kaudulla Reservoir', 'Grassland safari tracks', 'Elephant habitat'], ['Cultural Triangle Elephant Safari', 'Wildlife photography', 'Afternoon jeep safari']),
   'kinniya': guide(['Kinniya fish market', 'Coastal waterfront', 'Trincomalee connection'], ['Fish-market visit', 'Local-life stop', 'East-coast transfer']),
   'kitulgala': guide(['Kelani River', 'Rainforest edge', 'River valley scenery'], ['White-Water Rafting', 'River adventure', 'Rainforest walk']),
@@ -64,6 +64,8 @@ export const getDestinationGuide = (slug: string): DestinationGuide => destinati
 );
 
 const attractionDescriptions: Record<string, string> = {
+  'Samadhi Buddha Statue': 'See a stone Buddha seated in meditation in Anuradhapura’s Abhayagiri monastic precinct.',
+  'Anuradhapura Moonstone': 'Look closely at the carved bands on the semicircular stone threshold at Abhayagiri.',
   'Kandy Lake': 'A peaceful lakeside circuit at the centre of Kandy, ideal for a gentle walk between the city’s cultural landmarks.',
   'Temple of the Tooth': 'Kandy’s most revered Buddhist temple, where rituals, architecture and the lakeside setting create a meaningful visit.',
   'Peradeniya Botanical Garden': 'A spacious, beautifully maintained garden of giant trees, orchids and riverside paths just outside Kandy.',

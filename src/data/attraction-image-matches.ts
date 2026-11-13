@@ -19,7 +19,6 @@ const imageMatches: Record<string, RegExp> = {
   'Temple of the Tooth': /\/kandy\/temple-of-the-tooth-/,
   'Kandy Lake': /\/kandy\/kandy-lake-/,
   'Peradeniya Botanical Garden': /\/kandy\/peradeniya-botanical-gardens-/,
-  'Kandy cultural dance venue': /\/kandy\/kandy-cultural-dance-/,
   'Mirissa Beach': /\/mirissa\/mirissa-(beach-|palm-)/,
   'Gregory Lake': /\/nuwara-eliya\/lake-gregory-/,
   'Pidurangala Rock': /\/pidurangala-rock\/pidurangala-(sigiriya-view|panoramic-view)/,

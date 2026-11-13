@@ -95,11 +95,8 @@ const destination = {
     "Peradeniya Botanical Garden": {
       "src": "/images/destinations/kandy/peradeniya-botanical-gardens-landscape.webp",
       "alt": "Colourful formal garden landscape at the Royal Botanic Gardens, Peradeniya"
-    },
-    "Kandy cultural dance venue": {
-      "src": "/images/destinations/kandy/kandy-cultural-dance-fire-performance.webp",
-      "alt": "Traditional fire dance performance during a Kandy cultural show"
     }
+
   },
   "highlights": [
     "Temple of the Tooth",
